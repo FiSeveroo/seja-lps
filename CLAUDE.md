@@ -21,7 +21,7 @@ Página nova: criar `site/<nome>/index.html` com seus `assets/`, adicionar a lin
 
 ## Design do Claude
 
-- Design system da marca: https://claude.ai/artifact/7uVBRdfP9oNts7onCbcpFS ("Seja Creator": cores, Futuru, logos, símbolos, bg1 fotos dos sócios e as seções Botao, Hero, Dado, Servico, Rodape, Titulo, Acordeao, Pessoa, Projeto, Fechamento). Todo canvas novo de página da Seja usa ele.
+- Design system da marca: https://claude.ai/artifact/7uVBRdfP9oNts7onCbcpFS ("Seja Creator": cores, Futuru, logos, símbolos, bg1, fotos dos sócios e as seções Botao, Hero, Dado, Servico, Rodape, Titulo, Acordeao, Pessoa, Projeto, Fechamento). Todo canvas novo de página da Seja usa ele.
 - Fluxo: (1) rascunhar a página nova num canvas do Design ("LP <nome> · Seja Creator"); (2) aprovar com Filipe/Igor; (3) passar para `site/<nome>/index.html` seguindo a skill seja-lp-design; (4) push na `main` publica.
 - Mudou cor, fonte, logo ou um bloco padrão no repositório? Atualizar também o design system para os dois não divergirem.
 - Commits pequenos e descritivos, em português.
