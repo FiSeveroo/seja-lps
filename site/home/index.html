@@ -32,8 +32,8 @@ a:hover{opacity:.85}
 .grade-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px}
 .acordeao summary{list-style:none;cursor:pointer}
 .acordeao summary::-webkit-details-marker{display:none}
-.acordeao summary::after{content:'+';font-size:30px;line-height:1}
-.acordeao[open] summary::after{content:'\2212'}
+.mais{flex-shrink:0}
+details[open] .mais .vertical{display:none}
 @media (max-width:900px){
   .grade-2,.grade-3{grid-template-columns:minmax(0,1fr);gap:40px}
   .nav-links{display:none !important}
@@ -79,19 +79,19 @@ a:hover{opacity:.85}
     </div>
     <div>
       <details class="acordeao" name="servicos" open style="border: 1px solid #8338EB; margin-bottom: 16px;">
-        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Projeto</summary>
+        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Projeto <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
         <div style="padding: 0 32px 28px; font-size: 19px;">Trabalho com escopo e prazo definidos. Para objetivos específicos: lançamento, edital, campanha ou base inicial.</div>
       </details>
       <details class="acordeao" name="servicos" style="border: 1px solid #8338EB; margin-bottom: 16px">
-        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Parceria contínua</summary>
+        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Parceria contínua <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
         <div style="padding: 0 32px 28px; font-size: 19px">Caminhada de longo prazo com pesquisadores e grupos de pesquisa. Estratégia, planejamento, criação e gestão das plataformas.</div>
       </details>
       <details class="acordeao" name="servicos" style="border: 1px solid #8338EB; margin-bottom: 16px;">
-        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Editais</summary>
+        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Editais <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
         <div style="padding: 0 32px 28px; font-size: 19px;">Construímos junto com você o plano de divulgação científica e impacto social da proposta. Do documento pro edital ao trabalho contínuo depois da aprovação. <a href="https://wa.me/5551991006411?text=Oi%2C%20Filipe%21%20Vi%20o%20site%20da%20Seja%20e%20meu%20edital%20pede%20plano%20de%20divulga%C3%A7%C3%A3o%20cient%C3%ADfica." target="_blank" rel="noopener" style="font-weight: 700; color: #8338EB; text-decoration: none;">Falar sobre meu edital →</a></div>
       </details>
       <details class="acordeao" name="servicos" style="border: 1px solid #8338EB;">
-        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Formação</summary>
+        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Formação <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
         <div style="padding: 0 32px 28px; font-size: 19px;">Pra quem quer aprender a comunicar a própria ciência, individualmente ou em grupo de pesquisa.</div>
       </details>
     </div>
