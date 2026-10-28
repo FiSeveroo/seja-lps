@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seja Creator · Divulgação científica nas plataformas digitais</title>
+<meta name="description" content="A Seja Creator é especializada em divulgação científica nas plataformas digitais. Caminhamos ao lado de pesquisadores e grupos de pesquisa na estratégia, criação e gestão da presença digital.">
+<meta name="theme-color" content="#8338EB">
+<link rel="preload" href="assets/fonts/Futuru-Medium.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="assets/fonts/Futuru-Bold.otf" as="font" type="font/otf" crossorigin>
+<style>
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Medium.otf') format('opentype'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Semibold.otf') format('opentype'); font-weight: 600; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Extrabold.otf') format('opentype'); font-weight: 800; font-display: swap; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --roxo: #8338EB;
+    --rosa: #FF006E;
+    --azul: #3A86FE;
+    --laranja: #FB5507;
+    --amarelo: #FFBE0C;
+    --texto: #1A1A2E;
+    --claro: #F5F4F8;
+    --linha: #E6E3EE;
+    --apoio: #55526A;
+    --margem: clamp(20px, 5vw, 64px);
+  }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Futuru', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+    color: var(--texto);
+    background: #fff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; border-radius: 4px; }
+
+  section { position: relative; overflow: hidden; padding: 120px var(--margem); }
+  .container { max-width: 1160px; margin: 0 auto; position: relative; z-index: 2; }
+  h1, h2, h3 { font-weight: 700; letter-spacing: -0.025em; line-height: 1.08; text-wrap: balance; }
+  h2 { font-size: clamp(32px, 4.2vw, 52px); margin-bottom: 28px; }
+  h3 { font-size: 26px; line-height: 1.2; margin-bottom: 12px; }
+  p { font-size: 19px; line-height: 1.65; margin-bottom: 16px; text-wrap: pretty; }
+  .fonte { font-size: 15px; color: var(--apoio); }
+
+  .cta {
+    display: inline-block;
+    background: var(--rosa);
+    color: #fff;
+    padding: 18px 34px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    transition: transform .2s ease, background-color .2s ease;
+    touch-action: manipulation;
+  }
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(0); }
+  .cta-branco { background: #fff; color: var(--rosa); }
+  .cta-escuro { background: var(--texto); color: var(--amarelo); }
+  .link-seta { font-weight: 700; color: var(--roxo); text-decoration: none; font-size: 18px; }
+  .link-seta:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  .simbolo-bg { position: absolute; z-index: 1; pointer-events: none; width: 820px; opacity: .07; }
+  .simbolo-bg.dir { right: -220px; bottom: -260px; }
+  .simbolo-bg.esq { left: -260px; top: -240px; }
+
+  /* HERO */
+  .hero {
+    background: #5a3ee0 url('assets/bg1.png') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 72px var(--margem) 140px;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-logo { width: 190px; margin: 0 auto 72px; }
+  .hero h1 { font-size: clamp(40px, 6.2vw, 84px); max-width: 1000px; margin: 0 auto 32px; }
+  .hero-sub { font-size: clamp(19px, 1.7vw, 23px); max-width: 720px; margin: 0 auto 44px; color: #fff; }
+
+  /* DORES */
+  .dores h2 { color: var(--roxo); max-width: 900px; margin-bottom: 40px; }
+  .dores-lista { list-style: none; columns: 2; column-gap: 72px; }
+  .dores-lista li { break-inside: avoid; }
+  .dores-lista li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 20px;
+    padding: 26px 0;
+    font-size: 21px;
+    line-height: 1.5;
+  }
+  .dores-lista li { border-top: 2px solid var(--linha); }
+  .dores-lista img { width: 30px; margin-top: 4px; }
+  .dores-fechamento { margin-top: 28px; font-size: 21px; font-weight: 700; color: var(--roxo); }
+
+  /* DADOS */
+  .dados { background: var(--roxo); color: #fff; }
+  .dados h2 { max-width: 760px; }
+  .dados-intro { max-width: 720px; color: #fff; }
+  .dados-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; margin: 64px 0 56px; }
+  .dado-num {
+    font-size: clamp(64px, 7.5vw, 112px);
+    font-weight: 800;
+    line-height: .95;
+    letter-spacing: -0.04em;
+    margin-bottom: 18px;
+    font-variant-numeric: tabular-nums;
+  }
+  .dado p { font-size: 19px; color: #fff; margin-bottom: 12px; }
+  .dado .fonte { color: #EDE3FF; font-size: 15px; }
+  .dados-fechamento { max-width: 820px; font-size: 22px; font-weight: 600; color: #fff; margin: 0; }
+
+  /* CAPES */
+  .capes { background: var(--claro); text-align: center; }
+  .capes h2 { color: var(--roxo); max-width: 820px; margin-left: auto; margin-right: auto; }
+  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin: 64px 0 48px; position: relative; list-style: none; }
+  .timeline::before { content: ''; position: absolute; top: 40px; left: 12%; right: 12%; height: 4px; background: var(--linha); border-radius: 4px; }
+  .etapa { position: relative; }
+  .etapa-icone {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: #fff; border: 4px solid var(--linha);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; padding: 18px;
+  }
+  .etapa.laranja .etapa-icone { background: var(--laranja); border-color: var(--laranja); }
+  .etapa.roxo .etapa-icone { background: var(--roxo); border-color: var(--roxo); }
+  .etapa-ano { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+  .etapa-titulo { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
+  .etapa-texto { font-size: 17px; line-height: 1.55; color: var(--texto); margin: 0; }
+
+  /* SERVIÇOS */
+  .servicos h2 { color: var(--roxo); max-width: 760px; }
+  .servicos-intro { max-width: 720px; }
+  .servicos-lista { margin-top: 56px; }
+  .servico {
+    display: grid;
+    grid-template-columns: 72px 4fr 7fr;
+    gap: 36px;
+    align-items: start;
+    padding: 40px 0;
+  }
+  .servico + .servico { border-top: 2px solid var(--linha); }
+  .servico img { width: 64px; }
+  .servico h3 { font-size: 34px; margin: 6px 0 0; }
+  .servico p { margin-bottom: 8px; }
+  .servico .link-seta { display: inline-block; margin-top: 8px; }
+
+  /* EDITAIS */
+  .editais { background: var(--amarelo); }
+  .editais-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .editais h2 { font-size: clamp(30px, 3.4vw, 44px); }
+  .editais p { color: var(--texto); }
+  .editais .cta { margin-top: 12px; }
+  .selo { display: flex; gap: 18px; align-items: center; background: var(--texto); color: #fff; padding: 22px 26px; border-radius: 16px; margin-top: 36px; }
+  .selo img { width: 40px; flex-shrink: 0; }
+  .selo p { color: #fff; font-size: 17px; margin: 0; line-height: 1.45; }
+  .selo strong { display: block; font-size: 19px; color: var(--amarelo); }
+
+  .doc { background: #fff; border-radius: 16px; padding: 40px 36px; position: relative; transform: rotate(-1.5deg); }
+  .doc-aviso {
+    position: absolute; top: -22px; right: -14px;
+    background: var(--laranja); color: #fff;
+    padding: 10px 18px; border-radius: 999px;
+    font-size: 16px; font-weight: 700; transform: rotate(3deg); white-space: nowrap;
+  }
+  .doc-cabecalho { border-bottom: 2px solid var(--linha); padding-bottom: 16px; margin-bottom: 22px; }
+  .doc-tipo { font-size: 14px; color: var(--apoio); margin-bottom: 4px; }
+  .doc-titulo { font-size: 18px; font-weight: 700; }
+  .campo { margin-bottom: 16px; }
+  .campo-nome { font-size: 15px; font-weight: 600; color: var(--apoio); margin-bottom: 6px; }
+  .campo-linha { height: 26px; border-radius: 6px; background: var(--claro); position: relative; }
+  .campo-linha::after { content: ''; position: absolute; top: 9px; left: 12px; right: 40%; height: 8px; border-radius: 3px; background: #DAD7E2; }
+  .campo-linha.curta::after { right: 62%; }
+  .campo-linha.longa::after { right: 18%; }
+  .campo-destaque { background: #FFF2E9; border: 3px solid var(--laranja); border-radius: 10px; padding: 16px; margin: 22px 0 18px; }
+  .campo-destaque .campo-nome { color: var(--laranja); font-weight: 700; font-size: 16px; }
+  .campo-destaque .campo-linha { background: #fff; height: 54px; }
+  .campo-destaque .campo-linha::after { display: none; }
+
+  /* HISTÓRIAS */
+  .historias h2 { color: var(--roxo); }
+  .historias-intro { max-width: 760px; }
+  .historias-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 56px; }
+  .historia { background: var(--claro); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+  .historia-capa {
+    background: var(--rosa); color: #fff;
+    min-height: 240px; padding: 36px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    position: relative; overflow: hidden;
+  }
+  .historia:nth-child(2) .historia-capa { background: var(--azul); }
+  .historia-capa img { position: absolute; width: 260px; right: -50px; top: -40px; opacity: .2; }
+  .historia-capa .projeto { font-size: clamp(34px, 3.6vw, 48px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; position: relative; }
+  .historia-capa .frente { font-size: 18px; font-weight: 600; margin-top: 12px; position: relative; }
+  .historia-corpo { padding: 36px; flex: 1; }
+  .historia-corpo h3 { font-size: 24px; }
+  .historia-corpo .quem { color: var(--apoio); font-size: 17px; margin-bottom: 18px; }
+  .historia-corpo p { font-size: 18px; }
+  .historias-fechamento { text-align: center; max-width: 760px; margin: 56px auto 0; font-size: 21px; color: var(--texto); }
+
+  /* CTA FINAL */
+  .cta-final { background: var(--rosa); color: #fff; text-align: center; padding: 140px var(--margem); }
+  .cta-final h2 { font-size: clamp(44px, 6vw, 80px); margin-bottom: 24px; }
+  .cta-final p { max-width: 600px; margin: 0 auto 40px; color: #fff; font-size: 20px; }
+  .cta-alt { display: block; margin-top: 28px; font-size: 17px; color: #fff; }
+  .cta-alt a { color: #fff; font-weight: 700; text-underline-offset: 4px; }
+
+  footer { background: #0F0A1F; color: #C9C4D9; text-align: center; padding: 56px var(--margem); font-size: 15px; }
+  footer img { width: 130px; margin: 0 auto 18px; }
+
+  /* Entrada suave dos blocos */
+  .revela { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .revela.visivel { opacity: 1; transform: none; }
+  .sem-js .revela { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .revela { opacity: 1; transform: none; transition: none; }
+    .cta { transition: none; }
+  }
+
+  @media (max-width: 960px) {
+    section { padding: 80px var(--margem); }
+    .editais-grid, .historias-grid { grid-template-columns: 1fr; gap: 40px; }
+    .dores-lista { columns: 1; }
+    .dados-grid { grid-template-columns: 1fr; gap: 40px; margin: 48px 0 40px; }
+    .timeline { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+    .timeline::before { display: none; }
+    .servico { grid-template-columns: 56px 1fr; gap: 12px 20px; }
+    .servico img { width: 48px; }
+    .servico > div:last-child { grid-column: 2; }
+    .servico h3 { font-size: 28px; margin-top: 4px; }
+    .doc { transform: none; margin-top: 16px; }
+  }
+  @media (max-width: 560px) {
+    p { font-size: 18px; }
+    .hero { min-height: auto; padding: 48px var(--margem) 88px; }
+    .hero-logo { width: 150px; margin-bottom: 56px; }
+    .hero h1 { font-size: 38px; }
+    .dores-lista li { font-size: 19px; grid-template-columns: 28px 1fr; gap: 14px; }
+    .dores-lista img { width: 24px; }
+    .timeline { grid-template-columns: 1fr; }
+    .doc { padding: 32px 22px; }
+    .doc-aviso { right: 8px; font-size: 14px; }
+    .historia-capa, .historia-corpo { padding: 28px; }
+    .simbolo-bg { width: 480px; }
+    .cta { padding: 17px 28px; font-size: 17px; }
+  }
+</style>
+</head>
+<body class="sem-js">
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <img class="simbolo-bg dir" src="assets/Simbolo_SEJA_BRANCO.png" alt="" aria-hidden="true" width="800" height="838">
+  <div class="container">
+    <img class="hero-logo" src="assets/Logotipo_SEJA_BRANCO.png" alt="Seja Creator" width="1000" height="486" fetchpriority="high">
+    <h1>A ciência que você faz precisa chegar em quem importa.</h1>
+    <p class="hero-sub">A Seja é especializada em divulgação científica nas plataformas digitais. Caminhamos ao lado de pesquisadores e grupos de pesquisa na estratégia, na criação e na gestão da presença digital.</p>
+    <a class="cta" href="https://wa.me/5551991006411?text=Oi%2C%20Filipe!%20Vi%20a%20p%C3%A1gina%20da%20Seja%20e%20quero%20conversar." target="_blank" rel="noopener">Marcar uma conversa</a>
+  </div>
+</section>
+
+<!-- DORES -->
+<section class="dores">
+  <div class="container">
+    <h2 class="revela">Se você é pesquisador, provavelmente já passou por isso.</h2>
+    <div class="revela">
+      <ul class="dores-lista">
+        <li><img src="assets/Simbolo_SEJA_ROXO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy"><span>Sabe que o que você estuda importa, mas não sabe como fazer isso chegar em quem não é da área.</span></li>
+        <li><img src="assets/Simbolo_SEJA_ROSA.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy"><span>Quer aparecer nas redes, mas não sabe por onde começar, e não tem tempo pra descobrir sozinho.</span></li>
+        <li><img src="assets/Simbolo_SEJA_LARANJA.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy"><span>Já tentou publicar conteúdo, mas o que sai técnico demais não é lido, e o que sai simples demais parece raso.</span></li>
+        <li><img src="assets/Simbolo_SEJA_ROXO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy"><span>Vê colegas construindo audiência e se pergunta como conciliar isso com a rotina de pesquisa, aula e orientação.</span></li>
+        <li><img src="assets/Simbolo_SEJA_ROSA.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy"><span>Precisa mostrar o impacto do seu trabalho pra editais, avaliações institucionais e agora pra CAPES, mas sente que a academia não te preparou pra isso.</span></li>
+      </ul>
+      <p class="dores-fechamento">A gente entende essas dores porque trabalha com elas todo dia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DADOS -->
+<section class="dados">
+  <img class="simbolo-bg esq" src="assets/Simbolo_SEJA_BRANCO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+  <div class="container">
+    <h2 class="revela">Você não está sozinho nessa.</h2>
+    <p class="dados-intro revela">Os dados mostram que o problema é estrutural. A academia forma pesquisadores excelentes, mas raramente prepara alguém pra comunicar ciência fora dos próprios pares.</p>
+    <div class="dados-grid">
+      <div class="dado revela">
+        <div class="dado-num">82,5%</div>
+        <p>dos pesquisadores brasileiros nunca receberam treinamento pra comunicar ciência.</p>
+        <p class="fonte">Flores &amp; Barata, Labjor/Unicamp (2019)</p>
+      </div>
+      <div class="dado revela">
+        <div class="dado-num">97%</div>
+        <p>dos cientistas gostariam de divulgar mais o próprio trabalho, mas não sabem como.</p>
+        <p class="fonte">Agência Bori (2019)</p>
+      </div>
+      <div class="dado revela">
+        <div class="dado-num">93%</div>
+        <p>dos jovens brasileiros não conseguem citar o nome de um cientista do país.</p>
+        <p class="fonte">INCT-CPCT (2019)</p>
+      </div>
+    </div>
+    <p class="dados-fechamento revela">Existe uma geração inteira interessada em ciência, cientistas querendo se comunicar, e um vazio no meio. Em 2025, esse vazio virou problema institucional.</p>
+  </div>
+</section>
+
+<!-- CAPES -->
+<section class="capes">
+  <div class="container">
+    <h2 class="revela">Comunicar ciência deixou de ser opcional.</h2>
+    <ol class="timeline">
+      <li class="etapa revela">
+        <div class="etapa-icone"><img src="assets/Simbolo_SEJA_PRETO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy"></div>
+        <div class="etapa-ano">Até 2024</div>
+        <div class="etapa-titulo">Sistema anterior</div>
+        <p class="etapa-texto">Programas de pós-graduação avaliados pelo Qualis Periódicos. Impacto na sociedade era desejável, mas não determinante.</p>
+      </li>
+      <li class="etapa laranja revela">
+        <div class="etapa-icone"><img src="assets/Simbolo_SEJA_BRANCO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy"></div>
+        <div class="etapa-ano">2025</div>
+        <div class="etapa-titulo">A CAPES muda as regras</div>
+        <p class="etapa-texto">Interação com a sociedade vira critério oficial. O Qualis Periódicos é extinto, e cada artigo passa a ser avaliado pelos próprios indicadores.</p>
+      </li>
+      <li class="etapa revela">
+        <div class="etapa-icone"><img src="assets/Simbolo_SEJA_ROXO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy"></div>
+        <div class="etapa-ano">2026 a 2028</div>
+        <div class="etapa-titulo">Janela de construção</div>
+        <p class="etapa-texto">Programas e pesquisadores constroem casos concretos de impacto na sociedade, presença digital e circulação da produção acadêmica.</p>
+      </li>
+      <li class="etapa roxo revela">
+        <div class="etapa-icone"><img src="assets/Simbolo_SEJA_BRANCO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy"></div>
+        <div class="etapa-ano">2029</div>
+        <div class="etapa-titulo">Avaliação Quadrienal</div>
+        <p class="etapa-texto">Notas, bolsas, repasses e credenciamento definidos pelo novo modelo, que agora pesa comunicação e alcance social.</p>
+      </li>
+    </ol>
+    <p class="fonte">Fonte: CAPES, Portaria nº 109/2025 e Ofício Circular nº 46/2024.</p>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos">
+  <div class="container">
+    <h2 class="revela">A gente caminha ao lado de quem faz ciência.</h2>
+    <p class="servicos-intro revela">Cuidamos da estratégia, da criação e da presença digital pra que o seu trabalho encontre quem precisa encontrar. Sem receita pronta e sem transformar você em quem você não é.</p>
+    <div class="servicos-lista">
+      <article class="servico revela">
+        <img src="assets/Simbolo_SEJA_ROXO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <h3>Projeto</h3>
+        <div>
+          <p>Trabalho com escopo e prazo definidos.</p>
+          <p>Para objetivos específicos: lançamento, edital, campanha ou base inicial.</p>
+        </div>
+      </article>
+      <article class="servico revela">
+        <img src="assets/Simbolo_SEJA_ROSA.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <h3>Parceria contínua</h3>
+        <div>
+          <p>Caminhada de longo prazo com pesquisadores e grupos de pesquisa.</p>
+          <p>Estratégia, planejamento, criação e gestão das plataformas.</p>
+        </div>
+      </article>
+      <article class="servico revela">
+        <img src="assets/Simbolo_SEJA_LARANJA.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <h3>Formação</h3>
+        <div>
+          <p>Pra quem quer aprender a comunicar a própria ciência, individualmente ou em grupo de pesquisa.</p>
+          <a class="link-seta" href="https://wa.me/5551991006411?text=Oi%2C%20Filipe!%20Quero%20saber%20mais%20sobre%20as%20forma%C3%A7%C3%B5es%20de%20divulga%C3%A7%C3%A3o%20cient%C3%ADfica%20da%20Seja." target="_blank" rel="noopener">Perguntar sobre formações →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EDITAIS -->
+<section class="editais">
+  <img class="simbolo-bg esq" src="assets/Simbolo_SEJA_LARANJA.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy" style="opacity:.1">
+  <div class="container editais-grid">
+    <div class="revela">
+      <h2>Seu edital pede plano de divulgação científica?</h2>
+      <p>Cada vez mais editais de FAPERGS, CNPq e CAPES exigem plano estruturado de divulgação científica e impacto social.</p>
+      <p>Nem sempre a orientação está clara. E o custo de errar é alto: proposta desclassificada ou nota baixa.</p>
+      <p><strong>A Seja constrói junto com você o planejamento de comunicação da sua proposta.</strong> Do documento pro edital ao trabalho contínuo depois da aprovação.</p>
+      <a class="cta cta-escuro" href="https://wa.me/5551991006411?text=Oi%2C%20Filipe!%20Quero%20falar%20sobre%20plano%20de%20divulga%C3%A7%C3%A3o%20cient%C3%ADfica%20para%20um%20edital." target="_blank" rel="noopener">Falar sobre meu edital</a>
+      <div class="selo">
+        <img src="assets/Simbolo_SEJA_AMARELO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <p><strong>Aprovado no FAPERGS 06/2025</strong>A Seja consta oficialmente no projeto Nós em redes (Grupo Lola / Unisinos).</p>
+      </div>
+    </div>
+    <div class="doc revela" role="img" aria-label="Ilustração de um formulário de edital com o campo Plano de divulgação científica e impacto social em destaque">
+      <div class="doc-aviso">É aqui que a Seja entra</div>
+      <div class="doc-cabecalho">
+        <div class="doc-tipo">Edital de fomento à pesquisa</div>
+        <div class="doc-titulo">Formulário de submissão de proposta</div>
+      </div>
+      <div class="campo"><div class="campo-nome">1. Título do projeto</div><div class="campo-linha longa"></div></div>
+      <div class="campo"><div class="campo-nome">2. Objetivos</div><div class="campo-linha longa"></div></div>
+      <div class="campo"><div class="campo-nome">3. Metodologia</div><div class="campo-linha"></div></div>
+      <div class="campo-destaque"><div class="campo-nome">4. Plano de divulgação científica e impacto social</div><div class="campo-linha"></div></div>
+      <div class="campo"><div class="campo-nome">5. Cronograma</div><div class="campo-linha curta"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTÓRIAS -->
+<section class="historias">
+  <div class="container">
+    <h2 class="revela">Histórias que ajudamos a contar</h2>
+    <p class="historias-intro revela">Duas frentes: uma pesquisadora construindo presença digital a partir da própria pesquisa, e um grupo de pesquisa executando um edital com plano estruturado de divulgação.</p>
+    <div class="historias-grid">
+      <article class="historia revela">
+        <div class="historia-capa">
+          <img src="assets/Simbolo_SEJA_BRANCO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+          <div class="projeto">Nós da Docência</div>
+          <div class="frente">Pesquisadora · Parceria contínua</div>
+        </div>
+        <div class="historia-corpo">
+          <h3>Maria Cláudia Dal’Igna</h3>
+          <p class="quem">Educação, gênero e trabalho docente</p>
+          <p>Pesquisadora com três décadas em educação, gênero e trabalho docente. Desde 2024, a Seja construiu com ela o ecossistema Nós da Docência: marca, site, redes, materiais, modelo de negócio e plataforma de formação continuada.</p>
+          <p>Hoje o Nós da Docência circula em livros, formações, podcast e redes sociais.</p>
+          <a class="link-seta" href="https://www.nosdadocencia.com" target="_blank" rel="noopener">Conheça o Nós da Docência →</a>
+        </div>
+      </article>
+      <article class="historia revela">
+        <div class="historia-capa">
+          <img src="assets/Simbolo_SEJA_BRANCO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+          <div class="projeto">Nós em redes</div>
+          <div class="frente">Grupo de pesquisa · Do edital à execução</div>
+        </div>
+        <div class="historia-corpo">
+          <h3>Grupo Lola · Unisinos</h3>
+          <p class="quem">Projeto aprovado no FAPERGS 06/2025</p>
+          <p>A Seja participou da construção da proposta do projeto Nós em redes junto com o Grupo Lola. O plano de divulgação, a metodologia de formação e a estrutura de comunicação foram desenhados em conjunto e incorporados oficialmente ao edital aprovado.</p>
+          <p>Desde agosto de 2026, a Seja executa o serviço em seis etapas ao longo de dois anos.</p>
+        </div>
+      </article>
+    </div>
+    <p class="historias-fechamento revela">Cada projeto é diferente porque cada pesquisador é diferente. O que se repete é o cuidado com a construção.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <img class="simbolo-bg dir" src="assets/Simbolo_SEJA_BRANCO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy" style="opacity:.12">
+  <div class="container">
+    <h2 class="revela">Vamos conversar.</h2>
+    <p class="revela">A primeira conversa é pra entender o que você faz, o que precisa e o que faz sentido construir. Sem compromisso, sem pacote pronto.</p>
+    <a class="cta cta-branco" href="https://wa.me/5551991006411?text=Oi%2C%20Filipe!%20Vi%20a%20p%C3%A1gina%20da%20Seja%20e%20quero%20conversar." target="_blank" rel="noopener">Marcar uma conversa</a>
+    <span class="cta-alt">Ou escreva para <a href="mailto:contato@sejacreator.com.br">contato@sejacreator.com.br</a></span>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img src="assets/Logotipo_SEJA_BRANCO.png" alt="Seja Creator" width="1000" height="486" loading="lazy">
+  CNPJ 24.560.652/0001-49 · <a href="https://sejacreator.com.br">sejacreator.com.br</a>
+</footer>
+
+<script>
+  document.body.classList.remove('sem-js');
+  (function () {
+    var els = document.querySelectorAll('.revela');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('visivel'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('visivel'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (e, i) { e.style.transitionDelay = ((i % 4) * 70) + 'ms'; io.observe(e); });
+  })();
+</script>
+</body>
+</html>
