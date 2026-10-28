@@ -24,8 +24,8 @@ Tudo isso já está no design system "Seja Creator" do Claude (componentes Titul
 - Rodapé: hoje só "2026 - Seja Creator"; incluir CNPJ 24.560.652/0001-49.
 - Ligação com as LPs: a home deve levar a ciencia.sejacreator.com.br e às páginas de formação/aula.
 
-## Decisões em aberto (o site atual difere das regras do CLAUDE.md)
+## Decidido (28/10/2026): as regras do CLAUDE.md ficam
 
-- Degradês em imagem fora do hero: o site usa rosa→vermelho no hero e rosa→laranja em Projetos; a regra atual permite só bg1.png no hero.
-- Cartão translúcido (glass) sobre o degradê: a regra proíbe.
-- Símbolo repetido em contorno bem claro no fundo das seções: a regra pede um símbolo só.
+- Degradês do site atual (rosa→vermelho, rosa→laranja) não entram por padrão; só quando o Filipe pedir, no elemento que ele indicar.
+- Cartão translúcido (glass): fora.
+- Símbolo repetido em contorno no fundo: fora; um símbolo só.

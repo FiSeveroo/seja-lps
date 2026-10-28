@@ -21,7 +21,7 @@ Página nova: criar `site/<nome>/index.html` com seus `assets/`, adicionar a lin
 
 ## Design do Claude
 
-- Design system da marca: https://claude.ai/artifact/7uVBRdfP9oNts7onCbcpFS ("Seja Creator": cores, Futuru, logos, símbolos, bg1 e as seções Botao, Hero, Dado, Servico, Rodape). Todo canvas novo de página da Seja usa ele.
+- Design system da marca: https://claude.ai/artifact/7uVBRdfP9oNts7onCbcpFS ("Seja Creator": cores, Futuru, logos, símbolos, bg1 fotos dos sócios e as seções Botao, Hero, Dado, Servico, Rodape, Titulo, Acordeao, Pessoa, Projeto, Fechamento). Todo canvas novo de página da Seja usa ele.
 - Fluxo: (1) rascunhar a página nova num canvas do Design ("LP <nome> · Seja Creator"); (2) aprovar com Filipe/Igor; (3) passar para `site/<nome>/index.html` seguindo a skill seja-lp-design; (4) push na `main` publica.
 - Mudou cor, fonte, logo ou um bloco padrão no repositório? Atualizar também o design system para os dois não divergirem.
 - Commits pequenos e descritivos, em português.
@@ -29,7 +29,7 @@ Página nova: criar `site/<nome>/index.html` com seus `assets/`, adicionar a lin
 ## Regras que não podem ser esquecidas
 
 - Cores: roxo #8338EB, rosa #FF006E, azul #3A86FE, laranja #FB5507, amarelo #FFBE0C, texto #1A1A2E. Fonte única Futuru, corpo em 500.
-- bg1.png só no hero; resto em cores sólidas; nada de degradê em CSS, sombras, glass ou textura repetida do símbolo.
+- bg1.png só no hero; resto em cores sólidas; nada de degradê em CSS, sombras, glass ou textura repetida do símbolo. Outro degradê (como os do site sejacreator.com.br) só quando o Filipe pedir, e só no elemento que ele indicar.
 - Texto: sem travessão (—), sem "não é X, é Y", sem jargão de startup (escalar, clientes, leads, cases de sucesso, mindset, conversão). Usar "caminhar ao lado", "parceiros", "Histórias que ajudamos a contar".
 - Nunca inventar números, depoimentos ou parceiros. Todo dado com fonte.
 - WhatsApp: `https://wa.me/5551991006411?text=` + mensagem URL-encoded e contextual.
