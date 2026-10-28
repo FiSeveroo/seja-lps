@@ -18,6 +18,12 @@ Página nova: criar `site/<nome>/index.html` com seus `assets/`, adicionar a lin
 - Antes de mexer em qualquer página, siga a skill `.claude/skills/seja-lp-design/SKILL.md` (identidade visual, regras de layout, tom de voz e checagem com screenshots). Para revisão técnica, use `.claude/skills/web-design-guidelines/SKILL.md`.
 - Prévia: abra `site/ciencia/index.html` direto no navegador, ou rode `npx serve site` e abra /ciencia.
 - Ajustes visuais podem ser explorados no Design do Claude (canvas). Ele é rascunho: o que for aprovado lá é passado para o HTML deste repositório, que é a versão oficial.
+
+## Design do Claude
+
+- Design system da marca: https://claude.ai/artifact/7uVBRdfP9oNts7onCbcpFS ("Seja Creator": cores, Futuru, logos, símbolos, bg1 e as seções Botao, Hero, Dado, Servico, Rodape). Todo canvas novo de página da Seja usa ele.
+- Fluxo: (1) rascunhar a página nova num canvas do Design ("LP <nome> · Seja Creator"); (2) aprovar com Filipe/Igor; (3) passar para `site/<nome>/index.html` seguindo a skill seja-lp-design; (4) push na `main` publica.
+- Mudou cor, fonte, logo ou um bloco padrão no repositório? Atualizar também o design system para os dois não divergirem.
 - Commits pequenos e descritivos, em português.
 
 ## Regras que não podem ser esquecidas
