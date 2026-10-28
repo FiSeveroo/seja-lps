@@ -1,0 +1,8 @@
+# Cada subdomínio mostra a pasta da sua página.
+# Para uma página nova: crie site/<nome>/, adicione uma linha aqui
+# e um CNAME <nome> → ciencialpseja.netlify.app na Wix.
+https://ciencia.sejacreator.com.br/*  /ciencia/:splat  200!
+https://aula.sejacreator.com.br/*     /aula/:splat     200!
+
+# Endereço padrão do Netlify abre a LP de ciência
+/  /ciencia/  302

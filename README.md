@@ -2,7 +2,7 @@
 
 Landing pages da Seja Creator.
 
-- `ciencia/` → ciencia.sejacreator.com.br
-- `aula/` → aula.sejacreator.com.br
+- `site/ciencia/` → ciencia.sejacreator.com.br
+- `site/aula/` → aula.sejacreator.com.br
 
-Páginas estáticas (HTML + CSS). Publicação automática pelo Netlify a cada push na `main`. Detalhes de identidade, tom de voz e fluxo de trabalho em `CLAUDE.md`.
+Páginas estáticas (HTML + CSS). Um único projeto no Netlify publica `site/` a cada push na `main`; `site/_redirects` liga cada subdomínio à sua pasta. Detalhes de identidade, tom de voz e fluxo de trabalho em `CLAUDE.md`.

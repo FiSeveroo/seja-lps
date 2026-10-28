@@ -4,17 +4,19 @@ Repositório das páginas estáticas da Seja Creator, empresa especializada em d
 
 ## Estrutura
 
-| Pasta | Site no ar | Netlify |
-|---|---|---|
-| `ciencia/` | https://ciencia.sejacreator.com.br | ciencialpseja.netlify.app |
-| `aula/` | https://aula.sejacreator.com.br | marvelous-blancmange-e93061.netlify.app |
+| Pasta | Endereço |
+|---|---|
+| `site/ciencia/` | https://ciencia.sejacreator.com.br |
+| `site/aula/` | https://aula.sejacreator.com.br |
 
-Cada pasta é um site independente: `index.html` + `assets/` (fontes Futuru, logos, símbolos, bg1.png). HTML e CSS puros, sem build. No Netlify, cada site usa a própria pasta como *Base directory* e *Publish directory*, e publica sozinho a cada push na `main`.
+Um único projeto no Netlify (ciencialpseja) publica a pasta `site/` (ver `netlify.toml`) a cada push na `main`. O arquivo `site/_redirects` liga cada subdomínio à sua pasta. Cada página é `index.html` + `assets/` próprios (fontes Futuru, logos, símbolos, bg1.png), HTML e CSS puros, sem build.
+
+Página nova: criar `site/<nome>/index.html` com seus `assets/`, adicionar a linha `https://<nome>.sejacreator.com.br/*  /<nome>/:splat  200!` no `_redirects` (antes da regra de `/`), adicionar `<nome>.sejacreator.com.br` como domínio do projeto no Netlify e criar na Wix o CNAME `<nome>` → `ciencialpseja.netlify.app`. Nada fora de `site/` é publicado.
 
 ## Como trabalhar
 
 - Antes de mexer em qualquer página, siga a skill `.claude/skills/seja-lp-design/SKILL.md` (identidade visual, regras de layout, tom de voz e checagem com screenshots). Para revisão técnica, use `.claude/skills/web-design-guidelines/SKILL.md`.
-- Prévia: abra `ciencia/index.html` direto no navegador, ou rode `npx serve ciencia`.
+- Prévia: abra `site/ciencia/index.html` direto no navegador, ou rode `npx serve ciencia`.
 - Ajustes visuais podem ser explorados no Design do Claude (canvas). Ele é rascunho: o que for aprovado lá é passado para o HTML deste repositório, que é a versão oficial.
 - Commits pequenos e descritivos, em português.
 
