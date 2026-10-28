@@ -8,6 +8,7 @@ Repositório das páginas estáticas da Seja Creator, empresa especializada em d
 |---|---|
 | `site/ciencia/` | https://ciencia.sejacreator.com.br |
 | `site/aula/` | https://aula.sejacreator.com.br |
+| `site/home/` | https://inicio.sejacreator.com.br (home nova; sejacreator.com.br segue na Wix por enquanto) |
 
 Um único projeto no Netlify (ciencialpseja) publica a pasta `site/` (ver `netlify.toml`) a cada push na `main`. O arquivo `site/_redirects` liga cada subdomínio à sua pasta. Cada página é `index.html` + `assets/` próprios (fontes Futuru, logos, símbolos, bg1.png), HTML e CSS puros, sem build.
 
