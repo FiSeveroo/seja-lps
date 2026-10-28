@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plataformas digitais a seu favor · Minicurso · Filipe Severo</title>
+<meta name="description" content="Página de apoio ao minicurso 'Plataformas digitais a seu favor: teoria e prática para a divulgação científica', ministrado por Filipe Severo no VII Semidiscom (PPGCOM/UFRGS, 2026).">
+<link rel="icon" href="assets/Simbolo_SEJA_ROXO.png" type="image/png">
+<style>
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Thin.otf') format('opentype'); font-weight: 100; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Extralight.otf') format('opentype'); font-weight: 200; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Light.otf') format('opentype'); font-weight: 300; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Regular.otf') format('opentype'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Medium.otf') format('opentype'); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Semibold.otf') format('opentype'); font-weight: 600; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Extrabold.otf') format('opentype'); font-weight: 800; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('assets/fonts/Futuru-Black.otf') format('opentype'); font-weight: 900; font-style: normal; font-display: swap; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --roxo: #8338EB;
+    --rosa: #FF006E;
+    --azul: #3A86FE;
+    --laranja: #FB5507;
+    --amarelo: #FFBE0C;
+    --texto: #1A1A2E;
+    --cinza: #F5F5F7;
+    --cinza-med: #E8E8ED;
+    --cinza-txt: #666;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Futuru', -apple-system, sans-serif;
+    color: var(--texto);
+    line-height: 1.6;
+    background: #fff;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
+
+  /* Placeholder visual pra Fi lembrar de preencher */
+  .pending {
+    background: var(--amarelo);
+    color: var(--texto);
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.9em;
+    display: inline-block;
+  }
+  .pending-block {
+    background: var(--amarelo);
+    color: var(--texto);
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    margin: 16px 0;
+    border-left: 4px solid var(--laranja);
+  }
+
+  /* HERO */
+  .hero {
+    background: url('assets/bg1.png') center/cover no-repeat;
+    color: #fff;
+    padding: 48px 20px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-logo { margin-bottom: 32px; }
+  .hero-logo img { height: 56px; }
+  .hero-event-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14.5px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+  }
+  .hero h1 {
+    font-size: 36px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .hero-sub {
+    font-size: 19px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 28px;
+    line-height: 1.4;
+  }
+  .hero-meta {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .hero-meta-item {
+    font-size: 15.5px;
+    color: rgba(255,255,255,0.85);
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+  .hero-meta-item strong {
+    color: #fff;
+    font-weight: 700;
+  }
+  .hero-quote {
+    border-left: 3px solid var(--amarelo);
+    padding: 14px 0 14px 18px;
+    margin-top: 24px;
+    font-size: 18px;
+    font-style: italic;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  /* SECTIONS */
+  section { padding: 48px 0; position: relative; }
+  section h2 {
+    font-size: 27px;
+    font-weight: 800;
+    color: var(--roxo);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  section .section-sub {
+    font-size: 17px;
+    color: var(--cinza-txt);
+    margin-bottom: 24px;
+  }
+  .section-tag {
+    display: inline-block;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  p { font-size: 18px; line-height: 1.65; color: var(--texto); margin-bottom: 14px; }
+
+  /* PRESENÇA (Section 1) */
+  .presenca {
+    background: var(--roxo);
+    color: #fff;
+    padding: 56px 0;
+  }
+  .presenca .section-tag { background: var(--amarelo); color: var(--texto); }
+  .presenca h2 { color: #fff; }
+  .presenca p { color: rgba(255,255,255,0.95); }
+  .presenca-btn {
+    display: block;
+    background: var(--amarelo);
+    color: var(--texto);
+    padding: 22px 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 22.5px;
+    text-align: center;
+    margin: 24px 0 12px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    transition: transform 0.15s;
+    letter-spacing: -0.01em;
+  }
+  .presenca-btn:active { transform: scale(0.98); }
+  .presenca-btn::after { content: " →"; }
+  .lgpd {
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+    margin-top: 12px;
+  }
+
+  /* VÍDEOS (Section 2) */
+  .videos .section-tag { background: #FFE8F3; color: var(--rosa); }
+  .video-card {
+    display: flex;
+    gap: 14px;
+    padding: 14px;
+    background: var(--cinza);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 12px;
+    transition: transform 0.15s;
+    border: 2px solid transparent;
+  }
+  .video-card:active { transform: scale(0.99); }
+  .video-card:hover { border-color: var(--roxo); }
+  .video-thumb {
+    width: 100px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--rosa), var(--roxo));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .video-thumb-play {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .video-thumb-play::after {
+    content: '';
+    border-left: 10px solid #fff;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    margin-left: 3px;
+  }
+  .video-info { flex: 1; min-width: 0; }
+  .video-title {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.3;
+    margin-bottom: 4px;
+    color: var(--texto);
+  }
+  .video-channel {
+    font-size: 13.5px;
+    color: var(--cinza-txt);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .video-why {
+    font-size: 14.5px;
+    color: var(--texto);
+    line-height: 1.4;
+  }
+
+  /* PROJETOS (Section 3) */
+  .projetos { background: var(--cinza); }
+  .projetos .section-tag { background: #E6F0FF; color: var(--azul); }
+  .projeto-item {
+    display: block;
+    padding: 16px 18px;
+    background: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--azul);
+    transition: transform 0.15s;
+  }
+  .projeto-item:active { transform: scale(0.99); }
+  .projeto-name {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--texto);
+    margin-bottom: 2px;
+  }
+  .projeto-desc {
+    font-size: 14.5px;
+    color: var(--cinza-txt);
+    line-height: 1.4;
+  }
+  .projeto-item.pending-item {
+    border-left-color: var(--laranja);
+    background: #FFF8E6;
+  }
+
+  /* LINKS DO FILIPE (Section 4) */
+  .links-fi .section-tag { background: #FFE8DD; color: var(--laranja); }
+  .fi-perfil {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .fi-foto {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--cinza);
+    border: 3px solid var(--roxo);
+  }
+  .fi-foto img { width: 100%; height: 100%; object-fit: cover; }
+  .fi-nome {
+    font-size: 22.5px;
+    font-weight: 800;
+    color: var(--roxo);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .fi-cargo {
+    font-size: 15.5px;
+    color: var(--cinza-txt);
+    line-height: 1.3;
+  }
+  .fi-bio {
+    background: var(--cinza);
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--texto);
+    margin-bottom: 24px;
+  }
+  .fi-links-grid {
+    display: grid;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .fi-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: #fff;
+    border: 2px solid var(--cinza-med);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--texto);
+    transition: all 0.15s;
+  }
+  .fi-link:active { transform: scale(0.98); }
+  .fi-link:hover { border-color: var(--roxo); }
+  .fi-link-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-weight: 800;
+    font-size: 15.5px;
+  }
+  .fi-link.insta-pessoal .fi-link-icon { background: linear-gradient(135deg, #FF006E, #FB5507); }
+  .fi-link.classe .fi-link-icon { background: var(--azul); }
+  .fi-link.seja .fi-link-icon { background: var(--roxo); }
+  .fi-link.newsletter .fi-link-icon { background: var(--laranja); }
+  .fi-link-info { flex: 1; min-width: 0; }
+  .fi-link-label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--cinza-txt);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .fi-link-handle {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--texto);
+  }
+  .fi-link-arrow {
+    color: var(--cinza-txt);
+    font-size: 22.5px;
+    flex-shrink: 0;
+  }
+
+  /* PROJETOS DO FI (Seja + Classe) */
+  .projetos-fi .section-tag { background: #FFF3D1; color: #8A5F00; }
+  .proj-card {
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .proj-card.seja { background: var(--roxo); }
+  .proj-card.classe { background: var(--azul); }
+  .proj-card-simbolo {
+    position: absolute;
+    right: -40px;
+    bottom: -40px;
+    width: 180px;
+    height: 180px;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+  .proj-card-simbolo img { width: 100%; height: 100%; object-fit: contain; }
+  .proj-card-tag {
+    display: inline-block;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+  }
+  .proj-card h3 {
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .proj-card p {
+    color: rgba(255,255,255,0.95);
+    font-size: 17px;
+    position: relative;
+    z-index: 1;
+  }
+  .proj-card-btn {
+    display: inline-block;
+    margin-top: 8px;
+    background: #fff;
+    color: var(--texto);
+    padding: 14px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .proj-card.seja .proj-card-btn { color: var(--roxo); }
+  .proj-card.classe .proj-card-btn { color: var(--azul); }
+  .proj-card-btn::after { content: " →"; }
+
+  /* MATERIAIS */
+  .materiais .section-tag { background: #FFE8DD; color: var(--laranja); }
+  .materiais-card {
+    background: var(--cinza);
+    border-radius: 16px;
+    padding: 26px 24px;
+    border-left: 5px solid var(--laranja);
+  }
+  .materiais-card p { margin-bottom: 18px; }
+  .btn-solid {
+    display: inline-block;
+    padding: 16px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 18px;
+    color: #fff;
+    transition: transform 0.15s;
+  }
+  .btn-solid:active { transform: scale(0.98); }
+  .btn-solid::after { content: " →"; }
+  .btn-laranja { background: var(--laranja); box-shadow: 0 10px 24px rgba(251,85,7,0.3); }
+
+  /* FORMAÇÃO CTA */
+  .formacao {
+    background: var(--rosa);
+    color: #fff;
+    overflow: hidden;
+  }
+  .formacao .section-tag { background: #fff; color: var(--rosa); }
+  .formacao h2 { color: #fff; }
+  .formacao p { color: rgba(255,255,255,0.95); margin-bottom: 22px; }
+  .formacao-simbolo {
+    position: absolute;
+    right: -120px;
+    bottom: -120px;
+    width: 420px;
+    height: 420px;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .formacao-simbolo img { width: 100%; height: 100%; object-fit: contain; }
+  .btn-branco { background: #fff; color: var(--rosa); box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+
+  /* REFERÊNCIAS (Section 5) */
+  .refs { background: var(--cinza); }
+  .refs .section-tag { background: #E8DDFF; color: var(--roxo); }
+  .refs-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 22px;
+    background: #fff;
+    border: 2px solid var(--cinza-med);
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--texto);
+    text-align: left;
+    transition: border-color 0.15s;
+  }
+  .refs-toggle:hover { border-color: var(--roxo); }
+  .refs-toggle-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--roxo);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.25s;
+  }
+  .refs-content {
+    display: none;
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    margin-top: 12px;
+    border: 2px solid var(--cinza-med);
+  }
+  .refs-content.open { display: block; }
+  .refs.open .refs-toggle-icon { transform: rotate(45deg); }
+  .refs-item {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--texto);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--cinza-med);
+    text-align: left;
+  }
+  .refs-item:last-child { border-bottom: none; }
+  .refs-item strong { font-weight: 700; }
+  .refs-item em { font-style: italic; }
+  .refs-item a { color: var(--roxo); word-break: break-all; text-decoration: none; }
+  .refs-item a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: var(--texto);
+    color: rgba(255,255,255,0.7);
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 14.5px;
+  }
+  footer img { height: 36px; margin-bottom: 14px; opacity: 0.9; }
+  footer a { color: #fff; text-decoration: none; font-weight: 600; }
+  footer a:hover { text-decoration: underline; }
+
+  /* DESKTOP */
+  @media (min-width: 720px) {
+    .hero { padding: 72px 20px 80px; }
+    .hero h1 { font-size: 49.5px; }
+    .hero-sub { font-size: 22.5px; }
+    .hero-logo img { height: 70px; }
+    section { padding: 72px 0; }
+    section h2 { font-size: 36px; }
+    .presenca-btn { font-size: 24.5px; padding: 26px; }
+    .videos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .videos-grid .video-card { margin-bottom: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-logo">
+      <img src="assets/Logotipo_SEJA_BRANCO.png" alt="Seja Creator">
+    </div>
+    <span class="hero-event-tag">VII Semidiscom · PPGCOM/UFRGS · 2026</span>
+    <h1>Plataformas digitais a seu favor</h1>
+    <p class="hero-sub">Teoria e prática para a divulgação científica.</p>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <strong>Ministrante</strong>
+        <span>Filipe Severo</span>
+      </div>
+      <div class="hero-meta-item">
+        <strong>Data</strong>
+        <span>23 de outubro de 2026 · 13h às 16h</span>
+      </div>
+      <div class="hero-meta-item">
+        <strong>Evento</strong>
+        <span>VII Seminário Discente do PPGCOM/UFRGS — "A Pesquisa em Comunicação: desafios, transformações e futuros" (21 a 23 de outubro de 2026)</span>
+      </div>
+    </div>
+
+    <blockquote class="hero-quote">
+      Não é sobre viralizar. É sobre entender o jogo para decidir com consciência.
+    </blockquote>
+  </div>
+</section>
+
+<!-- SEÇÃO 1 — PRESENÇA -->
+<section class="presenca" id="presenca">
+  <div class="container">
+    <span class="section-tag">1 · Presença</span>
+    <h2>Registre sua presença</h2>
+    <p>Primeiro passo pra receber material complementar e os certificados do minicurso.</p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGZcGovpo9EZIB9hMn4V8SD2qtf72UaVajinRn2V59m81uxQ/viewform" class="presenca-btn" target="_blank" rel="noopener">
+      Registrar minha presença
+    </a>
+
+    <p class="lgpd">
+      O formulário é gerido pela organização do evento (VII Semidiscom · PPGCOM/UFRGS). Dúvidas sobre uso dos dados, falar com a organização.
+    </p>
+  </div>
+</section>
+
+<!-- SEÇÃO 2 — MATERIAIS DA DINÂMICA -->
+<section class="materiais">
+  <div class="container">
+    <span class="section-tag">2 · Materiais</span>
+    <h2>Materiais da dinâmica</h2>
+    <div class="materiais-card">
+      <p>As fichas que usamos na aula, em PDF, para refazer com outra pesquisa ou testar outro formato.</p>
+      <a href="https://drive.google.com/drive/folders/1Yb094c780PgZYYVyV2_UigTfuivveLrG?usp=sharing" class="btn-solid btn-laranja" target="_blank" rel="noopener">Abrir materiais</a>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 3 — VÍDEOS RECOMENDADOS -->
+<section class="videos">
+  <div class="container">
+    <span class="section-tag">3 · Vídeos</span>
+    <h2>Para ver depois</h2>
+    <p class="section-sub">O que não coube na aula.</p>
+
+    <div class="videos-grid">
+
+      <a href="https://www.youtube.com/watch?v=lHYyRY1Zm4Y" class="video-card" target="_blank" rel="noopener">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/lHYyRY1Zm4Y/mqdefault.jpg" alt="">
+          <div class="video-thumb-play"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Por que data centers consomem tanta água e energia?</div>
+          <div class="video-channel">YouTube · divulgação técnico-científica</div>
+          <div class="video-why">A infraestrutura material das plataformas digitais — o que fica fora da tela quando a gente fala em "nuvem".</div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=zOR9l5XMPgE" class="video-card" target="_blank" rel="noopener">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/zOR9l5XMPgE/mqdefault.jpg" alt="">
+          <div class="video-thumb-play"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">"AI City": projeto bilionário de data center avança em Eldorado do Sul</div>
+          <div class="video-channel">YouTube · reportagem</div>
+          <div class="video-why">A plataformização passando pelo nosso quintal — o caso gaúcho que coloca em pauta soberania e território.</div>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SEÇÃO 4 — PROJETOS CITADOS -->
+<section class="projetos">
+  <div class="container">
+    <span class="section-tag">4 · Projetos</span>
+    <h2>Projetos de divulgação científica</h2>
+    <p class="section-sub">Iniciativas citadas na aula que levam pesquisa pra fora da academia.</p>
+
+    <a href="https://www.cafehistoria.com.br/" class="projeto-item" target="_blank" rel="noopener">
+      <div class="projeto-name">Café História</div>
+      <div class="projeto-desc">Bruno Leal (UnB) · divulgação em história</div>
+    </a>
+
+    <a href="https://cafecomsociologia.com/" class="projeto-item" target="_blank" rel="noopener">
+      <div class="projeto-name">Café com Sociologia</div>
+      <div class="projeto-desc">Cristiano Bodart (UFAL) · divulgação em sociologia</div>
+    </a>
+
+    <a href="https://digilabour.com.br/" class="projeto-item" target="_blank" rel="noopener">
+      <div class="projeto-name">DigiLabour</div>
+      <div class="projeto-desc">Rafael Grohmann · trabalho em plataformas digitais</div>
+    </a>
+
+    <a href="https://www.ufrgs.br/frontdaciencia/" class="projeto-item" target="_blank" rel="noopener">
+      <div class="projeto-name">Fronteiras da Ciência</div>
+      <div class="projeto-desc">Podcast · UFRGS · divulgação científica em áudio</div>
+    </a>
+
+    <a href="https://www.nosdadocencia.com/" class="projeto-item" target="_blank" rel="noopener">
+      <div class="projeto-name">Nós da Docência</div>
+      <div class="projeto-desc">Maria Cláudia Dal'Igna · ecossistema de pesquisa e formação docente</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- SEÇÃO 5 — LINKS DO FILIPE -->
+<section class="links-fi">
+  <div class="container">
+    <span class="section-tag">5 · Fale com o Fi</span>
+
+    <div class="fi-perfil">
+      <div class="fi-foto">
+        <img src="assets/filipe-foto.png" alt="Filipe Severo">
+      </div>
+      <div>
+        <div class="fi-nome">Filipe Severo</div>
+        <div class="fi-cargo">Creator pesquisador</div>
+      </div>
+    </div>
+
+    <div class="fi-bio">
+      Formado em Comunicação Social pela PUCRS. Mestre em Comunicação Social pela PUCRS, bolsista da CAPES. Pós-graduado pela PUCRS em Influência Digital: Conteúdo e Estratégia. Sócio fundador da Seja Creator e membro fundador da Classe Creator. Integrante do Grupo de Pesquisa em Ubiquidade Tecnológica (PUCRS).
+    </div>
+
+    <div class="fi-links-grid">
+
+      <a href="https://www.instagram.com/severo_filipe/" class="fi-link insta-pessoal" target="_blank" rel="noopener">
+        <div class="fi-link-icon">IG</div>
+        <div class="fi-link-info">
+          <div class="fi-link-label">Instagram pessoal</div>
+          <div class="fi-link-handle">@severo_filipe</div>
+        </div>
+        <div class="fi-link-arrow">→</div>
+      </a>
+
+      <a href="https://www.instagram.com/classecreator/" class="fi-link classe" target="_blank" rel="noopener">
+        <div class="fi-link-icon">CC</div>
+        <div class="fi-link-info">
+          <div class="fi-link-label">Classe Creator</div>
+          <div class="fi-link-handle">@classecreator</div>
+        </div>
+        <div class="fi-link-arrow">→</div>
+      </a>
+
+      <a href="https://www.instagram.com/seja.creator/" class="fi-link seja" target="_blank" rel="noopener">
+        <div class="fi-link-icon">SC</div>
+        <div class="fi-link-info">
+          <div class="fi-link-label">Seja Creator</div>
+          <div class="fi-link-handle">@seja.creator</div>
+        </div>
+        <div class="fi-link-arrow">→</div>
+      </a>
+
+      <a href="https://fisevero.substack.com/" class="fi-link newsletter" target="_blank" rel="noopener">
+        <div class="fi-link-icon">MA</div>
+        <div class="fi-link-info">
+          <div class="fi-link-label">Newsletter</div>
+          <div class="fi-link-handle">Me Atualiza Aí</div>
+        </div>
+        <div class="fi-link-arrow">→</div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SEÇÃO 6 — SEJA E CLASSE -->
+<section class="projetos-fi">
+  <div class="container">
+    <span class="section-tag">6 · Onde o Fi atua</span>
+    <h2>Seja Creator e Classe Creator</h2>
+    <p class="section-sub">Dois projetos, duas frentes: um trabalha junto com quem faz ciência, o outro pesquisa as plataformas por dentro.</p>
+
+    <div class="proj-card seja">
+      <div class="proj-card-simbolo"><img src="assets/Simbolo_SEJA_BRANCO.png" alt=""></div>
+      <span class="proj-card-tag">Divulgação científica</span>
+      <h3>Seja Creator</h3>
+      <p>A Seja caminha ao lado de pesquisadores, grupos de pesquisa e programas de pós-graduação que querem levar a ciência pra fora da academia. Cuidamos da estratégia, da criação e da presença digital, sem receita pronta.</p>
+      <p>Atuamos com formação de equipes, projetos com escopo definido (incluindo planos de divulgação científica para editais) e parceria contínua. Hoje acompanhamos, por exemplo, o projeto Nós em redes, aprovado no edital FAPERGS 06/2025.</p>
+      <a href="https://www.sejacreator.com.br/" class="proj-card-btn" target="_blank" rel="noopener">Conhecer a Seja</a>
+    </div>
+
+    <div class="proj-card classe">
+      <span class="proj-card-tag">Pesquisa · Formação · Comunidade</span>
+      <h3>Classe Creator</h3>
+      <p>A Classe Creator é um projeto de pesquisa, formação e pensamento crítico sobre o ecossistema das plataformas digitais. É um espaço para quem quer entender o sistema onde cria, não só performar dentro dele.</p>
+      <p>Não é curso pra viralizar. É lugar pra pensar.</p>
+      <a href="https://www.classecreator.com/" class="proj-card-btn" target="_blank" rel="noopener">Conhecer a Classe</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SEÇÃO 7 — FORMAÇÃO -->
+<section class="formacao">
+  <div class="formacao-simbolo"><img src="assets/Simbolo_SEJA_BRANCO.png" alt=""></div>
+  <div class="container">
+    <span class="section-tag">7 · Formação</span>
+    <h2>Quer levar essa formação para o seu grupo?</h2>
+    <p>Formações sobre divulgação científica nas plataformas para grupos de pesquisa, programas de pós-graduação, escolas e faculdades. Teoria crítica e prática de criação de conteúdo.</p>
+    <a href="https://wa.me/5551991006411?text=Oi%2C%20Filipe%21%20Participei%20do%20seu%20minicurso%20no%20Semidiscom%20%28PPGCOM/UFRGS%29%20e%20queria%20conversar%20sobre%20levar%20a%20forma%C3%A7%C3%A3o%20de%20divulga%C3%A7%C3%A3o%20cient%C3%ADfica%20para%20o%20meu%20grupo." class="btn-solid btn-branco" target="_blank" rel="noopener">Falar com o Filipe</a>
+  </div>
+</section>
+
+<!-- SEÇÃO 8 — REFERÊNCIAS -->
+<section class="refs" id="refs">
+  <div class="container">
+    <span class="section-tag">8 · Bibliografia</span>
+    <h2>Referências</h2>
+    <p class="section-sub">Lista completa em ABNT. Toque para expandir.</p>
+
+    <button class="refs-toggle" onclick="toggleRefs(this)">
+      <span>Ver todas as referências (64 itens)</span>
+      <span class="refs-toggle-icon">+</span>
+    </button>
+
+    <div class="refs-content">
+      <div class="refs-item">ARAÚJO, Willian Fernandes. A construção da norma algorítmica: análise dos textos sobre o Feed de Notícias do Facebook. <strong>E-Compós</strong>, Brasília, v. 21, n. 1, p. 1–21, 2018.</div>
+      <div class="refs-item">BARBOSA, Alexandre Costa et al. <strong>Tecnologia sem-teto</strong>: por territórios digitais soberanos. São Paulo: Editora Dandara, 2025.</div>
+      <div class="refs-item">BARLOW, John Perry. <strong>A declaration of the independence of cyberspace</strong>. Davos, 8 fev. 1996. Disponível em: <a href="https://www.eff.org/cyberspace-independence" target="_blank" rel="noopener">https://www.eff.org/cyberspace-independence</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">BÄRTL, Mathias. YouTube channels, uploads and views: a statistical analysis of the past 10 years. <strong>Convergence</strong>, v. 24, n. 1, p. 16–32, 2018. DOI: 10.1177/1354856517736979.</div>
+      <div class="refs-item">BERNAL, John Desmond. <strong>A função social da ciência</strong>. Tradução de Reinaldo Pedreira Cerqueira da Silva. [S. l.]: Marxists Internet Archive, 2019. Original publicado em 1938. Disponível em: <a href="https://www.marxists.org/portugues/bernal/" target="_blank" rel="noopener">https://www.marxists.org/portugues/bernal/</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">BONDARENKO, Alexander; VOLK, Denis; VOLKOV, Dmitrii; LADISH, Jeffrey. Demonstrating specification gaming in reasoning models. <strong>arXiv</strong>, 2502.13295, 2025. Preprint (Palisade Research). Disponível em: <a href="https://arxiv.org/abs/2502.13295" target="_blank" rel="noopener">https://arxiv.org/abs/2502.13295</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">BOURDIEU, Pierre. O campo científico. In: ORTIZ, Renato (org.). <strong>Pierre Bourdieu</strong>: sociologia. Tradução de Paula Montero e Alicia Auzmendi. São Paulo: Ática, 1983. p. 122–155.</div>
+      <div class="refs-item">BUCHER, Taina. <strong>If... then</strong>: algorithmic power and politics. New York: Oxford University Press, 2018.</div>
+      <div class="refs-item">BUENO, Wilson da Costa. Comunicação científica e divulgação científica: aproximações e rupturas conceituais. <strong>Informação & Informação</strong>, Londrina, v. 15, n. esp., p. 1–12, 2010. DOI: 10.5433/1981-8920.2010v15nesp.p1.</div>
+      <div class="refs-item">CAFÉ HISTÓRIA. <strong>Sobre</strong>. [S. l.], [2026]. Disponível em: <a href="https://cafehistoria.com.br/about" target="_blank" rel="noopener">https://cafehistoria.com.br/about</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">CALISKAN, Koray; MACKENZIE, Donald; CALLON, Michel. Stacked economization: a research program for the study of platforms. <strong>Journal of Cultural Economy</strong>, v. 18, n. 2, p. 304–331, 2025.</div>
+      <div class="refs-item">CALISKAN, Koray; MACKENZIE, Donald; MCGOWAN, Addie. Prodexchange: digital–industrial economization in Google Search supply chain. <strong>Platforms & Society</strong>, v. 2, p. 1–17, 2025.</div>
+      <div class="refs-item">CAMPANI, D.; GIERING, M. E. Escrita digital em defesa da ciência e educação linguística. <strong>Revista Letra Magna</strong>, [S. l.], v. 18, n. 29, p. 86–97, 2022. DOI: 10.47734/lm.v18i29.2000. Disponível em: <a href="https://ojs.ifsp.edu.br/magna/article/view/2000" target="_blank" rel="noopener">https://ojs.ifsp.edu.br/magna/article/view/2000</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">CASILLI, Antonio A. <strong>En attendant les robots</strong>: enquête sur le travail du clic. Paris: Seuil, 2019.</div>
+      <div class="refs-item">CNBC. Web inventor Tim Berners-Lee wants us to 'ignore' Web3: 'Web3 is not the web at all'. <strong>CNBC</strong>, 4 nov. 2022. Disponível em: <a href="https://www.cnbc.com/2022/11/04/web-inventor-tim-berners-lee-wants-us-to-ignore-web3.html" target="_blank" rel="noopener">https://www.cnbc.com/2022/11/04/web-inventor-tim-berners-lee-wants-us-to-ignore-web3.html</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">COMPANIESMARKETCAP. <strong>Companies ranked by market cap</strong>. [S. l.], 2026. Disponível em: <a href="https://companiesmarketcap.com/" target="_blank" rel="noopener">https://companiesmarketcap.com/</a>. Acesso em: 22 ago. 2026.</div>
+      <div class="refs-item">CONSELHO NACIONAL DE DESENVOLVIMENTO CIENTÍFICO E TECNOLÓGICO (Brasil). <strong>Critérios para avaliação de Bolsas de Produtividade, PQ e DT, nas Chamadas de 2024, 2025 e 2026</strong>. Brasília, DF: CNPq, [2026].</div>
+      <div class="refs-item">COORDENAÇÃO DE APERFEIÇOAMENTO DE PESSOAL DE NÍVEL SUPERIOR (Brasil). <strong>Diretrizes comuns da avaliação</strong>: quadriênio 2025–2028. Brasília, DF: CAPES, [2025].</div>
+      <div class="refs-item">COORDENAÇÃO DE APERFEIÇOAMENTO DE PESSOAL DE NÍVEL SUPERIOR (Brasil). <strong>Documento de área</strong>: Comunicação e Informação. Brasília, DF: CAPES, [2025].</div>
+      <div class="refs-item">COORDENAÇÃO DE APERFEIÇOAMENTO DE PESSOAL DE NÍVEL SUPERIOR (Brasil). <strong>Ficha de avaliação</strong>: Comunicação e Informação, quadriênio 2025–2028. Brasília, DF: CAPES, [2025].</div>
+      <div class="refs-item">COORDENAÇÃO DE APERFEIÇOAMENTO DE PESSOAL DE NÍVEL SUPERIOR (Brasil). <strong>Ofício Circular nº 46/2024-DAV/CAPES</strong>. Brasília, DF: CAPES, 3 out. 2024.</div>
+      <div class="refs-item">D'ANDRÉA, Carlos Frederico de Brito. <strong>Pesquisando plataformas online</strong>: conceitos e métodos. Salvador: EDUFBA, 2020. Disponível em: <a href="http://repositorio.ufba.br/ri/handle/ri/32043" target="_blank" rel="noopener">http://repositorio.ufba.br/ri/handle/ri/32043</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">DAL'IGNA, Maria Cláudia. <strong>Ecossistema Nós da Docência</strong>: ecossistema de desenvolvimento profissional. [S. l.: s. n.], 2025. Apresentação.</div>
+      <div class="refs-item">DARDOT, Pierre; LAVAL, Christian. <strong>A nova razão do mundo</strong>: ensaio sobre a sociedade neoliberal. São Paulo: Boitempo, 2016.</div>
+      <div class="refs-item">DE-AGUILERA-MOYANO, Miguel; CASTRO-HIGUERAS, Antonio; PÉREZ-RUFÍ, José-Patricio. Between broadcast yourself and broadcast whatever: YouTube's homepage as a synthesis of its business strategy. <strong>El Profesional de la Información</strong>, v. 28, n. 2, e280206, 2019. DOI: 10.3145/epi.2019.mar.06.</div>
+      <div class="refs-item">DUFFY, Brooke Erin; MEISNER, Colten. Platform governance at the margins: social media creators' experiences with algorithmic (in)visibility. <strong>Media, Culture & Society</strong>, v. 45, n. 2, p. 285–304, 2023.</div>
+      <div class="refs-item">FERRARI, Fabian; GRAHAM, Mark. Fissures in algorithmic power. <strong>Cultural Studies</strong>, v. 35, n. 4-5, p. 814–832, 2021.</div>
+      <div class="refs-item">FUNDAÇÃO DE AMPARO À PESQUISA DO ESTADO DO RIO GRANDE DO SUL. <strong>Prêmio Pesquisador Gaúcho 2026</strong>: resultado preliminar. Porto Alegre: FAPERGS, 1 set. 2026.</div>
+      <div class="refs-item">GALHARDI, Cláudia Pereira et al. Fake news e hesitação vacinal no contexto da pandemia da COVID-19 no Brasil. <strong>Ciência & Saúde Coletiva</strong>, v. 27, n. 5, p. 1849–1858, 2022. DOI: 10.1590/1413-81232022275.24092021.</div>
+      <div class="refs-item">GANDHI, Hazel; CHANDRAN, Rina. We mapped the world's hottest data centers. <strong>Rest of World</strong>, 2025. Disponível em: <a href="https://restofworld.org/2025/data-center-heat-map/" target="_blank" rel="noopener">https://restofworld.org/2025/data-center-heat-map/</a>. Acesso em: 26 ago. 2026.</div>
+      <div class="refs-item">GEBRIAL, Dalia. Racial platform capitalism: empire, migration and the making of Uber in London. <strong>Environment and Planning A: Economy and Space</strong>, v. 56, n. 4, p. 1170–1194, 2024.</div>
+      <div class="refs-item">GILLESPIE, Tarleton. A relevância dos algoritmos. <strong>Parágrafo</strong>, São Paulo, v. 6, n. 1, p. 95–121, 2018.</div>
+      <div class="refs-item">GILLESPIE, Tarleton. The politics of "platforms". <strong>New Media & Society</strong>, v. 12, n. 3, p. 347–364, 2010. DOI: 10.1177/1461444809342738.</div>
+      <div class="refs-item">GORWA, Robert. What is platform governance? <strong>Information, Communication & Society</strong>, v. 22, n. 6, p. 854–871, 2019.</div>
+      <div class="refs-item">GROHMANN, Rafael. Plataformização do trabalho: entre dataficação, financeirização e racionalidade neoliberal. <strong>Revista Eletrônica Internacional de Economia Política da Informação, da Comunicação e da Cultura (Eptic)</strong>, São Cristóvão, v. 22, n. 1, p. 106–122, 2020. Disponível em: <a href="https://periodicos.ufs.br/eptic/article/view/12188" target="_blank" rel="noopener">https://periodicos.ufs.br/eptic/article/view/12188</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">HELMOND, Anne. The platformization of the web: making web data platform ready. <strong>Social Media + Society</strong>, v. 1, n. 2, p. 1–11, 2015.</div>
+      <div class="refs-item">INFLUENCY.ME; OPINION BOX. <strong>Dados e insights de influencer marketing no Brasil para 2025</strong>. [S. l.]: Influency.me; Opinion Box, dez. 2024. Disponível em: <a href="https://www.youtube.com/watch?v=8zP2A9gfOqw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=8zP2A9gfOqw</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">INTERVOZES – COLETIVO BRASIL DE COMUNICAÇÃO SOCIAL. <strong>Monopólios digitais</strong>: concentração e diversidade na internet. Organização de Jonas Valente e Marina Pita. São Paulo: Intervozes, 2018. E-book.</div>
+      <div class="refs-item">KWET, Michael. Digital colonialism and infrastructure-as-debt. <strong>University of Bayreuth African Studies Online</strong>, 2022.</div>
+      <div class="refs-item">MALAFAIA, Osvaldo; VIEBIG, Ricardo Guilherme; ANDREOLLO, Nelson Adami. Fim do Qualis e início de uma nova era! Mudança radical da CAPES dando valor à pesquisa e não à revista onde ela é publicada. <strong>SciELO Preprints</strong>, 2024. DOI: 10.1590/SciELOPreprints.10896. Disponível em: <a href="https://doi.org/10.1590/SciELOPreprints.10896" target="_blank" rel="noopener">https://doi.org/10.1590/SciELOPreprints.10896</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">MWEMA, Esther; BIRHANE, Abeba. Undersea cables in Africa: the new frontiers of digital colonialism. <strong>First Monday</strong>, v. 29, n. 4, 2024.</div>
+      <div class="refs-item">NIEBORG, David B.; POELL, Thomas. The platformization of cultural production: theorizing the contingent cultural commodity. <strong>New Media & Society</strong>, v. 20, n. 11, p. 4275–4292, 2018.</div>
+      <div class="refs-item">ORGANIZAÇÃO PAN-AMERICANA DA SAÚDE. <strong>Entenda a infodemia e a desinformação na luta contra a COVID-19</strong>. Washington, D.C.: OPAS, 2020. (Folheto informativo, OPS/IMS/EIH/COVID-19/20-0006). Disponível em: <a href="https://iris.paho.org/handle/10665.2/52054" target="_blank" rel="noopener">https://iris.paho.org/handle/10665.2/52054</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">PINHEIRO-MACHADO, Rosana. Raiva, sonhos e insubordinação: como a extrema direita e as mídias digitais mobilizam a classe trabalhadora plataformizada. <strong>Horizontes Antropológicos</strong>, Porto Alegre, v. 31, n. 73, e730601, p. 1–28, 2025.</div>
+      <div class="refs-item">PINHEIRO-MACHADO, Rosana; NEVES, Ianaira. The ambiguous revolts: precarity and insurgence in the 21st century. <strong>Journal of Anthropological Research</strong>, [no prelo].</div>
+      <div class="refs-item">POELL, Thomas; NIEBORG, David B.; VAN DIJCK, José. Platformisation. <strong>Internet Policy Review</strong>, v. 8, n. 4, p. 1–13, 2019.</div>
+      <div class="refs-item">RIEDER, Bernhard. Examinando uma técnica algorítmica: o classificador de Bayes como uma leitura interessada da realidade. <strong>Parágrafo</strong>, São Paulo, v. 6, n. 1, p. 123–142, 2018.</div>
+      <div class="refs-item">RIKAP, Cecilia. Varieties of corporate innovation systems and their interplay with global and national systems: Amazon, Facebook, Google and Microsoft's strategies to produce and appropriate artificial intelligence. <strong>Review of International Political Economy</strong>, v. 31, n. 6, p. 1735–1763, 2024.</div>
+      <div class="refs-item">SALAZAR, Giovanna. Ik 'ta K'op collective supports the technological sovereignty of the indigenous people in Mexico's Chiapas State. Tradução de Teodora C. Hasegan. <strong>Global Voices</strong>, 1 out. 2017. Disponível em: <a href="https://globalvoices.org/2017/10/01/ik-ta-kop-collective-supports-the-technological-sovereignty-of-the-indigenous-people-in-the-mexican-state-of-chiapas/" target="_blank" rel="noopener">https://globalvoices.org/2017/10/01/ik-ta-kop-collective-supports-the-technological-sovereignty-of-the-indigenous-people-in-the-mexican-state-of-chiapas/</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">SEVERO, Filipe Machado Leal. <strong>O novo "you" do YouTube</strong>: a ascensão dos produtores plataformizados e a falência da promessa participativa no Brasil. 2026. Dissertação (Mestrado em Comunicação Social) – Programa de Pós-Graduação em Comunicação Social, Pontifícia Universidade Católica do Rio Grande do Sul, Porto Alegre, 2026.</div>
+      <div class="refs-item">SILES, Ignacio et al. Genres as social affect: cultivating moods and emotions through playlists on Spotify. <strong>Social Media + Society</strong>, v. 5, n. 2, p. 1–11, 2019.</div>
+      <div class="refs-item">SILES, Ignacio. <strong>Living with algorithms</strong>: agency and user culture in Costa Rica. Cambridge: MIT Press, 2023.</div>
+      <div class="refs-item">SINGULANE, Dalila Varela; BITTENCOURT, Ana Beatriz Siqueira; SAPORETTI, Carolina. A divulgação do conhecimento histórico entre e fora dos pares: entrevista com Prof. Dr. Bruno Leal. <strong>Revista Faces de Clio</strong>, v. 8, n. 15, p. 209–215, 2022.</div>
+      <div class="refs-item">SORIANO, Cheryll Ruth; CABAÑES, Jason Vincent A. Solidaristic formations among cloud workers in the platform economy: entrepreneurial logics with resistant identities. In: FLEW, Terry; HOLT, Jennifer; THOMAS, Julian (ed.). <strong>The SAGE handbook of the digital media economy</strong>. London: SAGE, 2023. p. 426–446.</div>
+      <div class="refs-item">SRNICEK, Nick. <strong>Platform capitalism</strong>. Cambridge: Polity Press, 2016.</div>
+      <div class="refs-item">SYNERGY RESEARCH GROUP. <strong>Cloud market share trends</strong>: big three together hold 63% while Oracle and the neoclouds inch higher. [S. l.], 19 nov. 2025. Disponível em: <a href="https://srgresearch.com/articles/cloud-market-share-trends-big-three-together-hold-63-while-oracle-and-the-neoclouds-inch-higher" target="_blank" rel="noopener">https://srgresearch.com/articles/cloud-market-share-trends-big-three-together-hold-63-while-oracle-and-the-neoclouds-inch-higher</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">TERRANOVA, Tiziana. Free labor: producing culture for the digital economy. <strong>Social Text</strong>, Durham, v. 18, n. 2, p. 33–58, 2000.</div>
+      <div class="refs-item">THE ECONOMIST. The world's most valuable resource is no longer oil, but data. <strong>The Economist</strong>, London, 6 maio 2017.</div>
+      <div class="refs-item">TIME DO YOUTUBE BRASIL. 20 anos de criatividade e inovação refletidos da economia brasileira: relatório de impacto. <strong>YouTube Official Blog</strong>, 15 out. 2025. Disponível em: <a href="https://blog.youtube/intl/pt-br/news-and-events/relatorio-impacto-yt2024/" target="_blank" rel="noopener">https://blog.youtube/intl/pt-br/news-and-events/relatorio-impacto-yt2024/</a>. Acesso em: 4 nov. 2025.</div>
+      <div class="refs-item">VALENTE, Jonas Chagas Lúcio. <strong>Tecnologia, informação e poder</strong>: das plataformas online aos monopólios digitais. 2019. Tese (Doutorado em Sociologia) – Programa de Pós-Graduação em Sociologia, Universidade de Brasília, Brasília, 2019. Disponível em: <a href="http://repositorio.unb.br/handle/10482/36948" target="_blank" rel="noopener">http://repositorio.unb.br/handle/10482/36948</a>. Acesso em: 22 out. 2026.</div>
+      <div class="refs-item">VAN DIJCK, José; POELL, Thomas; DE WAAL, Martijn. <strong>The platform society</strong>: public values in a connective world. New York: Oxford University Press, 2018.</div>
+      <div class="refs-item">VAN DOORN, Niels. Platform labor: on the gendered and racialized exploitation of low-income service work in the "on-demand" economy. <strong>Information, Communication & Society</strong>, v. 20, n. 6, p. 898–914, 2017.</div>
+      <div class="refs-item">VAN DOORN, Niels; BADGER, Adam. Platform capitalism's hidden abode: producing data assets in the gig economy. <strong>Antipode</strong>, v. 52, n. 5, p. 1475–1495, 2020.</div>
+      <div class="refs-item">VOSOUGHI, Soroush; ROY, Deb; ARAL, Sinan. The spread of true and false news online. <strong>Science</strong>, v. 359, n. 6380, p. 1146–1151, 2018. DOI: 10.1126/science.aap9559.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="assets/Logotipo_SEJA_BRANCO.png" alt="Seja Creator">
+  <div>
+    Página de apoio produzida pela <a href="https://sejacreator.com.br" target="_blank" rel="noopener">Seja Creator</a>
+  </div>
+  <div style="margin-top: 10px; opacity: 0.5; font-size: 13.5px;">
+    CNPJ 24.560.652/0001-49 · aula.sejacreator.com.br
+  </div>
+</footer>
+
+<script>
+  function toggleRefs(btn){
+    var section = btn.closest('.refs');
+    var content = section.querySelector('.refs-content');
+    var label = btn.querySelector('span');
+    section.classList.toggle('open');
+    content.classList.toggle('open');
+    if (section.classList.contains('open')) {
+      label.textContent = 'Esconder referências';
+    } else {
+      label.textContent = 'Ver todas as referências (64 itens)';
+    }
+  }
+</script>
+
+</body>
+</html>
