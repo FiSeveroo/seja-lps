@@ -3,6 +3,7 @@
 # e um CNAME <nome> → ciencialpseja.netlify.app na Wix.
 https://ciencia.sejacreator.com.br/*  /ciencia/:splat  200!
 https://aula.sejacreator.com.br/*     /aula/:splat     200!
+https://inicio.sejacreator.com.br/*   /home/:splat     200!
 
 # Endereço padrão do Netlify abre a LP de ciência
 /  /ciencia/  302
