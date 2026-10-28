@@ -25,7 +25,7 @@ Um DESIGN.md da Seja (no formato popularizado pelo Google Stitch / awesome-desig
 - Fonte única: Futuru (.otf, todos os pesos via @font-face, `font-display: swap`). Corpo em Futuru Medium (500), títulos em pesos altos. Corpo mínimo 18px no desktop.
 - Logos: Logotipo_SEJA_BRANCO / ROSA / ROXO.png. Logo no hero com ~120px de altura (pequeno demais já foi recusado).
 - Símbolos: Simbolo_SEJA_{ROSA,ROXO,LARANJA,AMARELO,PRETO,BRANCO}.png. Usar como UMA imagem grande de fundo em baixa opacidade, ou como ícone de serviço. Nunca como textura repetida.
-- bg1.png (degradê azul→roxo da marca) só no hero. Fora dele, blocos em cor sólida (roxo, rosa, amarelo) alternando com fundo claro. Nada de degradês criados em CSS.
+- bg1.png (degradê azul→roxo da marca) só no hero. Fora dele, blocos em cor sólida (roxo, rosa, amarelo) alternando com fundo claro. Nada de degradês criados em CSS. Outros degradês da marca (ex.: rosa→laranja do site sejacreator.com.br) só quando o Filipe pedir, no elemento que ele indicar; nunca por iniciativa própria.
 - Peça os arquivos ao usuário se não estiverem na sessão; não invente substitutos.
 
 ## 3. Regras de casa
