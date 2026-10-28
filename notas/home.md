@@ -29,3 +29,4 @@ Tudo isso já está no design system "Seja Creator" do Claude (componentes Titul
 - Degradês do site atual (rosa→vermelho, rosa→laranja) não entram por padrão; só quando o Filipe pedir, no elemento que ele indicar.
 - Cartão translúcido (glass): fora.
 - Símbolo repetido em contorno no fundo: fora; um símbolo só.
+- Classe Creator: projeto pessoal do Filipe, fica fora da home. A seção Formação fala só das formações da Seja.

@@ -34,6 +34,7 @@ Página nova: criar `site/<nome>/index.html` com seus `assets/`, adicionar a lin
 - Nunca inventar números, depoimentos ou parceiros. Todo dado com fonte.
 - WhatsApp: `https://wa.me/5551991006411?text=` + mensagem URL-encoded e contextual.
 - Rodapé: CNPJ 24.560.652/0001-49.
+- A Classe Creator é projeto pessoal do Filipe, não da Seja. Não apresentar como serviço, formação ou braço da Seja; as formações da Seja são outras.
 
 ## Na página da aula
 
