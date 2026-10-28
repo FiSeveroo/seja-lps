@@ -16,7 +16,7 @@ Página nova: criar `site/<nome>/index.html` com seus `assets/`, adicionar a lin
 ## Como trabalhar
 
 - Antes de mexer em qualquer página, siga a skill `.claude/skills/seja-lp-design/SKILL.md` (identidade visual, regras de layout, tom de voz e checagem com screenshots). Para revisão técnica, use `.claude/skills/web-design-guidelines/SKILL.md`.
-- Prévia: abra `site/ciencia/index.html` direto no navegador, ou rode `npx serve ciencia`.
+- Prévia: abra `site/ciencia/index.html` direto no navegador, ou rode `npx serve site` e abra /ciencia.
 - Ajustes visuais podem ser explorados no Design do Claude (canvas). Ele é rascunho: o que for aprovado lá é passado para o HTML deste repositório, que é a versão oficial.
 - Commits pequenos e descritivos, em português.
 
