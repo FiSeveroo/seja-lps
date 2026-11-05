@@ -32,7 +32,7 @@ Página nova: criar `site/<nome>/index.html` com seus `assets/`, adicionar a lin
 - Cores: roxo #8338EB, rosa #FF006E, azul #3A86FE, laranja #FB5507, amarelo #FFBE0C, texto #1A1A2E. Fonte única Futuru, corpo em 500.
 - bg1.png só no hero; resto em cores sólidas; nada de degradê em CSS, sombras, glass ou textura repetida do símbolo. Outro degradê (como os do site sejacreator.com.br) só quando o Filipe pedir, e só no elemento que ele indicar.
 - Texto: sem travessão (—), sem "não é X, é Y", sem jargão de startup (escalar, clientes, leads, cases de sucesso, mindset, conversão). Usar "caminhar ao lado", "parceiros", "Histórias que ajudamos a contar".
-- Nunca inventar números, depoimentos ou parceiros. Todo dado com fonte.
+- Nunca inventar números, depoimentos ou parceiros. Todo dado com fonte, na redação exata de `notas/dados-com-fonte.md`; dado novo só entra depois de conferido no documento original e registrado lá.
 - WhatsApp: `https://wa.me/5551991006411?text=` + mensagem URL-encoded e contextual.
 - Rodapé: CNPJ 24.560.652/0001-49.
 - A Classe Creator é projeto pessoal do Filipe, não da Seja. Não apresentar como serviço, formação ou braço da Seja; as formações da Seja são outras.
