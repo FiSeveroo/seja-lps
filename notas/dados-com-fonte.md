@@ -10,8 +10,9 @@ Use estes números exatamente assim, sempre com a fonte junto. Revisado em 04 e 
 | 59,3% dos cientistas ouvidos dizem já fazer algum tipo de divulgação científica (996 de 1.681). | Righetti et al. (2021), anexo IV, tabela 17. |
 | Redes sociais são o canal mais citado: 55,6% de quem já divulga escreve em redes como Facebook e Twitter (550 de 996). As ações são "geralmente não profissionais". | Righetti et al. (2021), anexo IV, tabela 18; texto p. 20. |
 | Sete em cada dez cientistas ouvidos não tinham falado com nenhum jornalista sobre trabalho acadêmico no último ano. | Righetti et al. (2021), p. 17. |
-| Só 4,5% dos cientistas ouvidos disseram que não fariam um treinamento para falar com jornalistas. | Righetti et al. (2021), p. 22. |
-| 66,3% das respostas indicam que a instituição não tem procedimento para o pesquisador comunicar um novo trabalho publicado. | Righetti et al. (2021), p. 22. |
+| Só 4,5% das respostas foram negativas sobre fazer um treinamento para falar com jornalistas (pergunta de resposta múltipla). | Righetti et al. (2021), p. 22. |
+| 70,8% dos cientistas ouvidos dizem que não há procedimento previsto na instituição para comunicar um trabalho aceito ou publicado (1.190 de 1.681). | Righetti et al. (2021), anexo IV, tabela 26, coluna "porcentagem de casos". |
+| 66,3% das respostas indicam que não há procedimento previsto (1.190 de 1.795 respostas; pergunta de resposta múltipla). Usar só com "das respostas". | Righetti et al. (2021), p. 22. |
 | Dificuldades para divulgar à imprensa (duas por pessoa): 44,0% citam pouca valorização da ciência brasileira pela imprensa; 31,7% não sabem como contatar jornalistas; 16,4% dizem que o grupo não tem recursos para um profissional de comunicação; 15,0% dizem que divulgação não conta nas avaliações de agências de fomento. | Righetti et al. (2021), anexo IV, tabela 22 (porcentagem de casos). |
 | A avaliação de cada programa tem três quesitos: estrutura do programa; formação discente, pesquisa e produção intelectual; impacto e inovação. | CAPES, Portaria nº 109/2025, art. 12. |
 | Ciclo avaliativo 2025 a 2028; Avaliação Quadrienal em 2029; coleta de dados anual; notas de 1 a 7 (1 e 2 levam à desativação). | CAPES, Portaria nº 109/2025, arts. 3, 18, 35 e 36. |
@@ -58,8 +59,8 @@ RIGHETTI, Sabine; MORALES, Ana Paula; GAMBA, Estêvão C.; FLORES, Natália; AND
 
 ## Uso no site (decisões de 05/11/2026)
 
-- Bloco de dados da home e da LP de ciência: 82,5% (com o recorte USP, Unesp e Unicamp; fonte "Flores e Barata, Labjor/Unicamp (2019), citado no The Conversation"), 97,4% e 66,3% (Righetti et al., Agência Bori, 2021).
-- 66,3% no site: "dos cientistas ouvidos dizem que a instituição não tem um procedimento para comunicar um novo trabalho publicado". A tabela acima diz "das respostas indicam": conferir no relatório (p. 22) qual é a redação certa.
+- Bloco de dados da home e da LP de ciência: 82,5% (com o recorte USP, Unesp e Unicamp; fonte "Flores e Barata, Labjor/Unicamp (2019), citado no The Conversation"), 97,4% e 70,8% (Righetti et al., Agência Bori, 2021).
+- Perguntas de resposta múltipla (treinamento, procedimento na instituição, dificuldades): porcentagem "das respostas" nunca vira "dos cientistas". Para falar de pessoas, usar a coluna "porcentagem de casos" do anexo IV.
 - 55,6% (redes sociais) fica para os posts.
 - 7% (INCT-CPCT 2024) só depois de conferir no PDF.
 - Linha do tempo da CAPES na LP de ciência: Até 2024 (lista Qualis), 2025 (novo ciclo, três quesitos), 2025 a 2028 (coleta anual), 2029 (Quadrienal, notas 1 a 7). Sem afirmar nada sobre a Quadrienal 2017-2020 até alguém ler a ficha daquele ciclo.
