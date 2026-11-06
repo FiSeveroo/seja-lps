@@ -139,10 +139,10 @@ details[open] .mais .vertical{display:none}
     <article class="grade-2" style="gap: 0; background: #FFFFFF; border-radius: 20px; overflow: hidden;">
       <div class="capa-foto" style="position: relative; overflow: hidden; background: #1A1A2E; min-height: 460px;">
         <div class="carrossel" tabindex="0" aria-label="Fotos do Nós da Docência" style="position: absolute; inset: 0;">
-          <img loading="lazy" src="assets/maria-claudia-daligna.jpg" alt="Maria Cláudia Dal’Igna" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block; opacity: 1; transition: opacity 0.8s ease;">
-          <img loading="lazy" src="assets/nos-da-docencia-podcast.jpg" alt="Maria Cláudia gravando o podcast Nós da Docência" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; opacity: 0; transition: opacity 0.8s ease;">
-          <img loading="lazy" src="assets/nos-da-docencia-livro.jpg" alt="Capa do livro Nós da Docência" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 0; transition: opacity 0.8s ease;">
-          <img loading="lazy" src="assets/nos-da-docencia-gravacao.jpg" alt="Gravação em estúdio do Nós da Docência" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; opacity: 0; transition: opacity 0.8s ease;">
+          <img src="assets/maria-claudia-daligna.jpg" alt="Maria Cláudia Dal’Igna" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block; opacity: 1; transition: opacity 0.8s ease;">
+          <img src="assets/nos-da-docencia-podcast.jpg" alt="Maria Cláudia gravando o podcast Nós da Docência" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; opacity: 0; transition: opacity 0.8s ease;">
+          <img src="assets/nos-da-docencia-livro.jpg" alt="Capa do livro Nós da Docência" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 0; transition: opacity 0.8s ease;">
+          <img src="assets/nos-da-docencia-gravacao.jpg" alt="Gravação em estúdio do Nós da Docência" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; opacity: 0; transition: opacity 0.8s ease;">
         </div>
         <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
           <div style="display: inline-block; background: #FF006E; color: #FFFFFF; border-radius: 14px; padding: 16px 20px;">
@@ -277,23 +277,27 @@ details[open] .mais .vertical{display:none}
 
 </div>
 <script>
-document.querySelectorAll('.carrossel').forEach(function (c) {
-  var fotos = c.querySelectorAll('img');
-  var atual = 0;
-  var parado = false;
-  var reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduzir) fotos.forEach(function (f) { f.style.transition = 'none'; });
-  function proxima() {
-    fotos[atual].style.opacity = 0;
-    atual = (atual + 1) % fotos.length;
-    fotos[atual].style.opacity = 1;
-  }
-  c.style.cursor = 'pointer';
-  c.addEventListener('click', proxima);
-  c.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); proxima(); } });
-  ['mouseenter', 'focusin'].forEach(function (e) { c.addEventListener(e, function () { parado = true; }); });
-  ['mouseleave', 'focusout'].forEach(function (e) { c.addEventListener(e, function () { parado = false; }); });
-  if (!reduzir) setInterval(function () { if (!parado && !document.hidden) proxima(); }, 3000);
+window.addEventListener('load', function () {
+  document.querySelectorAll('.carrossel').forEach(function (c) {
+    var fotos = c.querySelectorAll('img');
+    var atual = 0;
+    var timer;
+    function proxima() {
+      fotos[atual].style.opacity = 0;
+      atual = (atual + 1) % fotos.length;
+      fotos[atual].style.opacity = 1;
+    }
+    function agendar() {
+      clearInterval(timer);
+      timer = setInterval(function () { if (!document.hidden) proxima(); }, 3000);
+    }
+    c.style.cursor = 'pointer';
+    c.addEventListener('click', function () { proxima(); agendar(); });
+    c.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); proxima(); agendar(); }
+    });
+    agendar();
+  });
 });
 </script>
 </body>
