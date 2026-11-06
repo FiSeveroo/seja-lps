@@ -145,8 +145,6 @@ details[open] .mais .vertical{display:none}
           <img loading="lazy" src="assets/nos-da-docencia-livro.jpg" alt="Capa do livro Nós da Docência" style="flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; object-position: center; scroll-snap-align: start; display: block;">
           <img loading="lazy" src="assets/nos-da-docencia-gravacao.jpg" alt="Gravação em estúdio do Nós da Docência" style="flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; scroll-snap-align: start; display: block;">
         </div>
-        <button type="button" class="carrossel-seta" data-dir="-1" aria-label="Foto anterior" style="position: absolute; top: 20px; left: 20px; width: 44px; height: 44px; border-radius: 999px; border: 0; background: #FFFFFF; color: #1A1A2E; display: grid; place-items: center; cursor: pointer;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l-6 6 6 6"></path></svg></button>
-        <button type="button" class="carrossel-seta" data-dir="1" aria-label="Próxima foto" style="position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 999px; border: 0; background: #FFFFFF; color: #1A1A2E; display: grid; place-items: center; cursor: pointer;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4l6 6-6 6"></path></svg></button>
         <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
           <div style="display: inline-block; background: #FF006E; color: #FFFFFF; border-radius: 14px; padding: 16px 20px;">
             <div style="font-size: 36px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">Nós da Docência</div>
@@ -280,14 +278,19 @@ details[open] .mais .vertical{display:none}
 
 </div>
 <script>
-document.querySelectorAll('.carrossel-seta').forEach(function (b) {
-  b.addEventListener('click', function () {
-    var c = b.parentElement.querySelector('.carrossel');
-    var n = Math.round(c.scrollLeft / c.clientWidth) + Number(b.dataset.dir);
+document.querySelectorAll('.carrossel').forEach(function (c) {
+  var reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var parado = false;
+  function ir(passo) {
     var total = c.children.length;
-    n = (n + total) % total;
-    c.scrollTo({ left: n * c.clientWidth, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-  });
+    var n = (Math.round(c.scrollLeft / c.clientWidth) + passo + total) % total;
+    c.scrollTo({ left: n * c.clientWidth, behavior: reduzir ? 'auto' : 'smooth' });
+  }
+  c.style.cursor = 'pointer';
+  c.addEventListener('click', function () { ir(1); });
+  ['mouseenter', 'focusin', 'touchstart'].forEach(function (e) { c.addEventListener(e, function () { parado = true; }, { passive: true }); });
+  ['mouseleave', 'focusout'].forEach(function (e) { c.addEventListener(e, function () { parado = false; }); });
+  if (!reduzir) setInterval(function () { if (!parado && !document.hidden) ir(1); }, 5000);
 });
 </script>
 </body>
