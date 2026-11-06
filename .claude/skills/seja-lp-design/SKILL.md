@@ -9,7 +9,7 @@ Um DESIGN.md da Seja (no formato popularizado pelo Google Stitch / awesome-desig
 
 ## 1. Posicionamento que a página precisa carregar
 
-- A Seja é uma empresa especializada em divulgação científica nas plataformas digitais. Caminha ao lado de pesquisadores, grupos de pesquisa e projetos acadêmicos.
+- A Seja é uma empresa especializada em divulgação científica nas plataformas digitais. A gente trabalha com pesquisadores, grupos de pesquisa, programas de pós-graduação e projetos de pesquisa.
 - Sócios: Filipe Severo (Fi), pesquisador, mestre em comunicação social, pós-graduado em influência digital; Igor da Silva, criação e tecnologia. Não usar títulos tipo "Diretor"; preferir frases descritivas ("Estratégia e pesquisa", "Criação e tecnologia").
 - Antes de desenhar, liste 8 a 12 coisas que pertencem só a este projeto (o edital, a CAPES, o grupo, o evento, a data, a universidade, o material real). A ideia da página sai dessa lista, nunca da categoria "agência".
 
