@@ -39,7 +39,15 @@ Use estes números exatamente assim, sempre com a fonte junto. Revisado em 04 e 
 
 Nós em redes: projeto do Grupo Lola (Unisinos) aprovado no FAPERGS 06/2025, com plano de divulgação construído junto com a Seja; execução desde agosto de 2026, em seis etapas ao longo de dois anos. Fonte: Edital FAPERGS 06/2025 / Seja Creator.
 
-Números do Nós da Docência (livro, podcast, formações, visualizações): ainda não autorizados. Não usar até a Maria Cláudia autorizar.
+Números do Nós da Docência: uso autorizado (confirmado por Filipe Severo em 06/11/2026). Fonte: apresentação do ecossistema Nós da Docência, "Vidas impactadas, 2021 a 2025". São resultados do ecossistema, não da Seja (a parceria começou em 2024). Redação usada no site:
+
+| Dado | Fonte |
+|---|---|
+| + de 70 mil visualizações nas plataformas digitais | Nós da Docência, dados de 2021 a 2025 |
+| + de 500 exemplares do livro vendidos | Nós da Docência, dados de 2021 a 2025 |
+| + de 4 mil pessoas nas formações | Nós da Docência, dados de 2021 a 2025 |
+
+O restante da apresentação continua confidencial: não copiar textos, outros números nem fotos dela.
 
 ## Referências (ABNT)
 
