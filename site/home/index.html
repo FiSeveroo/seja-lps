@@ -34,6 +34,7 @@ a:hover{opacity:.85}
 .hero{background:#5a3ee0 url('assets/bg1.png') center/cover no-repeat}
 .grade-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
 .grade-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px}
+.carrossel::-webkit-scrollbar{display:none}
 .acordeao summary{list-style:none;cursor:pointer}
 .acordeao summary::-webkit-details-marker{display:none}
 .mais{flex-shrink:0}
@@ -43,10 +44,11 @@ details[open] .mais .vertical{display:none}
   .nav-links{display:none !important}
   .marca{font-size:52px !important}
   h2:not(.marca){font-size:32px !important}
-  .capa-foto{min-height:620px !important}
-  .fotos-3{gap:10px !important}
-  .fotos-3 figcaption{line-height:1.25}
-  .fotos-3 img{border-radius:12px !important}
+  .capa-foto{min-height:520px !important}
+  .numeros{grid-template-columns:minmax(0,1fr) !important;gap:12px !important}
+  .numeros>div{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:baseline;gap:12px}
+  .numeros>div>div:first-child{white-space:nowrap}
+  .numeros>div>div:last-child{margin-top:0 !important;font-size:16px !important}
   .so-desktop{display:none !important}
   .secao{padding:80px 20px !important}
 }
@@ -136,61 +138,34 @@ details[open] .mais .vertical{display:none}
     <h2 class="marca" style="font-size: 120px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; color: #FFFFFF; text-align: center; margin: 0 0 16px;">Histórias</h2>
     <p style="font-size: 23px; font-weight: 700; color: #FFFFFF; text-align: center; margin: 0 0 64px;">que ajudamos a contar</p>
     <article class="grade-2" style="gap: 0; background: #FFFFFF; border-radius: 20px; overflow: hidden;">
-      <div class="capa-foto" style="position: relative; overflow: hidden; background: #1A1A2E; color: #FFFFFF; min-height: 420px; padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;">
-        <img loading="lazy" src="assets/maria-claudia-daligna.jpg" alt="Maria Cláudia Dal’Igna" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
-        <div style="position: relative; background: #FF006E; border-radius: 14px; padding: 18px 22px;">
-        <div style="position: relative; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">Nós da Docência</div>
-        <div style="position: relative; font-size: 20px; font-weight: 700; margin-top: 12px;">Ecossistema de desenvolvimento profissional docente</div>
-        <div style="position: relative; font-size: 19px; font-weight: 700; margin-top: 10px;">Maria Cláudia Dal’Igna · doutora em Educação, Unisinos · parceria contínua desde 2024</div>
+      <div class="capa-foto" style="position: relative; overflow: hidden; background: #1A1A2E; min-height: 460px;">
+        <div class="carrossel" tabindex="0" aria-label="Fotos do Nós da Docência" style="position: absolute; inset: 0; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;">
+          <img loading="lazy" src="assets/maria-claudia-daligna.jpg" alt="Maria Cláudia Dal’Igna" style="flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; object-position: center 15%; scroll-snap-align: start; display: block;">
+          <img loading="lazy" src="assets/nos-da-docencia-podcast.jpg" alt="Maria Cláudia gravando o podcast Nós da Docência" style="flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; scroll-snap-align: start; display: block;">
+          <img loading="lazy" src="assets/nos-da-docencia-livro.jpg" alt="Capa do livro Nós da Docência" style="flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; object-position: center; scroll-snap-align: start; display: block;">
+          <img loading="lazy" src="assets/nos-da-docencia-gravacao.jpg" alt="Gravação em estúdio do Nós da Docência" style="flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; scroll-snap-align: start; display: block;">
+        </div>
+        <button type="button" class="carrossel-seta" data-dir="-1" aria-label="Foto anterior" style="position: absolute; top: 20px; left: 20px; width: 44px; height: 44px; border-radius: 999px; border: 0; background: #FFFFFF; color: #1A1A2E; display: grid; place-items: center; cursor: pointer;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l-6 6 6 6"></path></svg></button>
+        <button type="button" class="carrossel-seta" data-dir="1" aria-label="Próxima foto" style="position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 999px; border: 0; background: #FFFFFF; color: #1A1A2E; display: grid; place-items: center; cursor: pointer;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4l6 6-6 6"></path></svg></button>
+        <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+          <div style="display: inline-block; background: #FF006E; color: #FFFFFF; border-radius: 14px; padding: 16px 20px;">
+            <div style="font-size: 36px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">Nós da Docência</div>
+            <div style="font-size: 19px; font-weight: 700; margin-top: 8px;">Maria Cláudia Dal’Igna, doutora em Educação (Unisinos)</div>
+          </div>
         </div>
       </div>
-      <div style="padding: 40px;">
-        <h3 style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; color: #1A1A2E; margin: 0 0 12px;">Da ideia ao ecossistema inteiro, construído junto.</h3>
-        <p style="font-size: 18px; margin: 0 0 20px;">A Seja caminhou ao lado da Maria Cláudia na construção de:</p>
-        <ul class="grade-2" style="list-style: none; margin: 0 0 24px; padding: 0; gap: 14px 24px;">
-          <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 18px; font-weight: 600; line-height: 1.35;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#FF006E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M4 11.5l4.5 4.5L18 6"></path></svg><span>Marca</span></li>
-          <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 18px; font-weight: 600; line-height: 1.35;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#FF006E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M4 11.5l4.5 4.5L18 6"></path></svg><span>Site</span></li>
-          <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 18px; font-weight: 600; line-height: 1.35;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#FF006E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M4 11.5l4.5 4.5L18 6"></path></svg><span>Redes sociais</span></li>
-          <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 18px; font-weight: 600; line-height: 1.35;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#FF006E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M4 11.5l4.5 4.5L18 6"></path></svg><span>Materiais</span></li>
-          <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 18px; font-weight: 600; line-height: 1.35;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#FF006E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M4 11.5l4.5 4.5L18 6"></path></svg><span>Modelo de negócio</span></li>
-          <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 18px; font-weight: 600; line-height: 1.35;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#FF006E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 3px;"><path d="M4 11.5l4.5 4.5L18 6"></path></svg><span>Plataforma de formação continuada</span></li>
-        </ul>
-        <p style="font-size: 18px; margin: 0 0 16px;">Hoje o ecossistema reúne pesquisas, formações, livro, podcast e conteúdos nas redes.</p>
+      <div style="padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+        <h3 style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; color: #1A1A2E; margin: 0 0 14px;">Da ideia ao ecossistema inteiro, construído junto.</h3>
+        <p style="font-size: 18px; margin: 0 0 28px;">Desde 2024, a Seja construiu com a Maria Cláudia a marca, o site, as redes, os materiais, o modelo de negócio e a plataforma de formação continuada do Nós da Docência.</p>
+        <div class="numeros" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; border-top: 2px solid #E6E3EE; padding-top: 20px;">
+          <div><div style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; color: #FF006E;">+ de 70 mil</div><div style="font-size: 15px; line-height: 1.35; margin-top: 6px;">visualizações nas plataformas</div></div>
+          <div><div style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; color: #FF006E;">+ de 500</div><div style="font-size: 15px; line-height: 1.35; margin-top: 6px;">livros vendidos</div></div>
+          <div><div style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; color: #FF006E;">+ de 4 mil</div><div style="font-size: 15px; line-height: 1.35; margin-top: 6px;">pessoas nas formações</div></div>
+        </div>
+        <p style="font-size: 14px; color: #55526A; margin: 12px 0 24px;">Fonte: Nós da Docência, dados de 2021 a 2025.</p>
         <a href="https://www.nosdadocencia.com" target="_blank" rel="noopener" style="font-weight: 700; font-size: 18px; color: #8338EB; text-decoration: none;">Conheça o Nós da Docência →</a>
       </div>
     </article>
-    <div style="background: #1A1A2E; border-radius: 20px; padding: 40px; margin-top: 24px;">
-      <h3 style="font-size: 24px; font-weight: 800; letter-spacing: -0.01em; text-transform: uppercase; color: #FFBE0C; margin: 0 0 28px;">Vidas impactadas pelo Nós da Docência</h3>
-      <div class="grade-3" style="gap: 32px;">
-        <div>
-          <div style="font-size: clamp(44px, 5.5vw, 72px); font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; color: #FFFFFF; margin-bottom: 10px;">+ de 70 mil</div>
-          <p style="font-size: 18px; line-height: 1.45; color: #FFFFFF; margin: 0;">visualizações nas plataformas digitais</p>
-        </div>
-        <div>
-          <div style="font-size: clamp(44px, 5.5vw, 72px); font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; color: #FFFFFF; margin-bottom: 10px;">+ de 500</div>
-          <p style="font-size: 18px; line-height: 1.45; color: #FFFFFF; margin: 0;">exemplares do livro vendidos</p>
-        </div>
-        <div>
-          <div style="font-size: clamp(44px, 5.5vw, 72px); font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; color: #FFFFFF; margin-bottom: 10px;">+ de 4 mil</div>
-          <p style="font-size: 18px; line-height: 1.45; color: #FFFFFF; margin: 0;">pessoas nas formações</p>
-        </div>
-      </div>
-      <p style="font-size: 15px; color: #C9C4D9; margin: 28px 0 0;">Fonte: Nós da Docência, dados de 2021 a 2025.</p>
-    </div>
-    <div class="fotos-3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 24px;">
-      <figure style="margin: 0;">
-        <img loading="lazy" src="assets/nos-da-docencia-podcast.jpg" alt="Maria Cláudia gravando o podcast Nós da Docência" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; display: block;">
-        <figcaption style="font-size: 19px; font-weight: 700; color: #FFFFFF; margin-top: 12px;">Podcast</figcaption>
-      </figure>
-      <figure style="margin: 0;">
-        <img loading="lazy" src="assets/nos-da-docencia-livro.jpg" alt="Capa do livro Nós da Docência, de Maria Cláudia Dal’Igna" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; display: block;">
-        <figcaption style="font-size: 19px; font-weight: 700; color: #FFFFFF; margin-top: 12px;">Livro</figcaption>
-      </figure>
-      <figure style="margin: 0;">
-        <img loading="lazy" src="assets/nos-da-docencia-gravacao.jpg" alt="Gravação em estúdio do Nós da Docência" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; display: block;">
-        <figcaption style="font-size: 19px; font-weight: 700; color: #FFFFFF; margin-top: 12px;">Gravação em estúdio</figcaption>
-      </figure>
-    </div>
   </div>
 </section>
 
@@ -304,5 +279,16 @@ details[open] .mais .vertical{display:none}
 </footer>
 
 </div>
+<script>
+document.querySelectorAll('.carrossel-seta').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var c = b.parentElement.querySelector('.carrossel');
+    var n = Math.round(c.scrollLeft / c.clientWidth) + Number(b.dataset.dir);
+    var total = c.children.length;
+    n = (n + total) % total;
+    c.scrollTo({ left: n * c.clientWidth, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+});
+</script>
 </body>
 </html>
