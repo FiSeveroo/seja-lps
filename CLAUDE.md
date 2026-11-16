@@ -20,6 +20,13 @@ Página nova: criar `src/pages/<nome>/index.astro` e `public/<nome>/assets/`. El
 
 Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os servidores DNS do Cloudflare. No Worker seja-creator estão ligados só sejacreator.com.br e www (Production); o endereço workers.dev de produção fica desligado. Cada PR ganha uma prévia em `*-seja-creator.sejacreatordrive.workers.dev`, marcada com noindex para não entrar no Google. Não há e-mail no domínio (nenhum registro MX).
 
+## SEO
+
+- Toda página tem `<link rel="canonical">` com o endereço oficial (https://sejacreator.com.br/<nome>/), `og:*` e `twitter:card`, com a imagem de compartilhamento `public/assets/og-seja.png` (1200×630).
+- Dados estruturados (JSON-LD, `<script type="application/ld+json" is:inline>`): a home tem a Organization (`#organizacao`, com os sócios) e o WebSite (`#site`); as demais páginas têm um WebPage ligado a eles.
+- O sitemap (`/sitemap-index.xml`) sai sozinho do `@astrojs/sitemap` (a 404 fica de fora). `public/robots.txt` libera buscadores e assistentes de IA. `public/llms.txt` resume a Seja para IAs: atualizar quando mudar serviço, página ou posicionamento, usando só o texto que já está no site.
+- Página nova: título e descrição próprios, canonical, og e um WebPage em JSON-LD, seguindo /ciencia/ como modelo.
+
 ## Como trabalhar
 
 - Antes de mexer em qualquer página, siga a skill `.claude/skills/seja-lp-design/SKILL.md` (identidade visual, regras de layout, tom de voz e checagem com screenshots). Para revisão técnica, use `.claude/skills/web-design-guidelines/SKILL.md`.

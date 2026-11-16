@@ -1,0 +1,5 @@
+# Buscadores e assistentes de IA podem ler todo o site.
+User-agent: *
+Allow: /
+
+Sitemap: https://sejacreator.com.br/sitemap-index.xml
