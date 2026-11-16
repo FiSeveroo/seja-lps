@@ -49,6 +49,18 @@ Números do Nós da Docência: uso autorizado (confirmado por Filipe Severo em 0
 
 O restante da apresentação continua confidencial: não copiar textos, outros números nem fotos dela.
 
+## Usados no blog
+
+Dados do post "Podcast, vídeo, carrossel ou newsletter? Como escolher o formato para divulgar sua pesquisa" (16/11/2026). A checagem foi feita no projeto de redação, antes da entrega. Referências completas no próprio post.
+
+| Dado (redação do post) | Fonte |
+|---|---|
+| Revisão de 28 estudos sobre vídeos de divulgação científica no YouTube e no TikTok; vídeos com legenda tiveram mais visualizações e compartilhamentos; perfis de pessoas influenciam mais que de organizações; no TikTok, referência em torno de um minuto para vídeos expositivos. | Lai et al. (2025), JCOM 24(3) V01. |
+| 89,3% dos estudos da revisão são dos Estados Unidos; o Instagram aparece em um único estudo. | Lai et al. (2025). |
+| Cerca de 92% das visualizações de um canal de química no YouTube vinham de não inscritos; inscritos curtiam cerca de 13 vezes mais por visualização (dados de 2014 a 2017). | Yang et al. (2022), PLoS ONE 17(5) e0267697. |
+| No YouTube, 85% das visualizações ficam com 3% dos canais. | Bärtl (2018), Convergence 24(1). |
+| Busca por termos centrais do debate político brasileiro nos metadados de 1.049 vídeos populares do YouTube teve incidência nula ou irrelevante. | Severo (2026), dissertação, PUCRS. |
+
 ## Referências (ABNT)
 
 COORDENAÇÃO DE APERFEIÇOAMENTO DE PESSOAL DE NÍVEL SUPERIOR (Brasil). Portaria nº 109, de 25 de abril de 2025. Disciplina o processo de Avaliação de Permanência dos Programas de Pós-Graduação stricto sensu no país. Brasília, DF: CAPES, 2025.

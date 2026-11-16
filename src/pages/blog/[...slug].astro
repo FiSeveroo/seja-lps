@@ -40,10 +40,13 @@ const dados = [
     datePublished: dataISO(post.data.data),
     dateModified: dataISO(post.data.atualizado ?? post.data.data),
     wordCount: palavras,
-    ...(capaOg ? { image: capaOg } : {}),
+    ...(post.data.temas ? { about: post.data.temas } : {}),
+    image: capaOg ?? 'https://sejacreator.com.br/assets/og-seja.png',
     author: {
       '@type': 'Person',
       name: autor.nome,
+      ...(autor.nomeCompleto ? { alternateName: autor.nomeCompleto } : {}),
+      jobTitle: autor.cargo,
       description: autor.bio,
       ...(autor.links.length ? { sameAs: autor.links } : {}),
       worksFor: { '@id': 'https://sejacreator.com.br/#organizacao' },
@@ -63,7 +66,7 @@ const dados = [
 ];
 ---
 <Base
-  titulo={`${post.data.titulo} · Seja Creator`}
+  titulo={`${post.data.tituloBusca ?? post.data.titulo} · Seja Creator`}
   descricao={post.data.descricao}
   caminho={caminho}
   tipo="article"
@@ -77,6 +80,7 @@ const dados = [
       <div class="coluna">
         <p class="voltar"><a href="/blog/">← Blog da Seja</a></p>
         <h1>{post.data.titulo}</h1>
+        {post.data.linhaFina && <p class="linha-fina">{post.data.linhaFina}</p>}
         <p class="meta">
           {autor.nome} · <time datetime={dataISO(post.data.data)}>{dataPorExtenso(post.data.data)}</time> · {minutos} min de leitura
           {post.data.atualizado && <><br>Atualizado em <time datetime={dataISO(post.data.atualizado)}>{dataPorExtenso(post.data.atualizado)}</time></>}
@@ -118,6 +122,7 @@ const dados = [
 .voltar a { text-decoration: none; }
 .voltar a:hover { text-decoration: underline; text-underline-offset: 5px; }
 h1 { font-size: clamp(38px, 5.6vw, 68px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 24px; text-wrap: balance; }
+.linha-fina { font-size: clamp(20px, 2.2vw, 24px); font-weight: 600; line-height: 1.4; margin: 0 0 24px; max-width: 760px; text-wrap: balance; }
 .meta { font-size: 17px; margin: 0; }
 .capa { max-width: calc(1100px + 2 * clamp(20px, 5vw, 64px)); margin: 48px auto 0; }
 .capa img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 24px; display: block; }
@@ -136,6 +141,13 @@ h1 { font-size: clamp(38px, 5.6vw, 68px); font-weight: 800; letter-spacing: -0.0
 .texto :global(hr) { border: 0; border-top: 2px solid #EDE6FB; margin: 2.4em 0; }
 .texto :global(code) { font-family: inherit; background: #F4EFFD; padding: 2px 6px; border-radius: 6px; }
 .texto :global(.fonte), .texto :global(small) { display: block; font-size: 16px; color: #5B5670; }
+.texto :global(table) { display: block; overflow-x: auto; border-collapse: collapse; margin: 1.6em 0; font-size: 16px; line-height: 1.45; }
+.texto :global(th) { text-align: left; background: #8338EB; color: #FFFFFF; font-weight: 700; padding: 12px 14px; }
+.texto :global(td) { padding: 12px 14px; border-bottom: 2px solid #EDE6FB; vertical-align: top; min-width: 150px; }
+.texto :global(td:first-child) { font-weight: 700; color: #8338EB; min-width: 120px; }
+.texto :global(.referencias) { font-size: 16px; line-height: 1.55; color: #3A3550; }
+.texto :global(.referencias p) { margin: 0 0 1em; }
+.texto :global(.referencias a) { font-weight: 500; word-break: break-word; }
 
 .fim { max-width: calc(720px + 2 * clamp(20px, 5vw, 64px)); margin: 0 auto; padding-bottom: 96px; }
 .autor { display: flex; gap: 24px; align-items: flex-start; padding: 32px 0; border-top: 2px solid #EDE6FB; border-bottom: 2px solid #EDE6FB; margin-bottom: 56px; }

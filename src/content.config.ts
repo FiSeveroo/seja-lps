@@ -9,10 +9,16 @@ const blog = defineCollection({
   schema: ({ image }) =>
     z.object({
       titulo: z.string().max(100),
+      // Título mais curto para o Google (opcional; até 60 caracteres)
+      tituloBusca: z.string().max(60).optional(),
+      // Frase de apoio que aparece abaixo do título (opcional)
+      linhaFina: z.string().max(220).optional(),
       // Aparece no Google e ao compartilhar: entre 70 e 160 caracteres
       descricao: z.string().min(70).max(160),
       data: z.coerce.date(),
       atualizado: z.coerce.date().optional(),
+      // Assuntos do post, para os dados estruturados (about)
+      temas: z.array(z.string()).optional(),
       autor: z.enum(['filipe-severo', 'igor-da-silva']),
       capa: image().optional(),
       capaAlt: z.string().optional(),
