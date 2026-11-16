@@ -14,7 +14,7 @@ Quem decide divulgar pesquisa científica nas redes sociais costuma começar pel
 
 ## Para quem você está falando: divulgação ou comunicação científica?
 
-Divulgação científica é o trabalho de levar a pesquisa a quem está fora da área. Bueno (2010, p. 5) a define como o esforço de "democratizar o acesso ao conhecimento científico" e de incluir os cidadãos no debate sobre temas especializados que afetam a vida deles. A comunicação científica, na mesma distinção, é a circulação de informação especializada entre pares: artigos, repositórios, preprints, Lattes, Google Acadêmico.
+[Divulgação científica](/blog/o-que-e-divulgacao-cientifica/) é o trabalho de levar a pesquisa a quem está fora da área. Bueno (2010, p. 5) a define como o esforço de "democratizar o acesso ao conhecimento científico" e de incluir os cidadãos no debate sobre temas especializados que afetam a vida deles. A comunicação científica, na mesma distinção, é a circulação de informação especializada entre pares: artigos, repositórios, preprints, Lattes, Google Acadêmico.
 
 Essa diferença muda a escolha do formato. Para ser encontrado por colegas da área, os canais acadêmicos já fazem boa parte do trabalho. Para chegar a professores da educação básica, a gestores públicos ou a quem vive o problema que você estuda, o conteúdo precisa ir até onde essas pessoas estão. Nas plataformas comerciais, como Instagram, TikTok e YouTube, o algoritmo premia o que prende a atenção e alcança muita gente. Os pares também estão lá, mas deixam de ser o centro da conversa.
 

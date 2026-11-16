@@ -61,6 +61,16 @@ Dados do post "Podcast, vídeo, carrossel ou newsletter? Como escolher o formato
 | No YouTube, 85% das visualizações ficam com 3% dos canais. | Bärtl (2018), Convergence 24(1). |
 | Busca por termos centrais do debate político brasileiro nos metadados de 1.049 vídeos populares do YouTube teve incidência nula ou irrelevante. | Severo (2026), dissertação, PUCRS. |
 
+Dados do post "Indicadores para um plano de divulgação científica, além de curtidas" (16/11/2026), também checados no projeto de redação:
+
+| Dado (redação do post) | Fonte |
+|---|---|
+| Impacto na sociedade descrito como os "efeitos percebidos na (e pela) sociedade" no ciclo 2025-2028. | CAPES, apresentação "Novas diretrizes da avaliação da pós-graduação: ciclo 25-28" (8 maio 2025). |
+| 48 vídeos de oito canais alemães de fitness e nutrição "baseados em ciência"; nota média de qualidade científica 2,12 numa escala de 1 a 5. | Otto et al. (2026), ECSM 13, DOI 10.34190/ecsm.13.1.4608. |
+| Revisão de 18 publicações de cientistas da saúde: seis mencionam envolver o público no planejamento, uma descreve como. | Fontaine et al. (2019), JMIR Public Health and Surveillance 5(3) e14447. |
+
+Post "O que é divulgação científica?" (16/11/2026): definição em cinco condições e espectro em quatro eixos de Valério e Takata (2025), Pro-Posições v. 36; levantamento latino-americano com nove expressões, relatado pelos mesmos autores.
+
 ## Referências (ABNT)
 
 COORDENAÇÃO DE APERFEIÇOAMENTO DE PESSOAL DE NÍVEL SUPERIOR (Brasil). Portaria nº 109, de 25 de abril de 2025. Disciplina o processo de Avaliação de Permanência dos Programas de Pós-Graduação stricto sensu no país. Brasília, DF: CAPES, 2025.

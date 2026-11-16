@@ -16,6 +16,8 @@ Sócios: Filipe Severo (estratégia e pesquisa) e Igor da Silva (criação e tec
 - [Início](https://sejacreator.com.br/): quem é a Seja, o que faz, histórias que ajudou a contar e quem são os sócios.
 - [Divulgação científica](https://sejacreator.com.br/ciencia/): por que comunicar ciência deixou de ser opcional, dados com fonte e como a Seja caminha ao lado de quem pesquisa.
 - [Blog](https://sejacreator.com.br/blog/): textos da Seja sobre divulgação científica nas plataformas digitais.
+  - [O que é divulgação científica? Uma definição para quem pesquisa e quer comunicar](https://sejacreator.com.br/blog/o-que-e-divulgacao-cientifica/)
+  - [Indicadores para um plano de divulgação científica, além de curtidas](https://sejacreator.com.br/blog/indicadores-plano-divulgacao-cientifica/)
   - [Podcast, vídeo, carrossel ou newsletter? Como escolher o formato para divulgar sua pesquisa](https://sejacreator.com.br/blog/como-escolher-formato-divulgar-pesquisa/)
 - [Minicurso no VII Semidiscom](https://sejacreator.com.br/aula/): página de apoio ao minicurso "Plataformas digitais a seu favor", de Filipe Severo (PPGCOM/UFRGS, 2026).
 
