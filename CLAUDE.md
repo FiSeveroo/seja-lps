@@ -4,26 +4,33 @@ Repositório das páginas estáticas da Seja Creator, empresa especializada em d
 
 ## Estrutura
 
-| Pasta | Endereço |
+Tudo fica no domínio principal:
+
+| Arquivo | Endereço |
 |---|---|
-| `site/ciencia/` | https://ciencia.sejacreator.com.br |
-| `site/aula/` | https://aula.sejacreator.com.br |
-| `site/home/` | https://inicio.sejacreator.com.br (home nova; sejacreator.com.br segue na Wix por enquanto) |
+| `src/pages/index.astro` | https://sejacreator.com.br (home) |
+| `src/pages/ciencia/index.astro` | https://sejacreator.com.br/ciencia/ |
+| `src/pages/aula/index.astro` | https://sejacreator.com.br/aula/ |
 
-Um único projeto no Netlify (ciencialpseja) publica a pasta `site/` (ver `netlify.toml`) a cada push na `main`. O arquivo `site/_redirects` liga cada subdomínio à sua pasta. Cada página é `index.html` + `assets/` próprios (fontes Futuru, logos, símbolos, bg1.png), HTML e CSS puros, sem build.
+O site é feito em Astro (gera HTML estático, sem JavaScript extra). Os arquivos de cada página (fontes Futuru, logos, símbolos, bg1.png, fotos, favicon) ficam em `public/` (home: `public/assets/`; demais: `public/<nome>/assets/`). CSS e scripts das páginas usam `<style is:inline>` e `<script is:inline>`, para o Astro não reescrever nada.
 
-Página nova: criar `site/<nome>/index.html` com seus `assets/`, adicionar a linha `https://<nome>.sejacreator.com.br/*  /<nome>/:splat  200!` no `_redirects` (antes da regra de `/`), adicionar `<nome>.sejacreator.com.br` como domínio do projeto no Netlify e criar na Wix o CNAME `<nome>` → `ciencialpseja.netlify.app`. Nada fora de `site/` é publicado.
+Hospedagem e DNS no Cloudflare (plano grátis): um Worker (`wrangler.jsonc`) roda `npm run build` e publica `dist/` a cada push na `main`. O `worker/index.js` faz os redirecionamentos permanentes: os subdomínios antigos (www, inicio, ciencia, aula) levam para o domínio principal e as páginas antigas da Wix (/blank, /sejapesquisa) e /home levam para as novas. Endereço antigo que mudar entra lá, para não quebrar links nem perder posição no Google.
+
+Página nova: criar `src/pages/<nome>/index.astro` e `public/<nome>/assets/`. Ela sai em sejacreator.com.br/<nome>/ sem configuração extra. Só o que sai em `dist/` (páginas de `src/pages/` e arquivos de `public/`) é publicado.
+
+Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os servidores DNS do Cloudflare. Não há e-mail no domínio (nenhum registro MX).
 
 ## Como trabalhar
 
 - Antes de mexer em qualquer página, siga a skill `.claude/skills/seja-lp-design/SKILL.md` (identidade visual, regras de layout, tom de voz e checagem com screenshots). Para revisão técnica, use `.claude/skills/web-design-guidelines/SKILL.md`.
-- Prévia: abra `site/ciencia/index.html` direto no navegador, ou rode `npx serve site` e abra /ciencia.
+- Prévia: `npm install` uma vez, depois `npm run dev` e abra http://localhost:4321/ (ou /ciencia/, /aula/). Antes de enviar, `npm run build` precisa terminar sem erro. Node 22.23.4 ou mais novo (o Cloudflare usa o 24, ver `.nvmrc`). Para testar os redirecionamentos como no Cloudflare: `npm run build` e `npx wrangler dev`.
+- No `.astro`, chaves `{ }` fora de `<style>` e `<script>` viram código: num texto que precise delas, escreva `{'{'}` e `{'}'}`.
 - Ajustes visuais podem ser explorados no Design do Claude (canvas). Ele é rascunho: o que for aprovado lá é passado para o HTML deste repositório, que é a versão oficial.
 
 ## Design do Claude
 
 - Design system da marca: https://claude.ai/artifact/7uVBRdfP9oNts7onCbcpFS ("Seja Creator": cores, Futuru, logos, símbolos, bg1, fotos dos sócios e as seções Botao, Hero, Dado, Servico, Rodape, Titulo, Acordeao, Pessoa, Projeto, Fechamento). Todo canvas novo de página da Seja usa ele.
-- Fluxo: (1) rascunhar a página nova num canvas do Design ("LP <nome> · Seja Creator"); (2) aprovar com Filipe/Igor; (3) passar para `site/<nome>/index.html` seguindo a skill seja-lp-design; (4) push na `main` publica.
+- Fluxo: (1) rascunhar a página nova num canvas do Design ("LP <nome> · Seja Creator"); (2) aprovar com Filipe/Igor; (3) passar para `src/pages/<nome>/index.astro` seguindo a skill seja-lp-design; (4) push na `main` publica.
 - Mudou cor, fonte, logo ou um bloco padrão no repositório? Atualizar também o design system para os dois não divergirem.
 - Commits pequenos e descritivos, em português.
 
