@@ -94,7 +94,15 @@ a:hover{opacity:.85}
 .acordeao summary::-webkit-details-marker{display:none}
 .mais{flex-shrink:0}
 details[open] .mais .vertical{display:none}
+.menu-mobile{display:none}
+.menu-mobile summary{list-style:none;cursor:pointer;background:#FFFFFF;color:#8338EB;padding:10px 22px;border-radius:999px;font-weight:800;font-size:15px;text-transform:uppercase}
+.menu-mobile summary::-webkit-details-marker{display:none}
+.menu-mobile[open] summary{background:#1A1A2E;color:#FFFFFF}
+.menu-mobile nav{position:absolute;left:0;right:0;top:100%;z-index:20;background:#8338EB;display:flex;flex-direction:column;padding:8px clamp(20px,5vw,64px) 24px;border-top:2px solid rgba(255,255,255,.25)}
+.menu-mobile nav a{color:#FFFFFF;text-decoration:none;font-size:22px;font-weight:700;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.2)}
 @media (max-width:900px){
+  .menu-mobile{display:block}
+  .cta-topo{display:none !important}
   .grade-2,.grade-3{grid-template-columns:minmax(0,1fr);gap:40px}
   .nav-links{display:none !important}
   .marca{font-size:52px !important}
@@ -112,7 +120,7 @@ details[open] .mais .vertical{display:none}
 <body>
 <div style="font-family: 'Futuru', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 500; color: #1A1A2E; background: #FFFFFF; line-height: 1.6; -webkit-font-smoothing: antialiased;">
 
-<header style="background: #8338EB; color: #FFFFFF; padding: 14px clamp(20px, 5vw, 64px); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+<header class="topo" style="position: relative; background: #8338EB; color: #FFFFFF; padding: 14px clamp(20px, 5vw, 64px); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
   <a href="#topo" aria-label="Seja Creator, início" style="display: flex; align-items: center; text-decoration: none;"><img loading="lazy" src="assets/Simbolo_SEJA_BRANCO.png" alt="" style="width: 36px; height: auto; display: block;"></a>
   <nav class="nav-links" aria-label="Seções" style="display: flex; gap: 32px; font-size: 17px; font-weight: 600;">
     <a href="#o-que-fazemos" style="text-decoration: none;">O que fazemos</a>
@@ -122,7 +130,18 @@ details[open] .mais .vertical{display:none}
     <a href="#feito-por" style="text-decoration: none;">Quem somos</a>
     <a href="/blog/" style="text-decoration: none;">Blog</a>
   </nav>
-  <a href="https://wa.me/5551991006411?text=Oi%2C%20Filipe%21%20Vi%20o%20site%20da%20Seja%20e%20quero%20conversar%20sobre%20a%20divulga%C3%A7%C3%A3o%20da%20minha%20pesquisa." target="_blank" rel="noopener" style="background: #FFFFFF; color: #8338EB; padding: 10px 22px; border-radius: 999px; font-weight: 800; font-size: 15px; text-transform: uppercase; text-decoration: none;">Falar com especialista</a>
+  <details class="menu-mobile">
+    <summary>Menu</summary>
+    <nav aria-label="Menu">
+      <a href="#o-que-fazemos">O que fazemos</a>
+      <a href="#historias">Histórias</a>
+      <a href="#editais">Editais</a>
+      <a href="#formacao">Formação</a>
+      <a href="#feito-por">Quem somos</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+  </details>
+  <a class="cta-topo" href="https://wa.me/5551991006411?text=Oi%2C%20Filipe%21%20Vi%20o%20site%20da%20Seja%20e%20quero%20conversar%20sobre%20a%20divulga%C3%A7%C3%A3o%20da%20minha%20pesquisa." target="_blank" rel="noopener" style="background: #FFFFFF; color: #8338EB; padding: 10px 22px; border-radius: 999px; font-weight: 800; font-size: 15px; text-transform: uppercase; text-decoration: none;">Falar com especialista</a>
 </header>
 <main>
 
@@ -355,6 +374,11 @@ window.addEventListener('load', function () {
     });
     agendar();
   });
+});
+</script>
+<script is:inline>
+document.querySelectorAll('.menu-mobile a').forEach(function (a) {
+  a.addEventListener('click', function () { a.closest('details').removeAttribute('open'); });
 });
 </script>
 </body>
