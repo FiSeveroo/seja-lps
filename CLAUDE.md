@@ -6,24 +6,25 @@ Repositório das páginas estáticas da Seja Creator, empresa especializada em d
 
 | Pasta | Endereço |
 |---|---|
-| `site/ciencia/` | https://ciencia.sejacreator.com.br |
-| `site/aula/` | https://aula.sejacreator.com.br |
-| `site/home/` | https://inicio.sejacreator.com.br (home nova; sejacreator.com.br segue na Wix por enquanto) |
+| `src/pages/ciencia/` | https://ciencia.sejacreator.com.br |
+| `src/pages/aula/` | https://aula.sejacreator.com.br |
+| `src/pages/home/` | https://inicio.sejacreator.com.br (home nova; sejacreator.com.br segue na Wix por enquanto) |
 
-Um único projeto no Netlify (ciencialpseja) publica a pasta `site/` (ver `netlify.toml`) a cada push na `main`. O arquivo `site/_redirects` liga cada subdomínio à sua pasta. Cada página é `index.html` + `assets/` próprios (fontes Futuru, logos, símbolos, bg1.png), HTML e CSS puros, sem build.
+O site é feito em Astro (gera HTML estático, sem JavaScript extra). Cada página é `src/pages/<nome>/index.astro`, e seus arquivos (fontes Futuru, logos, símbolos, bg1.png, fotos, favicon) ficam em `public/<nome>/`. CSS e scripts das páginas usam `<style is:inline>` e `<script is:inline>`, para o Astro não reescrever nada. Um único projeto no Netlify (ciencialpseja) roda `npm run build` e publica a pasta `dist/` (ver `netlify.toml`) a cada push na `main`. O arquivo `public/_redirects` liga cada subdomínio à sua pasta.
 
-Página nova: criar `site/<nome>/index.html` com seus `assets/`, adicionar a linha `https://<nome>.sejacreator.com.br/*  /<nome>/:splat  200!` no `_redirects` (antes da regra de `/`), adicionar `<nome>.sejacreator.com.br` como domínio do projeto no Netlify e criar na Wix o CNAME `<nome>` → `ciencialpseja.netlify.app`. Nada fora de `site/` é publicado.
+Página nova: criar `src/pages/<nome>/index.astro` e `public/<nome>/assets/`, adicionar a linha `https://<nome>.sejacreator.com.br/*  /<nome>/:splat  200!` no `_redirects` (antes da regra de `/`), adicionar `<nome>.sejacreator.com.br` como domínio do projeto no Netlify e criar na Wix o CNAME `<nome>` → `ciencialpseja.netlify.app`. Só o que sai em `dist/` (páginas de `src/pages/` e arquivos de `public/`) é publicado.
 
 ## Como trabalhar
 
 - Antes de mexer em qualquer página, siga a skill `.claude/skills/seja-lp-design/SKILL.md` (identidade visual, regras de layout, tom de voz e checagem com screenshots). Para revisão técnica, use `.claude/skills/web-design-guidelines/SKILL.md`.
-- Prévia: abra `site/ciencia/index.html` direto no navegador, ou rode `npx serve site` e abra /ciencia.
+- Prévia: `npm install` uma vez, depois `npm run dev` e abra http://localhost:4321/ciencia/ (ou /home/, /aula/). Antes de enviar, `npm run build` precisa terminar sem erro. Node 22.23.4 ou mais novo (o Netlify usa o 24, ver `.nvmrc`).
+- No `.astro`, chaves `{ }` fora de `<style>` e `<script>` viram código: num texto que precise delas, escreva `{'{'}` e `{'}'}`.
 - Ajustes visuais podem ser explorados no Design do Claude (canvas). Ele é rascunho: o que for aprovado lá é passado para o HTML deste repositório, que é a versão oficial.
 
 ## Design do Claude
 
 - Design system da marca: https://claude.ai/artifact/7uVBRdfP9oNts7onCbcpFS ("Seja Creator": cores, Futuru, logos, símbolos, bg1, fotos dos sócios e as seções Botao, Hero, Dado, Servico, Rodape, Titulo, Acordeao, Pessoa, Projeto, Fechamento). Todo canvas novo de página da Seja usa ele.
-- Fluxo: (1) rascunhar a página nova num canvas do Design ("LP <nome> · Seja Creator"); (2) aprovar com Filipe/Igor; (3) passar para `site/<nome>/index.html` seguindo a skill seja-lp-design; (4) push na `main` publica.
+- Fluxo: (1) rascunhar a página nova num canvas do Design ("LP <nome> · Seja Creator"); (2) aprovar com Filipe/Igor; (3) passar para `src/pages/<nome>/index.astro` seguindo a skill seja-lp-design; (4) push na `main` publica.
 - Mudou cor, fonte, logo ou um bloco padrão no repositório? Atualizar também o design system para os dois não divergirem.
 - Commits pequenos e descritivos, em português.
 

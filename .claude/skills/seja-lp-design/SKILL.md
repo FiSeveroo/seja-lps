@@ -60,7 +60,7 @@ Botões de WhatsApp: `https://wa.me/5551991006411?text=` + mensagem pré-escrita
 
 ## 6. Checagem visual (antes de entregar)
 
-Playwright e Chromium costumam estar pré-instalados no ambiente (não rodar `playwright install`). Tirar screenshots de página inteira em 1440, 768 e 390px:
+Playwright e Chromium costumam estar pré-instalados no ambiente (não rodar `playwright install`). Gerar o site com `npm run build`, servir `dist/` (ex.: `npx serve dist`) e tirar screenshots de página inteira em 1440, 768 e 390px, passando a URL da página (ex.: http://localhost:3000/ciencia/):
 
 ```js
 const { chromium } = require('playwright');
@@ -68,7 +68,7 @@ const { chromium } = require('playwright');
   const b = await chromium.launch();
   for (const w of [1440, 768, 390]) {
     const p = await b.newPage({ viewport: { width: w, height: 900 } });
-    await p.goto('file://' + process.argv[2]);
+    await p.goto(process.argv[2]);
     await p.waitForTimeout(800);
     await p.screenshot({ path: `shot-${w}.png`, fullPage: true });
   }
@@ -80,6 +80,6 @@ Abrir cada screenshot com Read e conferir: títulos com até 2 linhas, nenhum ov
 
 ## 7. Publicação
 
-- Netlify Drop (arrastar a pasta ou .zip com index.html + assets/) é gratuito.
+- O site é Astro: página em `src/pages/<nome>/index.astro`, arquivos em `public/<nome>/`. Push na `main` publica pelo Netlify (projeto ciencialpseja, ver CLAUDE.md).
 - Subdomínio via DNS da Wix (domínio sejacreator.com.br): primeiro um TXT `subdomain-owner-verification` com o hash do Netlify, depois o CNAME `<sub>` → `<site>.netlify.app`. Cadastrar no Netlify o domínio com .com.br.
-- Entregar sempre o .zip pronto para arrastar.
+- Mudanças vão por PR: o Netlify gera a prévia `deploy-preview-<N>--ciencialpseja.netlify.app` antes do merge.

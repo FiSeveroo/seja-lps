@@ -3,3 +3,5 @@
 .taste-skill/
 shots/
 node_modules/
+.astro/
+dist/
