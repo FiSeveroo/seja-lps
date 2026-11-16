@@ -18,7 +18,7 @@ Hospedagem e DNS no Cloudflare (plano grátis): um Worker (`wrangler.jsonc`) rod
 
 Página nova: criar `src/pages/<nome>/index.astro` e `public/<nome>/assets/`. Ela sai em sejacreator.com.br/<nome>/ sem configuração extra. Só o que sai em `dist/` (páginas de `src/pages/` e arquivos de `public/`) é publicado.
 
-Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os servidores DNS do Cloudflare. No Worker seja-creator estão ligados só sejacreator.com.br e www (Production); o endereço workers.dev fica desligado. Não há e-mail no domínio (nenhum registro MX).
+Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os servidores DNS do Cloudflare. No Worker seja-creator estão ligados só sejacreator.com.br e www (Production); o endereço workers.dev de produção fica desligado. Cada PR ganha uma prévia em `*-seja-creator.sejacreatordrive.workers.dev`, marcada com noindex para não entrar no Google. Não há e-mail no domínio (nenhum registro MX).
 
 ## Como trabalhar
 

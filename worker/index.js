@@ -33,6 +33,14 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    return env.ASSETS.fetch(request);
+    const resposta = await env.ASSETS.fetch(request);
+
+    // Prévias de PR (*.workers.dev) não entram no Google
+    if (url.hostname.endsWith('.workers.dev')) {
+      const previa = new Response(resposta.body, resposta);
+      previa.headers.set('X-Robots-Tag', 'noindex');
+      return previa;
+    }
+    return resposta;
   },
 };
