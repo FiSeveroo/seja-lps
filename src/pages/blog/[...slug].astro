@@ -1,0 +1,162 @@
+---
+// Página de cada post: /blog/<nome-do-arquivo>/
+import { Image, getImage } from 'astro:assets';
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { postsPublicados, dataPorExtenso, dataISO } from '../../data/blog';
+import { autores } from '../../data/autores';
+
+export async function getStaticPaths() {
+  const posts = await postsPublicados();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const autor = autores[post.data.autor];
+const caminho = `/blog/${post.id}/`;
+const url = `https://sejacreator.com.br${caminho}`;
+const palavras = (post.body ?? '').split(/\s+/).filter(Boolean).length;
+const minutos = Math.max(1, Math.round(palavras / 200));
+
+// Imagem de compartilhamento: a capa (1200 de largura) ou a imagem padrão da Seja
+const capaOg = post.data.capa
+  ? new URL((await getImage({ src: post.data.capa, width: 1200, format: 'jpg' })).src, 'https://sejacreator.com.br').toString()
+  : undefined;
+
+const whatsapp =
+  'https://wa.me/5551991006411?text=' +
+  encodeURIComponent(`Oi, Filipe! Li o texto "${post.data.titulo}" no blog da Seja e quero falar com um especialista.`);
+
+const dados = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.data.titulo,
+    description: post.data.descricao,
+    url,
+    mainEntityOfPage: url,
+    inLanguage: 'pt-BR',
+    datePublished: dataISO(post.data.data),
+    dateModified: dataISO(post.data.atualizado ?? post.data.data),
+    wordCount: palavras,
+    ...(post.data.temas ? { about: post.data.temas } : {}),
+    image: capaOg ?? 'https://sejacreator.com.br/assets/og-seja.png',
+    author: {
+      '@type': 'Person',
+      name: autor.nome,
+      ...(autor.nomeCompleto ? { alternateName: autor.nomeCompleto } : {}),
+      jobTitle: autor.cargo,
+      description: autor.bio,
+      ...(autor.links.length ? { sameAs: autor.links } : {}),
+      worksFor: { '@id': 'https://sejacreator.com.br/#organizacao' },
+    },
+    publisher: { '@id': 'https://sejacreator.com.br/#organizacao' },
+    isPartOf: { '@id': 'https://sejacreator.com.br/blog/#blog' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://sejacreator.com.br/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://sejacreator.com.br/blog/' },
+      { '@type': 'ListItem', position: 3, name: post.data.titulo, item: url },
+    ],
+  },
+];
+---
+<Base
+  titulo={`${post.data.tituloBusca ?? post.data.titulo} · Seja Creator`}
+  descricao={post.data.descricao}
+  caminho={caminho}
+  tipo="article"
+  imagem={capaOg}
+  imagemAlt={post.data.capaAlt}
+  dados={dados}
+>
+  <article>
+    <header class="cabeca margem">
+      <img class="simbolo-bg" src="/assets/Simbolo_SEJA_BRANCO.png" alt="" aria-hidden="true" width="800" height="838">
+      <div class="coluna">
+        <p class="voltar"><a href="/blog/">← Blog da Seja</a></p>
+        <h1>{post.data.titulo}</h1>
+        {post.data.linhaFina && <p class="linha-fina">{post.data.linhaFina}</p>}
+        <p class="meta">
+          {autor.nome} · <time datetime={dataISO(post.data.data)}>{dataPorExtenso(post.data.data)}</time> · {minutos} min de leitura
+          {post.data.atualizado && <><br>Atualizado em <time datetime={dataISO(post.data.atualizado)}>{dataPorExtenso(post.data.atualizado)}</time></>}
+        </p>
+      </div>
+    </header>
+
+    {post.data.capa && (
+      <div class="capa margem">
+        <Image src={post.data.capa} alt={post.data.capaAlt ?? ''} widths={[720, 1100, 1600]} sizes="(max-width: 1100px) 100vw, 1100px" loading="eager" fetchpriority="high" />
+      </div>
+    )}
+
+    <div class="texto margem">
+      <Content />
+    </div>
+
+    <footer class="fim margem">
+      <div class="autor">
+        <img src={autor.foto} alt={autor.nome} width="96" height="96" loading="lazy">
+        <div>
+          <p class="nome">{autor.nome} · {autor.frase}</p>
+          <p>{autor.bio}</p>
+        </div>
+      </div>
+      <div class="convite">
+        <h2>Vamos conversar sobre a sua pesquisa?</h2>
+        <a class="botao" href={whatsapp} target="_blank" rel="noopener">Falar com especialista</a>
+      </div>
+    </footer>
+  </article>
+</Base>
+
+<style>
+.cabeca { position: relative; overflow: hidden; background: #8338EB; color: #FFFFFF; padding-top: 56px; padding-bottom: 72px; }
+.simbolo-bg { position: absolute; width: 560px; max-width: none; right: -180px; bottom: -260px; opacity: 0.07; pointer-events: none; }
+.coluna { position: relative; max-width: 860px; margin: 0 auto; }
+.voltar { margin: 0 0 28px; font-size: 17px; font-weight: 600; }
+.voltar a { text-decoration: none; }
+.voltar a:hover { text-decoration: underline; text-underline-offset: 5px; }
+h1 { font-size: clamp(38px, 5.6vw, 68px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 24px; text-wrap: balance; }
+.linha-fina { font-size: clamp(20px, 2.2vw, 24px); font-weight: 600; line-height: 1.4; margin: 0 0 24px; max-width: 760px; text-wrap: balance; }
+.meta { font-size: 17px; margin: 0; }
+.capa { max-width: calc(1100px + 2 * clamp(20px, 5vw, 64px)); margin: 48px auto 0; }
+.capa img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 24px; display: block; }
+
+.texto { max-width: calc(720px + 2 * clamp(20px, 5vw, 64px)); margin: 0 auto; padding-top: 56px; padding-bottom: 24px; font-size: 20px; line-height: 1.7; }
+.texto :global(p) { margin: 0 0 1.2em; }
+.texto :global(h2) { color: #8338EB; font-size: clamp(28px, 3.4vw, 36px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin: 1.8em 0 0.6em; text-wrap: balance; }
+.texto :global(h3) { font-size: 24px; font-weight: 700; line-height: 1.25; margin: 1.6em 0 0.5em; }
+.texto :global(a) { color: #8338EB; font-weight: 600; text-underline-offset: 4px; }
+.texto :global(strong) { font-weight: 700; }
+.texto :global(ul), .texto :global(ol) { padding-left: 1.3em; margin: 0 0 1.2em; }
+.texto :global(li) { margin-bottom: 0.4em; }
+.texto :global(blockquote) { margin: 1.6em 0; padding: 4px 0 4px 24px; border-left: 4px solid #FF006E; font-size: 22px; font-weight: 600; }
+.texto :global(blockquote p:last-child) { margin-bottom: 0; }
+.texto :global(img) { border-radius: 16px; display: block; margin: 1.6em 0; }
+.texto :global(hr) { border: 0; border-top: 2px solid #EDE6FB; margin: 2.4em 0; }
+.texto :global(code) { font-family: inherit; background: #F4EFFD; padding: 2px 6px; border-radius: 6px; }
+.texto :global(.fonte), .texto :global(small) { display: block; font-size: 16px; color: #5B5670; }
+.texto :global(table) { display: block; overflow-x: auto; border-collapse: collapse; margin: 1.6em 0; font-size: 16px; line-height: 1.45; }
+.texto :global(th) { text-align: left; background: #8338EB; color: #FFFFFF; font-weight: 700; padding: 12px 14px; }
+.texto :global(td) { padding: 12px 14px; border-bottom: 2px solid #EDE6FB; vertical-align: top; min-width: 150px; }
+.texto :global(td:first-child) { font-weight: 700; color: #8338EB; min-width: 120px; }
+.texto :global(.referencias) { font-size: 16px; line-height: 1.55; color: #3A3550; }
+.texto :global(.referencias p) { margin: 0 0 1em; }
+.texto :global(.referencias a) { font-weight: 500; word-break: break-word; }
+
+.fim { max-width: calc(720px + 2 * clamp(20px, 5vw, 64px)); margin: 0 auto; padding-bottom: 96px; }
+.autor { display: flex; gap: 24px; align-items: flex-start; padding: 32px 0; border-top: 2px solid #EDE6FB; border-bottom: 2px solid #EDE6FB; margin-bottom: 56px; }
+.autor img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.autor p { margin: 0; font-size: 18px; }
+.autor .nome { font-weight: 800; color: #8338EB; margin-bottom: 6px; }
+.convite { background: #FF006E; color: #FFFFFF; border-radius: 24px; padding: 48px 32px; text-align: center; }
+.convite h2 { font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 28px; text-wrap: balance; }
+.botao { display: inline-block; background: #FFFFFF; color: #FF006E; padding: 18px 34px; border-radius: 999px; font-weight: 800; font-size: 18px; text-decoration: none; }
+.botao:hover { opacity: 0.9; }
+@media (max-width: 560px) { .autor { flex-direction: column; } }
+</style>

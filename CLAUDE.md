@@ -27,6 +27,13 @@ Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os se
 - O sitemap (`/sitemap-index.xml`) sai sozinho do `@astrojs/sitemap` (a 404 fica de fora). `public/robots.txt` libera buscadores e assistentes de IA. `public/llms.txt` resume a Seja para IAs: atualizar quando mudar serviço, página ou posicionamento, usando só o texto que já está no site.
 - Página nova: título e descrição próprios, canonical, og e um WebPage em JSON-LD, seguindo /ciencia/ como modelo.
 
+## Blog
+
+- Cada post é um arquivo Markdown em `src/content/blog/<endereco>.md` e sai em sejacreator.com.br/blog/<endereco>/. Modelo com todos os campos em `src/content/blog/_modelo.md` (arquivos que começam com `_` não são publicados). Imagens do post em `src/content/blog/imagens/` (o Astro converte para WebP e gera tamanhos).
+- Campos: `titulo`, `descricao` (70 a 160 caracteres), `data`, `autor` (`filipe-severo` ou `igor-da-silva`, bios em `src/data/autores.ts`), e opcionais `capa` (16:9) + `capaAlt`, `atualizado`, `rascunho`. O build falha se faltar campo obrigatório.
+- Lista em /blog/, feed em /blog/rss.xml, sitemap e dados estruturados (Blog, BlogPosting, BreadcrumbList) saem sozinhos. Layout em `src/layouts/Base.astro` com `Topo` e `Rodape` de `src/components/`.
+- Texto do post segue as regras de tom de voz deste arquivo. Todo número precisa de fonte logo abaixo (`<small>Fonte: ...</small>`) e estar registrado em `notas/dados-com-fonte.md`.
+
 ## Como trabalhar
 
 - Antes de mexer em qualquer página, siga a skill `.claude/skills/seja-lp-design/SKILL.md` (identidade visual, regras de layout, tom de voz e checagem com screenshots). Para revisão técnica, use `.claude/skills/web-design-guidelines/SKILL.md`.
