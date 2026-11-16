@@ -6,6 +6,8 @@ descricao: "Vídeo curto, podcast, carrossel ou newsletter? Veja como escolher o
 data: 2026-11-16
 autor: filipe-severo
 temas: ["divulgação científica", "redes sociais", "formatos de conteúdo"]
+capa: ./imagens/formatos-capa.webp
+capaAlt: "Esquema com os seis formatos de divulgação científica e as plataformas onde cada um aparece"
 ---
 
 A reunião do grupo termina com uma decisão: "vamos abrir um Instagram". Alguém cria o perfil, publica três posts sobre o último artigo e, quatro meses depois, a conta está parada. Faltou combinar antes com quem o grupo queria falar, o que essas pessoas deveriam levar da conversa e quantas horas por semana cada um tinha para isso.
@@ -54,6 +56,8 @@ Vale lembrar que o alcance nas plataformas é muito concentrado. No YouTube, 85%
 ## Os formatos se alimentam
 
 Um mesmo conteúdo pode circular em vários formatos, cada um com um papel. Uma live vira vídeo longo, o vídeo longo rende cortes curtos, os cortes levam a um texto mais longo, e o texto leva ao artigo. Os formatos curtos chamam a atenção, os longos aprofundam, e o artigo recebe quem quer saber tudo.
+
+![Trilha entre formatos: live, vídeo longo, cortes curtos, texto longo e artigo científico](./imagens/formatos-trilha.webp)
 
 O [Café História](https://cafehistoria.com.br/about), portal do historiador Bruno Leal (UnB), no ar desde 2008, mostra como um formato bem escolhido se sustenta. O site declara para quem escreve, adultos que não são historiadores e se interessam por política e sociedade, e mantém uma rotina de um texto original por semana. O próprio portal descreve o desafio de fazer conteúdo acessível "com rigor acadêmico" (CAFÉ HISTÓRIA, 2026).
 
