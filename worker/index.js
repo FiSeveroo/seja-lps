@@ -1,15 +1,13 @@
 // Worker do site da Seja no Cloudflare.
-// Leva os endereços antigos (subdomínios e páginas da Wix) para os novos
+// Leva o www e os endereços antigos das páginas da Wix para os novos
 // com redirecionamento permanente (301) e entrega o resto direto de dist/.
 
 const DOMINIO = 'sejacreator.com.br';
 
-// Subdomínio antigo → pasta no domínio principal
+// Outro nome do domínio → pasta no domínio principal.
+// O site não usa subdomínios: só o www, que leva ao endereço sem www.
 const SUBDOMINIOS = {
   'www.sejacreator.com.br': '/',
-  'inicio.sejacreator.com.br': '/',
-  'ciencia.sejacreator.com.br': '/ciencia/',
-  'aula.sejacreator.com.br': '/aula/',
 };
 
 // Página antiga → página nova (sem barra no fim, em minúsculas)

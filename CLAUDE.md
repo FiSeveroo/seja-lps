@@ -14,11 +14,11 @@ Tudo fica no domínio principal:
 
 O site é feito em Astro (gera HTML estático, sem JavaScript extra). Os arquivos de cada página (fontes Futuru, logos, símbolos, bg1.png, fotos, favicon) ficam em `public/` (home: `public/assets/`; demais: `public/<nome>/assets/`). CSS e scripts das páginas usam `<style is:inline>` e `<script is:inline>`, para o Astro não reescrever nada.
 
-Hospedagem e DNS no Cloudflare (plano grátis): um Worker (`wrangler.jsonc`) roda `npm run build` e publica `dist/` a cada push na `main`. O `worker/index.js` faz os redirecionamentos permanentes: os subdomínios antigos (www, inicio, ciencia, aula) levam para o domínio principal e as páginas antigas da Wix (/blank, /sejapesquisa) e /home levam para as novas. Endereço antigo que mudar entra lá, para não quebrar links nem perder posição no Google.
+Hospedagem e DNS no Cloudflare (plano grátis): um Worker (`wrangler.jsonc`) roda `npm run build` e publica `dist/` a cada push na `main`. O `worker/index.js` faz os redirecionamentos permanentes: www leva ao endereço sem www, e as páginas antigas da Wix (/blank, /sejapesquisa) e /home levam para as novas. Endereço que mudar entra lá. O site não usa subdomínios: toda página nova é uma pasta do domínio principal (os antigos ciencia., aula. e inicio. foram desligados).
 
 Página nova: criar `src/pages/<nome>/index.astro` e `public/<nome>/assets/`. Ela sai em sejacreator.com.br/<nome>/ sem configuração extra. Só o que sai em `dist/` (páginas de `src/pages/` e arquivos de `public/`) é publicado.
 
-Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os servidores DNS do Cloudflare. Não há e-mail no domínio (nenhum registro MX).
+Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os servidores DNS do Cloudflare. No Worker seja-creator estão ligados só sejacreator.com.br e www (Production); o endereço workers.dev fica desligado. Não há e-mail no domínio (nenhum registro MX).
 
 ## Como trabalhar
 
