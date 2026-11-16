@@ -5,3 +5,4 @@ shots/
 node_modules/
 .astro/
 dist/
+.wrangler/

@@ -1,0 +1,19 @@
+// Configuração do Cloudflare (Workers com arquivos estáticos).
+// O Cloudflare roda `npm run build` e publica dist/ com o worker de
+// redirecionamentos em worker/index.js.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "seja-creator",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "build": { "command": "npm run build" },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "workers_dev": true,
+  "preview_urls": true
+}

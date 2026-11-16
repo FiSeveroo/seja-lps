@@ -60,7 +60,7 @@ Botões de WhatsApp: `https://wa.me/5551991006411?text=` + mensagem pré-escrita
 
 ## 6. Checagem visual (antes de entregar)
 
-Playwright e Chromium costumam estar pré-instalados no ambiente (não rodar `playwright install`). Gerar o site com `npm run build`, servir `dist/` (ex.: `npx serve dist`) e tirar screenshots de página inteira em 1440, 768 e 390px, passando a URL da página (ex.: http://localhost:3000/ciencia/):
+Playwright e Chromium costumam estar pré-instalados no ambiente (não rodar `playwright install`). Gerar o site com `npm run build`, servir `dist/` (ex.: `npx serve dist`) e tirar screenshots de página inteira em 1440, 768 e 390px, passando a URL da página (ex.: http://localhost:3000/ciencia/). Para testar também os redirecionamentos, use `npx wrangler dev` no lugar do serve:
 
 ```js
 const { chromium } = require('playwright');
@@ -80,6 +80,6 @@ Abrir cada screenshot com Read e conferir: títulos com até 2 linhas, nenhum ov
 
 ## 7. Publicação
 
-- O site é Astro: página em `src/pages/<nome>/index.astro`, arquivos em `public/<nome>/`. Push na `main` publica pelo Netlify (projeto ciencialpseja, ver CLAUDE.md).
-- Subdomínio via DNS da Wix (domínio sejacreator.com.br): primeiro um TXT `subdomain-owner-verification` com o hash do Netlify, depois o CNAME `<sub>` → `<site>.netlify.app`. Cadastrar no Netlify o domínio com .com.br.
-- Mudanças vão por PR: o Netlify gera a prévia `deploy-preview-<N>--ciencialpseja.netlify.app` antes do merge.
+- O site é Astro: página em `src/pages/<nome>/index.astro`, arquivos em `public/<nome>/`. Ela sai em sejacreator.com.br/<nome>/. Push na `main` publica pelo Cloudflare (ver CLAUDE.md).
+- Páginas novas ficam no domínio principal, sem subdomínio. Endereço que mudar ganha redirecionamento em `worker/index.js`.
+- Mudanças vão por PR; o Cloudflare gera uma prévia da branch antes do merge.

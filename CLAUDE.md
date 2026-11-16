@@ -4,20 +4,26 @@ Repositório das páginas estáticas da Seja Creator, empresa especializada em d
 
 ## Estrutura
 
-| Pasta | Endereço |
+Tudo fica no domínio principal:
+
+| Arquivo | Endereço |
 |---|---|
-| `src/pages/ciencia/` | https://ciencia.sejacreator.com.br |
-| `src/pages/aula/` | https://aula.sejacreator.com.br |
-| `src/pages/home/` | https://inicio.sejacreator.com.br (home nova; sejacreator.com.br segue na Wix por enquanto) |
+| `src/pages/index.astro` | https://sejacreator.com.br (home) |
+| `src/pages/ciencia/index.astro` | https://sejacreator.com.br/ciencia/ |
+| `src/pages/aula/index.astro` | https://sejacreator.com.br/aula/ |
 
-O site é feito em Astro (gera HTML estático, sem JavaScript extra). Cada página é `src/pages/<nome>/index.astro`, e seus arquivos (fontes Futuru, logos, símbolos, bg1.png, fotos, favicon) ficam em `public/<nome>/`. CSS e scripts das páginas usam `<style is:inline>` e `<script is:inline>`, para o Astro não reescrever nada. Um único projeto no Netlify (ciencialpseja) roda `npm run build` e publica a pasta `dist/` (ver `netlify.toml`) a cada push na `main`. O arquivo `public/_redirects` liga cada subdomínio à sua pasta.
+O site é feito em Astro (gera HTML estático, sem JavaScript extra). Os arquivos de cada página (fontes Futuru, logos, símbolos, bg1.png, fotos, favicon) ficam em `public/` (home: `public/assets/`; demais: `public/<nome>/assets/`). CSS e scripts das páginas usam `<style is:inline>` e `<script is:inline>`, para o Astro não reescrever nada.
 
-Página nova: criar `src/pages/<nome>/index.astro` e `public/<nome>/assets/`, adicionar a linha `https://<nome>.sejacreator.com.br/*  /<nome>/:splat  200!` no `_redirects` (antes da regra de `/`), adicionar `<nome>.sejacreator.com.br` como domínio do projeto no Netlify e criar na Wix o CNAME `<nome>` → `ciencialpseja.netlify.app`. Só o que sai em `dist/` (páginas de `src/pages/` e arquivos de `public/`) é publicado.
+Hospedagem e DNS no Cloudflare (plano grátis): um Worker (`wrangler.jsonc`) roda `npm run build` e publica `dist/` a cada push na `main`. O `worker/index.js` faz os redirecionamentos permanentes: os subdomínios antigos (www, inicio, ciencia, aula) levam para o domínio principal e as páginas antigas da Wix (/blank, /sejapesquisa) e /home levam para as novas. Endereço antigo que mudar entra lá, para não quebrar links nem perder posição no Google.
+
+Página nova: criar `src/pages/<nome>/index.astro` e `public/<nome>/assets/`. Ela sai em sejacreator.com.br/<nome>/ sem configuração extra. Só o que sai em `dist/` (páginas de `src/pages/` e arquivos de `public/`) é publicado.
+
+Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os servidores DNS do Cloudflare. Não há e-mail no domínio (nenhum registro MX).
 
 ## Como trabalhar
 
 - Antes de mexer em qualquer página, siga a skill `.claude/skills/seja-lp-design/SKILL.md` (identidade visual, regras de layout, tom de voz e checagem com screenshots). Para revisão técnica, use `.claude/skills/web-design-guidelines/SKILL.md`.
-- Prévia: `npm install` uma vez, depois `npm run dev` e abra http://localhost:4321/ciencia/ (ou /home/, /aula/). Antes de enviar, `npm run build` precisa terminar sem erro. Node 22.23.4 ou mais novo (o Netlify usa o 24, ver `.nvmrc`).
+- Prévia: `npm install` uma vez, depois `npm run dev` e abra http://localhost:4321/ (ou /ciencia/, /aula/). Antes de enviar, `npm run build` precisa terminar sem erro. Node 22.23.4 ou mais novo (o Cloudflare usa o 24, ver `.nvmrc`). Para testar os redirecionamentos como no Cloudflare: `npm run build` e `npx wrangler dev`.
 - No `.astro`, chaves `{ }` fora de `<style>` e `<script>` viram código: num texto que precise delas, escreva `{'{'}` e `{'}'}`.
 - Ajustes visuais podem ser explorados no Design do Claude (canvas). Ele é rascunho: o que for aprovado lá é passado para o HTML deste repositório, que é a versão oficial.
 
