@@ -1,0 +1,84 @@
+---
+// Lista de posts do blog: /blog/
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import { postsPublicados, dataPorExtenso, dataISO } from '../../data/blog';
+import { autores } from '../../data/autores';
+
+const posts = await postsPublicados();
+const titulo = 'Blog · Seja Creator';
+const descricao = 'Textos da Seja Creator sobre divulgação científica nas plataformas digitais, para pesquisadores, grupos de pesquisa e programas de pós-graduação.';
+
+const dados = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    '@id': 'https://sejacreator.com.br/blog/#blog',
+    name: 'Blog da Seja Creator',
+    description: descricao,
+    url: 'https://sejacreator.com.br/blog/',
+    inLanguage: 'pt-BR',
+    publisher: { '@id': 'https://sejacreator.com.br/#organizacao' },
+    blogPost: posts.map((p) => ({
+      '@type': 'BlogPosting',
+      headline: p.data.titulo,
+      url: `https://sejacreator.com.br/blog/${p.id}/`,
+      datePublished: dataISO(p.data.data),
+    })),
+  },
+];
+---
+<Base titulo={titulo} descricao={descricao} caminho="/blog/" dados={dados}>
+  <section class="capa margem">
+    <img class="simbolo-bg" src="/assets/Simbolo_SEJA_BRANCO.png" alt="" aria-hidden="true" width="800" height="838">
+    <div class="conteudo">
+      <h1>Blog da Seja</h1>
+      <p>Divulgação científica nas plataformas digitais, escrita por quem faz isso todo dia.</p>
+    </div>
+  </section>
+
+  <section class="lista margem">
+    {posts.length === 0 && <p class="vazio">Os primeiros textos estão chegando.</p>}
+    {posts.map((post) => {
+      const autor = autores[post.data.autor];
+      return (
+        <article class="item">
+          <div class="texto">
+            <p class="meta"><time datetime={dataISO(post.data.data)}>{dataPorExtenso(post.data.data)}</time> · {autor.nome}</p>
+            <h2><a href={`/blog/${post.id}/`}>{post.data.titulo}</a></h2>
+            <p class="resumo">{post.data.descricao}</p>
+            <a class="ler" href={`/blog/${post.id}/`} aria-hidden="true" tabindex="-1">Ler o texto →</a>
+          </div>
+          {post.data.capa && (
+            <a class="miniatura" href={`/blog/${post.id}/`} aria-hidden="true" tabindex="-1">
+              <Image src={post.data.capa} alt="" widths={[360, 720]} sizes="(max-width: 720px) 100vw, 360px" />
+            </a>
+          )}
+        </article>
+      );
+    })}
+  </section>
+</Base>
+
+<style>
+.capa { position: relative; overflow: hidden; background: #8338EB; color: #FFFFFF; padding-top: 88px; padding-bottom: 96px; }
+.simbolo-bg { position: absolute; width: 640px; max-width: none; right: -200px; bottom: -280px; opacity: 0.07; pointer-events: none; }
+.conteudo { position: relative; max-width: 1100px; margin: 0 auto; }
+h1 { font-size: clamp(48px, 8vw, 104px); font-weight: 800; letter-spacing: -0.035em; line-height: 1; margin: 0 0 20px; }
+.capa p { font-size: clamp(20px, 2.4vw, 26px); font-weight: 600; line-height: 1.35; margin: 0; max-width: 720px; text-wrap: balance; }
+.lista { max-width: calc(1100px + 2 * clamp(20px, 5vw, 64px)); margin: 0 auto; padding-top: 32px; padding-bottom: 104px; }
+.vazio { font-size: 20px; padding: 48px 0; margin: 0; }
+.item { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 48px; align-items: center; padding: 48px 0; border-bottom: 2px solid #EDE6FB; }
+.item:not(:has(.miniatura)) { grid-template-columns: minmax(0, 1fr); }
+.meta { font-size: 16px; color: #5B5670; margin: 0 0 10px; }
+h2 { font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.12; margin: 0 0 14px; color: #8338EB; text-wrap: balance; }
+h2 a { text-decoration: none; }
+h2 a:hover { text-decoration: underline; text-underline-offset: 6px; }
+.resumo { font-size: 19px; margin: 0 0 16px; max-width: 680px; }
+.ler { font-weight: 700; color: #8338EB; text-underline-offset: 4px; }
+.miniatura img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 20px; display: block; }
+@media (max-width: 720px) {
+  .item { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .miniatura { order: -1; }
+}
+</style>

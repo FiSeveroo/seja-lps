@@ -1,0 +1,77 @@
+---
+// Layout das páginas do blog: cabeçalho, rodapé, fontes e SEO.
+import Topo from '../components/Topo.astro';
+import Rodape from '../components/Rodape.astro';
+
+interface Props {
+  titulo: string;
+  descricao: string;
+  caminho: string; // ex.: /blog/meu-post/
+  imagem?: string; // URL absoluta da imagem de compartilhamento
+  imagemAlt?: string;
+  tipo?: 'website' | 'article';
+  dados?: object[]; // JSON-LD extra
+  semIndice?: boolean;
+}
+
+const {
+  titulo,
+  descricao,
+  caminho,
+  imagem = 'https://sejacreator.com.br/assets/og-seja.png',
+  imagemAlt = 'Seja Creator. Plataformas a favor da ciência. Especialistas em divulgação científica digital.',
+  tipo = 'website',
+  dados = [],
+  semIndice = false,
+} = Astro.props;
+
+const url = new URL(caminho, 'https://sejacreator.com.br').toString();
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{titulo}</title>
+<meta name="description" content={descricao}>
+<meta name="theme-color" content="#8338EB">
+{semIndice && <meta name="robots" content="noindex">}
+<link rel="canonical" href={url}>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="Blog da Seja Creator" href="/blog/rss.xml">
+<meta property="og:type" content={tipo}>
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Seja Creator">
+<meta property="og:title" content={titulo}>
+<meta property="og:description" content={descricao}>
+<meta property="og:url" content={url}>
+<meta property="og:image" content={imagem}>
+<meta property="og:image:alt" content={imagemAlt}>
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/Futuru-Medium.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="/assets/fonts/Futuru-Extrabold.otf" as="font" type="font/otf" crossorigin>
+{dados.map((d) => <script type="application/ld+json" set:html={JSON.stringify(d)} />)}
+<style is:global>
+@font-face{font-family:'Futuru';src:url('/assets/fonts/Futuru-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'Futuru';src:url('/assets/fonts/Futuru-Semibold.otf') format('opentype');font-weight:600;font-display:swap}
+@font-face{font-family:'Futuru';src:url('/assets/fonts/Futuru-Bold.otf') format('opentype');font-weight:700;font-display:swap}
+@font-face{font-family:'Futuru';src:url('/assets/fonts/Futuru-Extrabold.otf') format('opentype');font-weight:800;font-display:swap}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: 'Futuru', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 500; color: #1A1A2E; background: #FFFFFF; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid #3A86FE; outline-offset: 3px; border-radius: 4px; }
+.margem { padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); }
+</style>
+</head>
+<body>
+<Topo />
+<main>
+  <slot />
+</main>
+<Rodape />
+</body>
+</html>

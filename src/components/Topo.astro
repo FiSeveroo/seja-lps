@@ -1,0 +1,26 @@
+---
+// Cabeçalho das páginas do blog, no mesmo desenho do topo da home.
+const whatsapp =
+  'https://wa.me/5551991006411?text=' +
+  encodeURIComponent('Oi, Filipe! Li o blog da Seja e quero falar com um especialista sobre a divulgação da minha pesquisa.');
+---
+<header class="topo margem">
+  <a href="/" aria-label="Seja Creator, início" class="simbolo"><img src="/assets/Simbolo_SEJA_BRANCO.png" alt="" width="36" height="38"></a>
+  <nav aria-label="Páginas" class="links">
+    <a href="/">Início</a>
+    <a href="/ciencia/">Divulgação científica</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+  <a class="cta" href={whatsapp} target="_blank" rel="noopener">Falar com especialista</a>
+</header>
+
+<style>
+.topo { background: #8338EB; color: #FFFFFF; padding-top: 14px; padding-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.simbolo { display: flex; }
+.simbolo img { width: 36px; height: auto; display: block; }
+.links { display: flex; gap: 32px; font-size: 17px; font-weight: 600; }
+.links a { text-decoration: none; }
+.links a:hover { text-decoration: underline; text-underline-offset: 6px; }
+.cta { background: #FFFFFF; color: #8338EB; padding: 10px 22px; border-radius: 999px; font-weight: 800; font-size: 15px; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+@media (max-width: 860px) { .links { display: none; } }
+</style>
