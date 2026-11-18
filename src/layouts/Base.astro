@@ -50,14 +50,14 @@ const url = new URL(caminho, 'https://sejacreator.com.br').toString();
 <meta property="og:image" content={imagem}>
 <meta property="og:image:alt" content={imagemAlt}>
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" href="/assets/fonts/Futuru-Medium.otf" as="font" type="font/otf" crossorigin>
-<link rel="preload" href="/assets/fonts/Futuru-Extrabold.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="/fonts/Futuru-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Futuru-Extrabold.woff2" as="font" type="font/woff2" crossorigin>
 {dados.map((d) => <script type="application/ld+json" set:html={JSON.stringify(d)} />)}
 <style is:global>
-@font-face{font-family:'Futuru';src:url('/assets/fonts/Futuru-Medium.otf') format('opentype');font-weight:500;font-display:swap}
-@font-face{font-family:'Futuru';src:url('/assets/fonts/Futuru-Semibold.otf') format('opentype');font-weight:600;font-display:swap}
-@font-face{font-family:'Futuru';src:url('/assets/fonts/Futuru-Bold.otf') format('opentype');font-weight:700;font-display:swap}
-@font-face{font-family:'Futuru';src:url('/assets/fonts/Futuru-Extrabold.otf') format('opentype');font-weight:800;font-display:swap}
+@font-face{font-family:'Futuru';src:url('/fonts/Futuru-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Futuru';src:url('/fonts/Futuru-Semibold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Futuru';src:url('/fonts/Futuru-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Futuru';src:url('/fonts/Futuru-Extrabold.woff2') format('woff2');font-weight:800;font-display:swap}
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; font-family: 'Futuru', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 500; color: #1A1A2E; background: #FFFFFF; line-height: 1.6; -webkit-font-smoothing: antialiased; }
