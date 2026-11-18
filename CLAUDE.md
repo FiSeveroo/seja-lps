@@ -12,11 +12,11 @@ Tudo fica no domínio principal:
 | `src/pages/ciencia/index.astro` | https://sejacreator.com.br/ciencia/ |
 | `src/pages/aula/index.astro` | https://sejacreator.com.br/aula/ |
 
-O site é feito em Astro (gera HTML estático, sem JavaScript extra). As fontes Futuru ficam numa pasta só, `public/fonts/` (WOFF2, pesos 400 a 900, cache de um ano via `public/_headers`); os originais .otf de todos os pesos estão em `marca/fontes/` (fora do site). Os demais arquivos de cada página (logos, símbolos, bg1.png, fotos, favicon) ficam em `public/` (home: `public/assets/`; demais: `public/<nome>/assets/`). CSS e scripts das páginas usam `<style is:inline>` e `<script is:inline>`, para o Astro não reescrever nada.
+O site é feito em Astro (gera HTML estático, sem JavaScript extra). As fontes Futuru ficam numa pasta só, `public/fonts/` (WOFF2, pesos 400 a 900, cache de um ano via `public/_headers`); os originais .otf de todos os pesos estão em `marca/fontes/` (fora do site). Logos, símbolos, bg1, fotos e ícones também ficam numa pasta só, `public/assets/`, usada por todas as páginas com caminho absoluto (`/assets/...`). Imagens em WebP no tamanho em que aparecem (logos, símbolos e bg1 sem perda; fotos em qualidade 80), com cache de 30 dias via `public/_headers`; só `og-seja.png`, `favicon-32.png`, `apple-touch-icon.png` e o `Logotipo_SEJA_ROXO.png` dos dados estruturados seguem em PNG. Os originais em alta ficam em `marca/imagens/` (fora do site). Trocou o conteúdo de uma imagem? Dê um nome novo ao arquivo, para ninguém ficar com a versão antiga guardada. CSS e scripts das páginas usam `<style is:inline>` e `<script is:inline>`, para o Astro não reescrever nada.
 
 Hospedagem e DNS no Cloudflare (plano grátis): um Worker (`wrangler.jsonc`) roda `npm run build` e publica `dist/` a cada push na `main`. O `worker/index.js` faz os redirecionamentos permanentes: www leva ao endereço sem www, e as páginas antigas da Wix (/blank, /sejapesquisa) e /home levam para as novas. Endereço que mudar entra lá. O site não usa subdomínios: toda página nova é uma pasta do domínio principal (os antigos ciencia., aula. e inicio. foram desligados).
 
-Página nova: criar `src/pages/<nome>/index.astro` e `public/<nome>/assets/`. Ela sai em sejacreator.com.br/<nome>/ sem configuração extra. Só o que sai em `dist/` (páginas de `src/pages/` e arquivos de `public/`) é publicado.
+Página nova: criar `src/pages/<nome>/index.astro`, usando as imagens de `/assets/` (imagem nova entra lá, em WebP). Ela sai em sejacreator.com.br/<nome>/ sem configuração extra. Só o que sai em `dist/` (páginas de `src/pages/` e arquivos de `public/`) é publicado.
 
 Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os servidores DNS do Cloudflare. No Worker seja-creator estão ligados só sejacreator.com.br e www (Production); o endereço workers.dev de produção fica desligado. Cada PR ganha uma prévia em `*-seja-creator.sejacreatordrive.workers.dev`, marcada com noindex para não entrar no Google. Não há e-mail no domínio (nenhum registro MX).
 
@@ -51,7 +51,7 @@ Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os se
 ## Regras que não podem ser esquecidas
 
 - Cores: roxo #8338EB, rosa #FF006E, azul #3A86FE, laranja #FB5507, amarelo #FFBE0C, texto #1A1A2E. Fonte única Futuru, corpo em 500.
-- bg1.png só no hero; resto em cores sólidas; nada de degradê em CSS, sombras, glass ou textura repetida do símbolo. Outro degradê (como os do site sejacreator.com.br) só quando o Filipe pedir, e só no elemento que ele indicar.
+- bg1 só no hero; resto em cores sólidas; nada de degradê em CSS, sombras, glass ou textura repetida do símbolo. Outro degradê (como os do site sejacreator.com.br) só quando o Filipe pedir, e só no elemento que ele indicar.
 - Texto: sem travessão (—), sem "não é X, é Y", sem jargão de startup (escalar, clientes, leads, cases de sucesso, mindset, conversão). Usar "caminhar ao lado", "parceiros", "Histórias que ajudamos a contar".
 - Nunca inventar números, depoimentos ou parceiros. Todo dado com fonte, na redação exata de `notas/dados-com-fonte.md`; dado novo só entra depois de conferido no documento original e registrado lá.
 - WhatsApp: `https://wa.me/5551991006411?text=` + mensagem URL-encoded e contextual.

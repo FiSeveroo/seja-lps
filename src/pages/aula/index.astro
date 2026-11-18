@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plataformas digitais a seu favor · Minicurso · Filipe Severo</title>
 <link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="description" content="Página de apoio ao minicurso 'Plataformas digitais a seu favor: teoria e prática para a divulgação científica', ministrado por Filipe Severo no VII Semidiscom (PPGCOM/UFRGS, 2026).">
 <meta name="theme-color" content="#8338EB">
 <meta property="og:type" content="website">
@@ -85,7 +85,9 @@
   section h2 { font-size: 30px; font-weight: 700; color: var(--roxo); margin-bottom: 16px; }
   p { font-size: 18px; line-height: 1.65; margin-bottom: 14px; text-wrap: pretty; }
   .section-sub { color: var(--apoio); margin-bottom: 28px; }
-  .simbolo-bg { position: absolute; z-index: 1; pointer-events: none; opacity: .07; width: 520px; }
+  /* Logos e símbolos são os mesmos recortados das outras páginas; o padding devolve a margem
+     transparente das versões quadradas que esta página usava, para o desenho ficar igual. */
+  .simbolo-bg { position: absolute; z-index: 1; pointer-events: none; opacity: .07; width: 520px; padding: 66.14px 75px 66.26px; }
 
   .cta {
     display: inline-block;
@@ -107,12 +109,12 @@
 
   /* HERO */
   .hero {
-    background: #5a3ee0 url('assets/bg1.png') center/cover no-repeat;
+    background: #5a3ee0 url('/assets/bg1.webp') center/cover no-repeat;
     color: #fff;
     padding: 48px 0 64px;
   }
   .hero .simbolo-bg { right: -200px; bottom: -220px; }
-  .hero-logo { width: 150px; margin-bottom: 40px; }
+  .hero-logo { width: 150px; padding: 41.94px 6.98px; margin-bottom: 40px; }
   .hero-evento { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
   .hero h1 { font-size: 40px; font-weight: 700; margin-bottom: 14px; }
   .hero-sub { font-size: 21px; margin-bottom: 32px; }
@@ -146,7 +148,7 @@
   .projetos-lista { list-style: none; }
   .projetos-lista li + li { border-top: 2px solid var(--linha); }
   .projeto-item { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; padding: 20px 0; text-decoration: none; }
-  .projeto-item img { width: 34px; margin-top: 4px; }
+  .projeto-item img { width: 34px; padding: 4.32px 4.9px 4.33px; margin-top: 4px; }
   .projeto-name { font-weight: 700; font-size: 20px; color: var(--roxo); }
   .projeto-item:hover .projeto-name { text-decoration: underline; text-underline-offset: 3px; }
   .projeto-desc { font-size: 17px; color: var(--apoio); line-height: 1.45; }
@@ -169,7 +171,7 @@
   .proj-card { border-radius: 20px; padding: 36px 28px; margin-bottom: 20px; color: #fff; position: relative; overflow: hidden; }
   .proj-card.seja { background: var(--roxo); }
   .proj-card.classe { background: var(--texto); }
-  .proj-card .simbolo-bg { width: 260px; right: -60px; bottom: -70px; opacity: .15; }
+  .proj-card .simbolo-bg { width: 260px; padding: 33.07px 37.5px 33.13px; right: -60px; bottom: -70px; opacity: .15; }
   .proj-card-frente { font-size: 17px; font-weight: 600; margin-bottom: 8px; position: relative; z-index: 2; }
   .proj-card.seja .proj-card-frente { color: var(--lilas); }
   .proj-card.classe .proj-card-frente { color: var(--amarelo); }
@@ -198,7 +200,7 @@
 
   /* RODAPÉ */
   footer { background: var(--rodape); color: var(--rodape-texto); padding: 48px 20px; text-align: center; font-size: 16px; }
-  footer img { width: 130px; margin: 0 auto 18px; }
+  footer img { width: 130px; padding: 36.35px 6.05px; margin: 0 auto 18px; }
   footer p { font-size: 16px; margin: 0 0 6px; }
   footer a { color: #fff; font-weight: 600; text-underline-offset: 3px; }
 
@@ -212,7 +214,7 @@
     section h2 { font-size: 40px; }
     .hero { padding: 64px 0 96px; }
     .hero { text-align: center; }
-    .hero-logo { width: 190px; margin: 0 auto 56px; }
+    .hero-logo { width: 190px; padding: 53.12px 8.85px; margin: 0 auto 56px; }
     .hero-meta { justify-items: center; }
     .hero h1 { font-size: 60px; }
     .hero-sub { font-size: 23px; }
@@ -227,9 +229,9 @@
 <main>
 <!-- HERO -->
 <section class="hero">
-  <img class="simbolo-bg" src="assets/Simbolo_SEJA_BRANCO.png" alt="" aria-hidden="true" width="800" height="838">
+  <img class="simbolo-bg" src="/assets/Simbolo_SEJA_BRANCO.webp" alt="" aria-hidden="true" width="800" height="838">
   <div class="container">
-    <img class="hero-logo" src="assets/Logotipo_SEJA_BRANCO.png" alt="Seja Creator" width="1000" height="486" fetchpriority="high">
+    <img class="hero-logo" src="/assets/Logotipo_SEJA_BRANCO.webp" alt="Seja Creator" width="1000" height="486" fetchpriority="high">
     <p class="hero-evento">Minicurso no VII Semidiscom · PPGCOM/UFRGS</p>
     <h1>Plataformas digitais a seu favor</h1>
     <p class="hero-sub">Teoria e prática para a divulgação científica.</p>
@@ -299,23 +301,23 @@
     <p class="section-sub">Iniciativas citadas na aula que levam pesquisa pra fora da academia.</p>
     <ul class="projetos-lista">
       <li><a class="projeto-item" href="https://www.cafehistoria.com.br/" target="_blank" rel="noopener">
-        <img src="assets/Simbolo_SEJA_ROXO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <img src="/assets/Simbolo_SEJA_ROXO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
         <span><span class="projeto-name">Café História</span><br><span class="projeto-desc">Bruno Leal (UnB) · divulgação em história</span></span>
       </a></li>
       <li><a class="projeto-item" href="https://cafecomsociologia.com/" target="_blank" rel="noopener">
-        <img src="assets/Simbolo_SEJA_ROSA.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <img src="/assets/Simbolo_SEJA_ROSA.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
         <span><span class="projeto-name">Café com Sociologia</span><br><span class="projeto-desc">Cristiano Bodart (UFAL) · divulgação em sociologia</span></span>
       </a></li>
       <li><a class="projeto-item" href="https://digilabour.com.br/" target="_blank" rel="noopener">
-        <img src="assets/Simbolo_SEJA_LARANJA.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <img src="/assets/Simbolo_SEJA_LARANJA.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
         <span><span class="projeto-name">DigiLabour</span><br><span class="projeto-desc">Rafael Grohmann · trabalho em plataformas digitais</span></span>
       </a></li>
       <li><a class="projeto-item" href="https://www.ufrgs.br/frontdaciencia/" target="_blank" rel="noopener">
-        <img src="assets/Simbolo_SEJA_ROXO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <img src="/assets/Simbolo_SEJA_ROXO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
         <span><span class="projeto-name">Fronteiras da Ciência</span><br><span class="projeto-desc">Podcast · UFRGS · divulgação científica em áudio</span></span>
       </a></li>
       <li><a class="projeto-item" href="https://www.nosdadocencia.com/" target="_blank" rel="noopener">
-        <img src="assets/Simbolo_SEJA_ROSA.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <img src="/assets/Simbolo_SEJA_ROSA.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
         <span><span class="projeto-name">Nós da Docência</span><br><span class="projeto-desc">Maria Cláudia Dal'Igna · ecossistema de pesquisa e formação docente</span></span>
       </a></li>
     </ul>
@@ -326,7 +328,7 @@
 <section class="fi">
   <div class="container">
     <div class="fi-perfil">
-      <img class="fi-foto" src="assets/filipe-severo.jpg" alt="Filipe Severo" width="1000" height="1000" loading="lazy">
+      <img class="fi-foto" src="/assets/filipe-severo.webp" alt="Filipe Severo" width="1000" height="1000" loading="lazy">
       <div>
         <h2 class="fi-nome">Fale com o Filipe</h2>
         <p class="fi-cargo">Filipe Severo · creator pesquisador</p>
@@ -361,7 +363,7 @@
     <p class="section-sub">Dois projetos, duas frentes: um trabalha junto com quem faz ciência, o outro pesquisa as plataformas por dentro.</p>
 
     <div class="proj-card seja">
-      <img class="simbolo-bg" src="assets/Simbolo_SEJA_BRANCO.png" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+      <img class="simbolo-bg" src="/assets/Simbolo_SEJA_BRANCO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
       <p class="proj-card-frente">Divulgação científica</p>
       <h3>Seja Creator</h3>
       <p>A Seja caminha ao lado de pesquisadores, grupos de pesquisa, programas de pós-graduação e projetos de pesquisa que querem levar a ciência pra fora da academia. Cuidamos da estratégia, da criação e da presença digital, sem receita pronta.</p>
@@ -385,7 +387,7 @@
     <h2>Quer levar essa formação para o seu grupo?</h2>
     <p>Formações sobre divulgação científica nas plataformas para grupos de pesquisa, programas de pós-graduação, escolas e faculdades. Teoria crítica e prática de criação de conteúdo.</p>
     <figure>
-      <img src="assets/semidiscom.jpg" alt="Filipe com participantes do minicurso no VII Semidiscom" width="980" height="515" loading="lazy">
+      <img src="/assets/semidiscom.webp" alt="Filipe com participantes do minicurso no VII Semidiscom" width="980" height="515" loading="lazy">
       <figcaption>Minicurso no VII Semidiscom, PPGCOM/UFRGS. Foto: Laíssa Sardiglia</figcaption>
     </figure>
     <a class="cta cta-escuro" href="https://wa.me/5551991006411?text=Oi%2C%20Filipe%21%20Participei%20do%20seu%20minicurso%20no%20Semidiscom%20%28PPGCOM/UFRGS%29%20e%20queria%20conversar%20sobre%20levar%20a%20forma%C3%A7%C3%A3o%20de%20divulga%C3%A7%C3%A3o%20cient%C3%ADfica%20para%20o%20meu%20grupo." target="_blank" rel="noopener">Falar com o Filipe</a>
@@ -470,7 +472,7 @@
 </main>
 
 <footer>
-  <img src="assets/Logotipo_SEJA_BRANCO.png" alt="Seja Creator" width="1000" height="486" loading="lazy">
+  <img src="/assets/Logotipo_SEJA_BRANCO.webp" alt="Seja Creator" width="1000" height="486" loading="lazy">
   <p>Página de apoio produzida pela <a href="/">Seja Creator</a></p>
   <p>CNPJ 24.560.652/0001-49 · sejacreator.com.br/aula</p>
 </footer>
