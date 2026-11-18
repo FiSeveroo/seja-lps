@@ -12,7 +12,7 @@ Tudo fica no domínio principal:
 | `src/pages/ciencia/index.astro` | https://sejacreator.com.br/ciencia/ |
 | `src/pages/aula/index.astro` | https://sejacreator.com.br/aula/ |
 
-O site é feito em Astro (gera HTML estático, sem JavaScript extra). Os arquivos de cada página (fontes Futuru, logos, símbolos, bg1.png, fotos, favicon) ficam em `public/` (home: `public/assets/`; demais: `public/<nome>/assets/`). CSS e scripts das páginas usam `<style is:inline>` e `<script is:inline>`, para o Astro não reescrever nada.
+O site é feito em Astro (gera HTML estático, sem JavaScript extra). As fontes Futuru ficam numa pasta só, `public/fonts/` (WOFF2, pesos 400 a 900, cache de um ano via `public/_headers`); os originais .otf de todos os pesos estão em `marca/fontes/` (fora do site). Os demais arquivos de cada página (logos, símbolos, bg1.png, fotos, favicon) ficam em `public/` (home: `public/assets/`; demais: `public/<nome>/assets/`). CSS e scripts das páginas usam `<style is:inline>` e `<script is:inline>`, para o Astro não reescrever nada.
 
 Hospedagem e DNS no Cloudflare (plano grátis): um Worker (`wrangler.jsonc`) roda `npm run build` e publica `dist/` a cada push na `main`. O `worker/index.js` faz os redirecionamentos permanentes: www leva ao endereço sem www, e as páginas antigas da Wix (/blank, /sejapesquisa) e /home levam para as novas. Endereço que mudar entra lá. O site não usa subdomínios: toda página nova é uma pasta do domínio principal (os antigos ciencia., aula. e inicio. foram desligados).
 
