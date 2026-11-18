@@ -19,6 +19,10 @@ const url = `https://sejacreator.com.br${caminho}`;
 const palavras = (post.body ?? '').split(/\s+/).filter(Boolean).length;
 const minutos = Math.max(1, Math.round(palavras / 200));
 
+// Título no Google: com " · Seja Creator" só se couber em 60 caracteres
+const tituloCurto = post.data.tituloBusca ?? post.data.titulo;
+const tituloPagina = `${tituloCurto} · Seja Creator`.length <= 60 ? `${tituloCurto} · Seja Creator` : tituloCurto;
+
 // Imagem de compartilhamento: a capa (1200 de largura) ou a imagem padrão da Seja
 const capaOg = post.data.capa
   ? new URL((await getImage({ src: post.data.capa, width: 1200, format: 'jpg' })).src, 'https://sejacreator.com.br').toString()
@@ -44,6 +48,7 @@ const dados = [
     image: capaOg ?? 'https://sejacreator.com.br/assets/og-seja.png',
     author: {
       '@type': 'Person',
+      ...(autor.pagina ? { '@id': `https://sejacreator.com.br${autor.pagina}#pessoa`, url: `https://sejacreator.com.br${autor.pagina}` } : {}),
       name: autor.nome,
       ...(autor.nomeCompleto ? { alternateName: autor.nomeCompleto } : {}),
       jobTitle: autor.cargo,
@@ -66,7 +71,7 @@ const dados = [
 ];
 ---
 <Base
-  titulo={`${post.data.tituloBusca ?? post.data.titulo} · Seja Creator`}
+  titulo={tituloPagina}
   descricao={post.data.descricao}
   caminho={caminho}
   tipo="article"
@@ -82,7 +87,7 @@ const dados = [
         <h1>{post.data.titulo}</h1>
         {post.data.linhaFina && <p class="linha-fina">{post.data.linhaFina}</p>}
         <p class="meta">
-          {autor.nome} · <time datetime={dataISO(post.data.data)}>{dataPorExtenso(post.data.data)}</time> · {minutos} min de leitura
+          {autor.pagina ? <a href={autor.pagina}>{autor.nome}</a> : autor.nome} · <time datetime={dataISO(post.data.data)}>{dataPorExtenso(post.data.data)}</time> · {minutos} min de leitura
           {post.data.atualizado && <><br>Atualizado em <time datetime={dataISO(post.data.atualizado)}>{dataPorExtenso(post.data.atualizado)}</time></>}
         </p>
       </div>
@@ -102,7 +107,7 @@ const dados = [
       <div class="autor">
         <img src={autor.foto} alt={autor.nome} width="96" height="96" loading="lazy">
         <div>
-          <p class="nome">{autor.nome} · {autor.frase}</p>
+          <p class="nome">{autor.pagina ? <a href={autor.pagina}>{autor.nome}</a> : autor.nome} · {autor.frase}</p>
           <p>{autor.bio}</p>
         </div>
       </div>
@@ -124,6 +129,7 @@ const dados = [
 h1 { font-size: clamp(38px, 5.6vw, 68px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 24px; text-wrap: balance; }
 .linha-fina { font-size: clamp(20px, 2.2vw, 24px); font-weight: 600; line-height: 1.4; margin: 0 0 24px; max-width: 760px; text-wrap: balance; }
 .meta { font-size: 17px; margin: 0; }
+.meta a { text-underline-offset: 4px; }
 .capa { max-width: calc(1100px + 2 * clamp(20px, 5vw, 64px)); margin: 48px auto 0; }
 .capa img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 24px; display: block; }
 
@@ -154,6 +160,7 @@ h1 { font-size: clamp(38px, 5.6vw, 68px); font-weight: 800; letter-spacing: -0.0
 .autor img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .autor p { margin: 0; font-size: 18px; }
 .autor .nome { font-weight: 800; color: #8338EB; margin-bottom: 6px; }
+.autor .nome a { text-underline-offset: 4px; }
 .convite { background: #FF006E; color: #FFFFFF; border-radius: 24px; padding: 48px 32px; text-align: center; }
 .convite h2 { font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 28px; text-wrap: balance; }
 .botao { display: inline-block; background: #FFFFFF; color: #FF006E; padding: 18px 34px; border-radius: 999px; font-weight: 800; font-size: 18px; text-decoration: none; }

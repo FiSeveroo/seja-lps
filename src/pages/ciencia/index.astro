@@ -1,3 +1,6 @@
+---
+import DoBlog from '../../components/DoBlog.astro';
+---
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,12 +10,12 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="description" content="A Seja Creator é especializada em divulgação científica nas plataformas digitais. Caminhamos ao lado de pesquisadores, grupos de pesquisa, programas de pós-graduação e projetos de pesquisa na estratégia, criação e gestão da presença digital.">
+<meta name="description" content="A Seja Creator é especializada em divulgação científica nas plataformas digitais. Caminhamos ao lado de pesquisadores, grupos e programas de pós-graduação.">
 <meta name="theme-color" content="#8338EB">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Seja Creator · Divulgação científica nas plataformas digitais">
-<meta property="og:description" content="A Seja Creator é especializada em divulgação científica nas plataformas digitais. Caminhamos ao lado de pesquisadores, grupos de pesquisa, programas de pós-graduação e projetos de pesquisa na estratégia, criação e gestão da presença digital.">
+<meta property="og:description" content="A Seja Creator é especializada em divulgação científica nas plataformas digitais. Caminhamos ao lado de pesquisadores, grupos e programas de pós-graduação.">
 <meta property="og:url" content="https://sejacreator.com.br/ciencia/">
 <link rel="canonical" href="https://sejacreator.com.br/ciencia/">
 <meta property="og:site_name" content="Seja Creator">
@@ -26,7 +29,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Seja Creator · Divulgação científica nas plataformas digitais",
-  "description": "A Seja Creator é especializada em divulgação científica nas plataformas digitais. Caminhamos ao lado de pesquisadores, grupos de pesquisa, programas de pós-graduação e projetos de pesquisa na estratégia, criação e gestão da presença digital.",
+  "description": "A Seja Creator é especializada em divulgação científica nas plataformas digitais. Caminhamos ao lado de pesquisadores, grupos e programas de pós-graduação.",
   "url": "https://sejacreator.com.br/ciencia/",
   "inLanguage": "pt-BR",
   "isPartOf": {
@@ -221,6 +224,22 @@
   .campo-destaque .campo-nome { color: var(--laranja); font-weight: 700; font-size: 16px; }
   .campo-destaque .campo-linha { background: #fff; height: 54px; }
   .campo-destaque .campo-linha::after { display: none; }
+
+  /* PERGUNTAS FREQUENTES */
+  .faq { background: var(--roxo); color: #fff; }
+  .faq-container { max-width: 860px; }
+  .faq h2 { color: #fff; margin-bottom: 40px; }
+  .faq-lista { border-top: 2px solid rgba(255,255,255,.3); }
+  .faq details { border-bottom: 2px solid rgba(255,255,255,.3); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 0; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary h3 { font-size: clamp(20px, 2vw, 24px); margin: 0; color: #fff; }
+  .faq-mais { position: relative; flex-shrink: 0; width: 22px; height: 22px; }
+  .faq-mais::before, .faq-mais::after { content: ""; position: absolute; left: 0; top: 10px; width: 22px; height: 3px; border-radius: 3px; background: #fff; }
+  .faq-mais::after { transform: rotate(90deg); transition: transform .2s ease; }
+  .faq details[open] .faq-mais::after { transform: rotate(0deg); }
+  .faq details p { color: #fff; margin: 0 0 28px; max-width: 760px; }
+  @media (prefers-reduced-motion: reduce) { .faq-mais::after { transition: none; } }
 
   /* HISTÓRIAS */
   .historias h2 { color: var(--roxo); }
@@ -482,6 +501,62 @@
   </div>
 </section>
 
+<!-- PERGUNTAS FREQUENTES -->
+<section class="faq" id="perguntas">
+  <div class="container faq-container">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-lista">
+      <details>
+        <summary><h3>O que é um plano de divulgação científica?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
+        <p>É o documento que define como a pesquisa vai circular fora da universidade: para quem, por quais canais e formatos, com que frequência, quem faz o quê e como acompanhar o impacto social. Editais de FAPERGS, CNPq e CAPES pedem cada vez mais esse plano, e ele precisa caber na realidade do grupo, sem virar sobrecarga.</p>
+      </details>
+      <details>
+        <summary><h3>Como a Seja entra num edital? Precisa estar prevista no orçamento?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
+        <p>A gente constrói o plano de divulgação junto com o grupo, ainda na escrita da proposta. Quando a execução também fica com a Seja, ela precisa estar prevista no orçamento, seguindo as regras do edital para contratação de serviços. Alguns editais pedem outros orçamentos para comparação. No Nós em redes (FAPERGS 06/2025), a Seja consta oficialmente no projeto aprovado.</p>
+      </details>
+      <details>
+        <summary><h3>Quanto tempo leva para montar o plano de divulgação de uma proposta?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
+        <p>Depende do edital e do momento da proposta: o tamanho do projeto, o que o formulário pede, se o grupo já tem canais e quanto tempo falta para o prazo de submissão. Quanto antes a gente começar a caminhar ao lado do grupo, melhor o plano conversa com o resto da proposta.</p>
+      </details>
+      <details>
+        <summary><h3>A Seja continua depois que o projeto é aprovado? Como funciona a execução?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
+        <p>Sim. Depois da aprovação, a Seja executa o que foi previsto no plano, organizado em etapas ao longo da vigência do projeto. Isso pode incluir formação da equipe, consultoria para as redes, edição, design e gestão de comunidade. O conteúdo e o rigor continuam com os pesquisadores. No Nós em redes, o trabalho segue em seis etapas.</p>
+      </details>
+      <details>
+        <summary><h3>Qual a diferença entre Projeto e Parceria contínua?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
+        <p>O Projeto tem escopo e prazo definidos: um lançamento, uma campanha, a base inicial de um canal ou o plano de um edital. A Parceria contínua é um acompanhamento de longo prazo, com estratégia, planejamento, edição, design e gestão das plataformas. É o que fazemos com o Nós da Docência desde 2024. Um Projeto pode virar parceria, se fizer sentido.</p>
+      </details>
+      <details>
+        <summary><h3>Como funciona a formação?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
+        <p>As formações unem teoria crítica das plataformas e prática de criação de conteúdo, e são pensadas para grupos: equipes de pesquisa, programas de pós-graduação e eventos acadêmicos. Já fizemos formação com a equipe do Grupo Lola e um minicurso presencial no VII Semidiscom (UFRGS). O formato depende do grupo e do objetivo.</p>
+      </details>
+      <details>
+        <summary><h3>Preciso já ter redes sociais ou público para começar?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
+        <p>Não precisa. Dá para começar do zero, e às vezes é até melhor, porque a gente define junto onde a pesquisa faz sentido estar antes de abrir qualquer canal. Se o grupo já tem perfis, partimos do que existe. O ponto de partida é a pesquisa e as pessoas com quem ela precisa conversar.</p>
+      </details>
+      <details>
+        <summary><h3>Vocês produzem o conteúdo ou ensinam o grupo a produzir?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
+        <p>Os dois, com uma divisão clara. O texto e o rigor científico ficam com os pesquisadores: a gente não escreve conteúdo, roteiro nem legenda. A Seja escuta, ajuda a transformar o que já existe em formatos, sugere ajustes e cuida da edição, do design e da gestão de comunidade. E ensina no dia a dia, junto com as formações.</p>
+      </details>
+      <details>
+        <summary><h3>Quanto custa?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
+        <p>O valor depende do serviço e do escopo: número de etapas, tamanho da equipe, formatos e tempo de acompanhamento. Por isso a gente monta cada proposta depois da primeira conversa. Em editais, o orçamento é pensado junto com o grupo para caber na rubrica e no cronograma do projeto.</p>
+      </details>
+      <details>
+        <summary><h3>Vocês garantem número de seguidores ou alcance?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
+        <p>Não. Seguidores e alcance dependem muito de como cada plataforma distribui o conteúdo. Por isso, combinamos com o grupo indicadores que façam sentido para a pesquisa, como conversas, parcerias e uso do conhecimento fora da universidade, e um ritmo possível de manter na rotina.</p>
+      </details>
+      <details>
+        <summary><h3>Como é a primeira conversa e o que eu preciso levar?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
+        <p>A primeira conversa é pelo WhatsApp, direto com a gente, e serve para entender a sua pesquisa, o seu grupo e o que vocês precisam agora. Se houver edital, leve o link e o prazo de submissão. Também ajuda trazer um resumo do projeto e os canais que já existem.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- DO BLOG -->
+<DoBlog />
+
 <!-- CTA FINAL -->
 <section class="cta-final">
   <img class="simbolo-bg dir" src="/assets/Simbolo_SEJA_BRANCO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy" style="opacity:.12">
@@ -495,7 +570,8 @@
 
 <footer>
   <img src="/assets/Logotipo_SEJA_BRANCO.webp" alt="Seja Creator" width="1000" height="486" loading="lazy">
-  CNPJ 24.560.652/0001-49 · <a href="/">sejacreator.com.br</a>
+  CNPJ 24.560.652/0001-49 · <a href="/">sejacreator.com.br</a><br>
+  Porto Alegre, RS · <a href="mailto:filipe.leal.severo@gmail.com">filipe.leal.severo@gmail.com</a>
 </footer>
 
 <script is:inline>

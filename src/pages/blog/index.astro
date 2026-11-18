@@ -51,7 +51,7 @@ const dados = [
           </div>
           {post.data.capa && (
             <a class="miniatura" href={`/blog/${post.id}/`} aria-hidden="true" tabindex="-1">
-              <Image src={post.data.capa} alt="" widths={[360, 720]} sizes="(max-width: 720px) 100vw, 360px" />
+              <Image src={post.data.capa} alt={post.data.capaAlt ?? ""} widths={[360, 720]} sizes="(max-width: 720px) 100vw, 360px" />
             </a>
           )}
         </article>
