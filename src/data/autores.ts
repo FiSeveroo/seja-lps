@@ -5,7 +5,9 @@ export const autores = {
     nomeCompleto: 'Filipe Machado Leal Severo',
     frase: 'Estratégia e pesquisa',
     cargo: 'Pesquisador em comunicação e plataformas digitais',
-    bio: 'Pesquisador, mestre em Comunicação Social pela PUCRS e membro fundador da Classe Creator. Trabalha há dez anos com conteúdo para plataformas digitais e é sócio da Seja Creator, especializada em divulgação científica digital.',
+    bio: 'Filipe Severo é pesquisador e mestre em Comunicação Social pela PUCRS. Há dez anos trabalha com conteúdo para plataformas digitais e hoje se dedica à divulgação científica. Fundou a Classe Creator, que estuda e forma quem trabalha na produção cultural das plataformas.',
+    // Página de autor no site (aparece nos posts e nos dados estruturados)
+    pagina: '/autor/filipe-severo/' as string | undefined,
     foto: '/assets/filipe-severo.webp',
     links: [
       'http://lattes.cnpq.br/1675366659630964',
@@ -19,6 +21,7 @@ export const autores = {
     frase: 'Criação e tecnologia',
     cargo: 'Criação e tecnologia',
     bio: 'Formado em Tecnologia da Informação. Construiu o maior canal de Vasco do Brasil, o Atenção, Vascaínos!',
+    pagina: undefined as string | undefined,
     foto: '/assets/igor-silva.webp',
     links: [] as string[],
   },

@@ -11,6 +11,7 @@ Tudo fica no domínio principal:
 | `src/pages/index.astro` | https://sejacreator.com.br (home) |
 | `src/pages/ciencia/index.astro` | https://sejacreator.com.br/ciencia/ |
 | `src/pages/aula/index.astro` | https://sejacreator.com.br/aula/ |
+| `src/pages/autor/filipe-severo/index.astro` | https://sejacreator.com.br/autor/filipe-severo/ (página de autor, ligada aos posts e ao schema Person) |
 
 O site é feito em Astro (gera HTML estático, sem JavaScript extra). As fontes Futuru ficam numa pasta só, `public/fonts/` (WOFF2, pesos 400 a 900, cache de um ano via `public/_headers`); os originais .otf de todos os pesos estão em `marca/fontes/` (fora do site). Logos, símbolos, bg1, fotos e ícones também ficam numa pasta só, `public/assets/`, usada por todas as páginas com caminho absoluto (`/assets/...`). Imagens em WebP no tamanho em que aparecem (logos, símbolos e bg1 sem perda; fotos em qualidade 80), com cache de 30 dias via `public/_headers`; só `og-seja.png`, `favicon-32.png`, `apple-touch-icon.png` e o `Logotipo_SEJA_ROXO.png` dos dados estruturados seguem em PNG. Os originais em alta ficam em `marca/imagens/` (fora do site). Trocou o conteúdo de uma imagem? Dê um nome novo ao arquivo, para ninguém ficar com a versão antiga guardada. CSS e scripts das páginas usam `<style is:inline>` e `<script is:inline>`, para o Astro não reescrever nada.
 

@@ -1,0 +1,224 @@
+---
+// Página de autor do Filipe Severo: /autor/filipe-severo/
+// Texto enviado pelo Filipe em 18/11/2026. Itens que ele marcou como
+// "a confirmar" (repositório da dissertação, títulos finais de trabalhos,
+// perfis antigos) ficaram de fora até serem confirmados.
+import Base from '../../../layouts/Base.astro';
+import { postsPublicados, dataPorExtenso, dataISO } from '../../../data/blog';
+import { autores } from '../../../data/autores';
+
+const autor = autores['filipe-severo'];
+const caminho = '/autor/filipe-severo/';
+const url = `https://sejacreator.com.br${caminho}`;
+const posts = (await postsPublicados()).filter((p) => p.data.autor === 'filipe-severo');
+
+const titulo = 'Filipe Severo · Pesquisador de plataformas digitais';
+const descricao = 'Filipe Severo é pesquisador de plataformas digitais, mestre em Comunicação Social pela PUCRS e sócio da Seja Creator, em estratégia e pesquisa.';
+
+const temas = [
+  'Plataformização da produção cultural',
+  'Economia política das plataformas',
+  'Trabalho de criadores de conteúdo',
+  'YouTube e economia de criadores no Brasil',
+  'Auditoria algorítmica e métodos digitais',
+  'Organizações coletivas de criadores',
+  'Divulgação científica nas redes',
+  'Estratégia de conteúdo para plataformas',
+];
+
+const links = [
+  { nome: 'LinkedIn', url: 'https://www.linkedin.com/in/filipe-severo/' },
+  { nome: 'Currículo Lattes', url: 'http://lattes.cnpq.br/1675366659630964' },
+  { nome: 'Instagram', url: 'https://www.instagram.com/severo_filipe/' },
+  { nome: 'Classe Creator', url: 'https://classecreator.com' },
+];
+
+const whatsapp =
+  'https://wa.me/5551991006411?text=' +
+  encodeURIComponent('Oi, Filipe! Vi sua página no site da Seja e quero conversar sobre divulgação científica.');
+
+const dados = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    '@id': `${url}#pagina`,
+    url,
+    name: titulo,
+    inLanguage: 'pt-BR',
+    isPartOf: { '@id': 'https://sejacreator.com.br/#site' },
+    mainEntity: {
+      '@type': 'Person',
+      '@id': `${url}#pessoa`,
+      name: autor.nome,
+      alternateName: autor.nomeCompleto,
+      url,
+      image: `https://sejacreator.com.br${autor.foto}`,
+      jobTitle: 'Pesquisador de plataformas digitais',
+      description: autor.bio,
+      worksFor: { '@id': 'https://sejacreator.com.br/#organizacao' },
+      alumniOf: {
+        '@type': 'CollegeOrUniversity',
+        name: 'Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS)',
+        sameAs: 'https://www.pucrs.br/',
+      },
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'Mestrado em Comunicação Social', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'PUCRS' } },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'certificate', name: 'Especialização em Influência Digital: Conteúdo e Estratégia', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'PUCRS' } },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'Graduação em Publicidade e Propaganda', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'PUCRS' } },
+      ],
+      award: [
+        'Projeto Destaque no Salão Jovem Cientista da UFRGS (2013)',
+        'Vencedor do Torneio Empreendedor PUCRS (2018)',
+      ],
+      knowsAbout: temas,
+      sameAs: autor.links,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://sejacreator.com.br/' },
+      { '@type': 'ListItem', position: 2, name: autor.nome, item: url },
+    ],
+  },
+];
+---
+<Base titulo={titulo} descricao={descricao} caminho={caminho} dados={dados}>
+  <header class="cabeca margem">
+    <img class="simbolo-bg" src="/assets/Simbolo_SEJA_BRANCO.webp" alt="" aria-hidden="true" width="800" height="838">
+    <div class="coluna apresenta">
+      <img class="foto" src={autor.foto} alt={autor.nome} width="900" height="900" fetchpriority="high">
+      <div>
+        <h1>{autor.nome}</h1>
+        <p class="linha-fina">Pesquisador de plataformas digitais e mestre em Comunicação Social pela PUCRS. Na Seja Creator, cuida da estratégia e da pesquisa.</p>
+        <ul class="links">
+          {links.map((l) => <li><a href={l.url} target="_blank" rel="noopener">{l.nome}</a></li>)}
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="texto margem">
+    <section>
+      <h2>Quem é</h2>
+      <p>Filipe Severo é pesquisador de plataformas digitais e mestre em Comunicação Social pela PUCRS. Fez o mestrado com bolsa CAPES e orientação do professor Eduardo Campos Pellanda, e a dissertação foi aprovada com louvor em 2026. Na pesquisa, analisou quem ocupa o topo de audiência do YouTube no Brasil e mostrou que a plataforma concentra a visibilidade em produtores profissionalizados. Também é especialista em Influência Digital: Conteúdo e Estratégia e graduado em Publicidade e Propaganda, as duas formações pela PUCRS.</p>
+      <p>Antes da pesquisa, passou dez anos nos bastidores da criação de conteúdo. Planejou canais, lançamentos e equipes de criação para artistas, atletas e marcas, em projetos como KondZilla, Bebeto7 e Xtreme21. Esse percurso deu a ele uma visão de dentro sobre as condições de trabalho de quem produz para as plataformas. Fundou a Classe Creator, um observatório e espaço de formação voltado à classe trabalhadora digital, onde criou o Raio-X, uma ferramenta aberta de auditoria do YouTube. Na Seja Creator, usa essa experiência em formações e projetos de divulgação científica com professores, grupos de pesquisa e instituições de ensino.</p>
+    </section>
+
+    <section>
+      <h2>Formação</h2>
+      <ul class="linha-do-tempo">
+        <li><span class="ano">2024 a 2026</span><div><strong>Mestrado em Comunicação Social</strong>PPGCOM da Escola de Comunicação, Artes e Design (Famecos), PUCRS. Bolsa CAPES, dissertação aprovada com louvor.</div></li>
+        <li><span class="ano">2024 a 2025</span><div><strong>Especialização em Influência Digital: Conteúdo e Estratégia</strong>PUCRS, com Bolsa Mérito ENADE 2024.</div></li>
+        <li><span class="ano">2020 a 2024</span><div><strong>Graduação em Publicidade e Propaganda</strong>PUCRS.</div></li>
+      </ul>
+      <h3>Prêmios</h3>
+      <ul>
+        <li>Projeto Destaque no Salão Jovem Cientista da UFRGS (2013).</li>
+        <li>Vencedor do Torneio Empreendedor PUCRS (2018).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>A pesquisa de mestrado</h2>
+      <p class="destaque">O novo “You” do YouTube: a ascensão dos produtores plataformizados e a falência da promessa participativa no Brasil</p>
+      <p>Dissertação defendida em 2026 no PPGCOM da PUCRS, com orientação do Prof. Dr. Eduardo Campos Pellanda. A banca teve André Fagundes Pase (PUCRS) e Gustavo Daudt Fischer (UFRGS).</p>
+      <p class="referencia">SEVERO, Filipe Machado Leal. <em>O novo “You” do YouTube</em>: a ascensão dos produtores plataformizados e a falência da promessa participativa no Brasil. 2026. Dissertação (Mestrado em Comunicação Social) – Escola de Comunicação, Artes e Design – Famecos, Pontifícia Universidade Católica do Rio Grande do Sul, Porto Alegre, 2026.</p>
+    </section>
+
+    <section>
+      <h2>Divulgação científica e formações</h2>
+      <ul class="linha-do-tempo">
+        <li><span class="ano">Desde 2024</span><div><strong>Nós da Docência</strong>Estruturou o ecossistema do projeto (podcast, livro e conteúdos) junto com a idealizadora, a professora Maria Cláudia Dal’Igna, cuidando da estratégia de conteúdo, da distribuição e da divulgação.</div></li>
+        <li><span class="ano">2025 e 2026</span><div><strong>Formações para o Grupo Lola (Unisinos)</strong>Em 2026, dentro do projeto Nós em redes, com recursos da FAPERGS.</div></li>
+        <li><span class="ano">2026</span><div><strong>Minicurso Plataformas digitais a seu favor</strong>VII Semidiscom, PPGCOM/UFRGS. <a href="/aula/">Página de apoio do minicurso</a>.</div></li>
+        <li><span class="ano">2026</span><div><strong>4S Annual Meeting</strong>Apresentação de trabalho em Toronto, em outubro.</div></li>
+        <li><span class="ano">2026</span><div><strong>Fonte em reportagem</strong><a href="https://www.youtube.com/watch?v=yMOQRi_5AkU" target="_blank" rel="noopener">Novas formas de trabalho no mercado digital</a>, de Jéssica Oliveira, para o Primeira Pauta RBS 2026.</div></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Classe Creator</h2>
+      <p>Fora da Seja, Filipe fundou a <a href="https://classecreator.com" target="_blank" rel="noopener">Classe Creator</a>, um observatório e espaço de formação voltado à classe trabalhadora digital. Lá criou o Raio-X, uma ferramenta aberta de auditoria algorítmica do YouTube.</p>
+    </section>
+
+    <section>
+      <h2>Temas de pesquisa e trabalho</h2>
+      <ul class="temas">
+        {temas.map((t) => <li>{t}</li>)}
+      </ul>
+    </section>
+
+    {posts.length > 0 && (
+      <section>
+        <h2>Textos no blog da Seja</h2>
+        <ul class="posts">
+          {posts.map((p) => (
+            <li>
+              <a href={`/blog/${p.id}/`}>{p.data.titulo}</a>
+              <span><time datetime={dataISO(p.data.data)}>{dataPorExtenso(p.data.data)}</time></span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+
+  <div class="fim margem">
+    <div class="convite">
+      <h2>Quer conversar com o Filipe?</h2>
+      <a class="botao" href={whatsapp} target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+    </div>
+  </div>
+</Base>
+
+<style>
+.cabeca { position: relative; overflow: hidden; background: #8338EB; color: #FFFFFF; padding-top: 72px; padding-bottom: 80px; }
+.simbolo-bg { position: absolute; width: 560px; max-width: none; right: -180px; bottom: -260px; opacity: 0.07; pointer-events: none; }
+.coluna { position: relative; max-width: 860px; margin: 0 auto; }
+.apresenta { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; align-items: center; }
+.foto { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: center 30%; display: block; }
+h1 { font-size: clamp(44px, 6vw, 76px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin: 0 0 18px; }
+.linha-fina { font-size: clamp(19px, 2vw, 22px); font-weight: 600; line-height: 1.4; margin: 0 0 24px; max-width: 600px; text-wrap: pretty; }
+.links { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 0; margin: 0; font-size: 17px; font-weight: 700; }
+.links a { text-underline-offset: 4px; }
+
+.texto { max-width: calc(760px + 2 * clamp(20px, 5vw, 64px)); margin: 0 auto; padding-top: 24px; padding-bottom: 24px; font-size: 19px; line-height: 1.7; }
+section { padding: 40px 0 8px; border-bottom: 2px solid #EDE6FB; }
+section:last-child { border-bottom: 0; }
+h2 { color: #8338EB; font-size: clamp(28px, 3.4vw, 36px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 20px; }
+h3 { font-size: 22px; font-weight: 700; margin: 28px 0 12px; }
+p { margin: 0 0 1.1em; }
+a { color: #8338EB; font-weight: 600; text-underline-offset: 4px; }
+.links a { color: #FFFFFF; }
+ul { padding-left: 1.2em; margin: 0 0 1.4em; }
+li { margin-bottom: 0.4em; }
+.linha-do-tempo { list-style: none; padding: 0; }
+.linha-do-tempo li { display: grid; grid-template-columns: 130px minmax(0, 1fr); column-gap: 24px; margin-bottom: 22px; }
+.linha-do-tempo .ano { font-weight: 700; color: #FF006E; font-size: 17px; padding-top: 2px; }
+.linha-do-tempo strong { display: block; font-weight: 700; }
+.destaque { font-size: 23px; font-weight: 700; line-height: 1.35; text-wrap: balance; }
+.referencia { font-size: 16px; line-height: 1.55; color: #3A3550; }
+.temas { columns: 2; column-gap: 40px; }
+.temas li { break-inside: avoid; }
+.posts { list-style: none; padding: 0; }
+.posts li { margin-bottom: 16px; }
+.posts a { display: block; font-size: 20px; font-weight: 700; text-decoration: none; }
+.posts a:hover { text-decoration: underline; }
+.posts span { font-size: 16px; color: #5B5670; }
+
+.fim { max-width: calc(760px + 2 * clamp(20px, 5vw, 64px)); margin: 0 auto; padding-top: 32px; padding-bottom: 96px; }
+.convite { background: #FF006E; color: #FFFFFF; border-radius: 24px; padding: 48px 32px; text-align: center; }
+.convite h2 { color: #FFFFFF; font-size: clamp(28px, 3.6vw, 40px); margin: 0 0 28px; text-wrap: balance; }
+.botao { display: inline-block; background: #FFFFFF; color: #FF006E; padding: 18px 34px; border-radius: 999px; font-weight: 800; font-size: 18px; text-decoration: none; }
+.botao:hover { opacity: 0.9; }
+
+@media (max-width: 720px) {
+  .cabeca { padding-top: 48px; padding-bottom: 56px; }
+  .apresenta { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .foto { width: 140px; height: 140px; }
+  .linha-do-tempo li { grid-template-columns: minmax(0, 1fr); }
+  .temas { columns: 1; }
+}
+</style>
