@@ -18,20 +18,20 @@ Hospedagem e DNS no Cloudflare (plano grátis): um Worker (`wrangler.jsonc`) rod
 
 Página nova: criar `src/pages/<nome>/index.astro`, usando as imagens de `/assets/` (imagem nova entra lá, em WebP). Ela sai em sejacreator.com.br/<nome>/ sem configuração extra. Só o que sai em `dist/` (páginas de `src/pages/` e arquivos de `public/`) é publicado.
 
-Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os servidores DNS do Cloudflare. No Worker seja-creator estão ligados só sejacreator.com.br e www (Production); o endereço workers.dev de produção fica desligado. Cada PR ganha uma prévia em `*-seja-creator.sejacreatordrive.workers.dev`, marcada com noindex para não entrar no Google. Não há e-mail no domínio (nenhum registro MX).
+Domínio: sejacreator.com.br registrado no Registro.br (sem provedor), com os servidores DNS do Cloudflare. No Worker seja-creator estão ligados só sejacreator.com.br e www (Production); o endereço workers.dev de produção fica desligado. Cada PR ganha uma prévia em `*-seja-creator.sejacreatordrive.workers.dev`, marcada com noindex para não entrar no Google. Não há e-mail no domínio (nenhum registro MX); o e-mail de contato publicado é filipe.leal.severo@gmail.com (rodapés, Organization e llms.txt). Sede: Porto Alegre, RS.
 
 ## SEO
 
 - Toda página tem `<link rel="canonical">` com o endereço oficial (https://sejacreator.com.br/<nome>/), `og:*` e `twitter:card`, com a imagem de compartilhamento `public/assets/og-seja.png` (1200×630).
-- Dados estruturados (JSON-LD, `<script type="application/ld+json" is:inline>`): a home tem a Organization (`#organizacao`, com os sócios) e o WebSite (`#site`); as demais páginas têm um WebPage ligado a eles.
+- Dados estruturados (JSON-LD, `<script type="application/ld+json" is:inline>`): a home tem a Organization (`#organizacao`, com os sócios, endereço em Porto Alegre e sameAs com Instagram, LinkedIn, YouTube e Facebook) e o WebSite (`#site`); as demais páginas têm um WebPage ligado a eles.
 - O sitemap (`/sitemap-index.xml`) sai sozinho do `@astrojs/sitemap` (a 404 fica de fora). `public/robots.txt` libera buscadores e assistentes de IA. `public/llms.txt` resume a Seja para IAs: atualizar quando mudar serviço, página ou posicionamento, usando só o texto que já está no site.
-- Página nova: título e descrição próprios, canonical, og e um WebPage em JSON-LD, seguindo /ciencia/ como modelo.
+- Página nova: título (até 60 caracteres) e descrição (até 155) próprios, canonical, og e um WebPage em JSON-LD, seguindo /ciencia/ como modelo. Imagens com `width` e `height` do arquivo (e `height: auto` no CSS).
 
 ## Blog
 
 - Cada post é um arquivo Markdown em `src/content/blog/<endereco>.md` e sai em sejacreator.com.br/blog/<endereco>/. Modelo com todos os campos em `src/content/blog/_modelo.md` (arquivos que começam com `_` não são publicados). Imagens do post em `src/content/blog/imagens/` (o Astro converte para WebP e gera tamanhos).
 - Campos: `titulo`, `descricao` (70 a 160 caracteres), `data`, `autor` (`filipe-severo` ou `igor-da-silva`, bios em `src/data/autores.ts`), e opcionais `capa` (16:9) + `capaAlt`, `atualizado`, `rascunho`. O build falha se faltar campo obrigatório.
-- Lista em /blog/, feed em /blog/rss.xml, sitemap e dados estruturados (Blog, BlogPosting, BreadcrumbList) saem sozinhos. Layout em `src/layouts/Base.astro` com `Topo` e `Rodape` de `src/components/`.
+- Lista em /blog/, feed em /blog/rss.xml, sitemap (com `<lastmod>` vindo de `atualizado` ou `data`) e dados estruturados (Blog, BlogPosting, BreadcrumbList) saem sozinhos. O bloco "Do blog" (`src/components/DoBlog.astro`) mostra os três posts mais recentes na home, em /ciencia/ e em /aula/. O título da aba usa `tituloBusca` e só leva " · Seja Creator" se couber em 60 caracteres. Layout em `src/layouts/Base.astro` com `Topo` e `Rodape` de `src/components/`.
 - Texto do post segue as regras de tom de voz deste arquivo. Todo número precisa de fonte logo abaixo (`<small>Fonte: ...</small>`) e estar registrado em `notas/dados-com-fonte.md`.
 
 ## Como trabalhar

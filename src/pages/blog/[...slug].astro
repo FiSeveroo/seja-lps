@@ -19,6 +19,10 @@ const url = `https://sejacreator.com.br${caminho}`;
 const palavras = (post.body ?? '').split(/\s+/).filter(Boolean).length;
 const minutos = Math.max(1, Math.round(palavras / 200));
 
+// Título no Google: com " · Seja Creator" só se couber em 60 caracteres
+const tituloCurto = post.data.tituloBusca ?? post.data.titulo;
+const tituloPagina = `${tituloCurto} · Seja Creator`.length <= 60 ? `${tituloCurto} · Seja Creator` : tituloCurto;
+
 // Imagem de compartilhamento: a capa (1200 de largura) ou a imagem padrão da Seja
 const capaOg = post.data.capa
   ? new URL((await getImage({ src: post.data.capa, width: 1200, format: 'jpg' })).src, 'https://sejacreator.com.br').toString()
@@ -66,7 +70,7 @@ const dados = [
 ];
 ---
 <Base
-  titulo={`${post.data.tituloBusca ?? post.data.titulo} · Seja Creator`}
+  titulo={tituloPagina}
   descricao={post.data.descricao}
   caminho={caminho}
   tipo="article"

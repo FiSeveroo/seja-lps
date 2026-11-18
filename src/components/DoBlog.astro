@@ -1,0 +1,55 @@
+---
+// Bloco "Do blog" com os posts mais recentes. Usado na home, em /ciencia/
+// e em /aula/ para ligar as páginas ao blog.
+import { postsPublicados, dataPorExtenso, dataISO } from '../data/blog';
+import { autores } from '../data/autores';
+
+interface Props {
+  quantos?: number;
+  largura?: number; // largura máxima do conteúdo, em px
+  coluna?: boolean; // um post embaixo do outro (páginas estreitas)
+  fundo?: string;
+}
+
+const { quantos = 3, largura = 1160, coluna = false, fundo = '#F5F4F8' } = Astro.props;
+const posts = (await postsPublicados()).slice(0, quantos);
+---
+{posts.length > 0 && (
+  <section class="do-blog" style={`background: ${fundo};`}>
+    <div class="dentro" style={`max-width: ${largura}px;`}>
+      <h2>Do blog</h2>
+      <p class="apoio">Divulgação científica nas plataformas digitais, escrita por quem faz isso todo dia.</p>
+      <div class:list={['posts', { coluna }]}>
+        {posts.map((post) => (
+          <article>
+            <p class="meta"><time datetime={dataISO(post.data.data)}>{dataPorExtenso(post.data.data)}</time> · {autores[post.data.autor].nome}</p>
+            <h3><a href={`/blog/${post.id}/`}>{post.data.tituloBusca ?? post.data.titulo}</a></h3>
+            <p class="resumo">{post.data.descricao}</p>
+          </article>
+        ))}
+      </div>
+      <a class="todos" href="/blog/">Ver todos os textos do blog →</a>
+    </div>
+  </section>
+)}
+
+<style>
+.do-blog { padding: 104px clamp(20px, 5vw, 64px); color: #1A1A2E; font-family: 'Futuru', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 500; line-height: 1.6; text-align: left; }
+.dentro { margin: 0 auto; }
+h2 { font-size: clamp(40px, 5vw, 64px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #8338EB; margin: 0 0 16px; }
+.apoio { font-size: 19px; margin: 0 0 48px; max-width: 640px; }
+.posts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.posts.coluna { grid-template-columns: minmax(0, 1fr); gap: 0; }
+article { border-top: 2px solid #E2D8F7; padding-top: 24px; }
+.coluna article { padding: 24px 0; }
+.meta { font-size: 15px; color: #5B5670; margin: 0 0 10px; }
+h3 { font-size: 24px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.2; margin: 0 0 12px; color: #8338EB; text-wrap: balance; }
+h3 a { text-decoration: none; color: inherit; }
+h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.resumo { font-size: 17px; margin: 0; }
+.todos { display: inline-block; margin-top: 48px; font-weight: 700; font-size: 18px; color: #8338EB; text-underline-offset: 4px; }
+@media (max-width: 900px) {
+  .do-blog { padding-top: 80px; padding-bottom: 80px; }
+  .posts { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+}
+</style>
