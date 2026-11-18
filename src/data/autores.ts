@@ -6,7 +6,7 @@ export const autores = {
     frase: 'Estratégia e pesquisa',
     cargo: 'Pesquisador em comunicação e plataformas digitais',
     bio: 'Pesquisador, mestre em Comunicação Social pela PUCRS e membro fundador da Classe Creator. Trabalha há dez anos com conteúdo para plataformas digitais e é sócio da Seja Creator, especializada em divulgação científica digital.',
-    foto: '/assets/filipe-severo.jpg',
+    foto: '/assets/filipe-severo.webp',
     links: [
       'http://lattes.cnpq.br/1675366659630964',
       'https://www.linkedin.com/in/filipe-severo/',
@@ -19,7 +19,7 @@ export const autores = {
     frase: 'Criação e tecnologia',
     cargo: 'Criação e tecnologia',
     bio: 'Formado em Tecnologia da Informação. Construiu o maior canal de Vasco do Brasil, o Atenção, Vascaínos!',
-    foto: '/assets/igor-silva.jpg',
+    foto: '/assets/igor-silva.webp',
     links: [] as string[],
   },
 } as const;
