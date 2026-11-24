@@ -79,7 +79,7 @@ Dados do post "Indicadores para um plano de divulgação científica, além de c
 | 26,6% dos brasileiros não buscam ciência nas redes. | CGEE (2024), p. 14. |
 | Tipologia de comunicação científica: profissional, de déficit, consultiva e deliberativa. Recursos para divulgação definidos na proposta (posição dos autores, p. 523-524); grupo australiano que destinou 10% dos recursos a ações com a comunidade (p. 519, dados de 2010). | Palmer e Schibeci (2014), Public Understanding of Science 23(5). |
 
-Post "O que é divulgação científica?" (16/11/2026): definição em cinco condições e espectro em quatro eixos de Valério e Takata (2025), Pro-Posições v. 36; levantamento latino-americano com nove expressões, relatado pelos mesmos autores.
+Post "O que é divulgação científica?" (16/11/2026, revisto em 24/11/2026): definição em cinco condições e espectro em quatro eixos de Valério e Takata (2025), Pro-Posições v. 36; levantamento latino-americano com nove expressões, relatado pelos mesmos autores. Exemplo do lambe-lambe numa parada de ônibus: p. 16 (o original diz "lambe", e não "cartaz"); conceito "plural": p. 15; ficção científica e obras de arte como questões em aberto: p. 17. Na revisão entraram: Burns, O'Connor e Stocklmayer (2003, p. 191 e 193), Palmer e Schibeci (2014, p. 513), Otto et al. (2026), CGEE (2024, p. 13-14 e 26) e Sumner et al. (2014), com a mesma redação registrada nas tabelas acima. Dado novo deste post: o estudo do CGEE com 320 perfis do Instagram e 320 canais do YouTube encontrou o termo "cientista" usado muitas vezes para legitimar autores e vender produtos (CGEE, 2024, p. 26).
 
 ## Referências (ABNT)
 

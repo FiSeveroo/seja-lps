@@ -4,6 +4,7 @@ tituloBusca: "O que é divulgação científica? Definição e exemplos"
 linhaFina: "O que é divulgação científica, como ela se diferencia da comunicação entre pares e como saber se o vídeo, o podcast ou o post do seu grupo cabe nessa definição."
 descricao: "Entenda o que é divulgação científica, a diferença para a comunicação científica e como saber se o conteúdo do seu grupo de pesquisa cabe na definição."
 data: 2026-11-16
+atualizado: 2026-11-24
 autor: filipe-severo
 temas: ["divulgação científica", "comunicação científica", "popularização da ciência"]
 ---
@@ -24,19 +25,21 @@ Os autores organizam a definição em cinco condições. Uma ação é divulgaç
 4. adapta ou transpõe a linguagem científica;
 5. busca democratizar a racionalidade e a cultura científica.
 
-A lista é larga de propósito. Cabem nela [um vídeo curto, um episódio de podcast](/blog/como-escolher-formato-divulgar-pesquisa/), uma exposição, um livro, uma peça de teatro e até um cartaz numa parada de ônibus, um dos exemplos citados pelos autores. O formato importa menos do que a combinação das cinco condições.
+A lista é larga de propósito. Cabem nela [um vídeo curto, um episódio de podcast](/blog/como-escolher-formato-divulgar-pesquisa/), uma exposição, um livro, uma peça de teatro e até um lambe-lambe numa parada de ônibus, um dos exemplos citados pelos autores (Valério; Takata, 2025, p. 16). O formato importa menos do que a combinação das cinco condições.
 
 ## Por que existem tantos nomes para a mesma coisa
 
 Divulgação, difusão, popularização, vulgarização e comunicação pública da ciência aparecem ora como sinônimos, ora como coisas diferentes, e a confusão tem história. Valério e Takata (2025) lembram que um levantamento de trabalhos latino-americanos encontrou nove expressões em uso para falar da relação entre ciência e público, sem consenso sobre onde uma termina e a outra começa.
 
-As instituições brasileiras também variam. O CNPq usa "divulgação científica" no nome de um comitê assessor e de um prêmio, enquanto o ministério ao qual ele se vincula fala em "popularização da ciência", segundo os mesmos autores. Em inglês, o termo mais comum hoje é *science communication*, que em português se confunde com a comunicação científica entre pares.
+As instituições brasileiras também variam. O CNPq usa "divulgação científica" no nome de um comitê assessor e de um prêmio, enquanto o ministério ao qual ele se vincula fala em "popularização da ciência", segundo os mesmos autores. Em inglês, o termo mais comum hoje é *science communication*, que em português se confunde com a comunicação científica entre pares. Na definição de Burns, O'Connor e Stocklmayer (2003, p. 191), muito citada na área, *science communication* inclui tanto a comunicação com o público quanto a comunicação entre pares. Por isso a tradução direta confunde.
 
 Para quem pesquisa, a consequência é prática. Editais, fichas de avaliação e formulários usam palavras diferentes para pedir coisas parecidas, e vale ler o que cada documento descreve antes de decidir o que registrar.
 
 ## Qual a diferença entre divulgação científica e comunicação científica?
 
 A diferença está em quem recebe. Comunicação científica é a circulação de informação especializada entre pares, e divulgação científica é o esforço de levar o conhecimento a quem está fora da área, de modo a "democratizar o acesso ao conhecimento científico" (Bueno, 2010, p. 5). Artigos, congressos, repositórios e preprints são comunicação científica. Valério e Takata (2025) são diretos nesse ponto: um artigo ou um simpósio não devem ser confundidos com divulgação.
+
+Palmer e Schibeci (2014, p. 513) organizam essa diferença numa tipologia de quatro tipos. O primeiro é a comunicação profissional, entre cientistas. Os outros três falam com o público: a de déficit, que leva o conhecimento dos cientistas ao público; a consultiva, com troca nos dois sentidos; e a deliberativa, em que cientistas e público têm posição igual e o conhecimento científico e o local são respeitados mutuamente. A divulgação também tem, portanto, graus de diálogo, que um [plano de divulgação pode medir](/blog/indicadores-plano-divulgacao-cientifica/).
 
 Isso responde às dúvidas da abertura. A live para colegas de outras universidades é comunicação entre pares, ainda que aconteça numa plataforma aberta. O post com o link do artigo, escrito em linguagem técnica, também. O episódio de podcast com a professora da rede pública tem tudo para ser divulgação, porque fala com outro público e em outra linguagem.
 
@@ -51,13 +54,15 @@ A proposta mais útil do ensaio é tratar a divulgação científica como um esp
 | Linguagens | hermética, restrita | coloquial, acessível, adaptada |
 | Intencionalidade pedagógica | vaga, omitida | evidente, empenhada |
 
-O espectro ajuda a pensar casos de fronteira. Um perfil que fala para pós-graduandos de outras áreas tem público de nicho, mas não é comunicação entre pares. Um conteúdo pode manter termos técnicos, desde que os explique. E um vídeo de entretenimento se aproxima da divulgação quando deixa ver uma intenção de ensinar algo sobre a ciência.
+O espectro ajuda a pensar casos de fronteira. Um perfil que fala para pós-graduandos de outras áreas tem público de nicho, mas não é comunicação entre pares. Burns, O'Connor e Stocklmayer (2003, p. 193) usam a imagem de uma cordilheira: um cientista pode estar no alto de uma ou duas montanhas e no pé de muitas outras. Quem é especialista numa área é leigo em outra. Um conteúdo pode manter termos técnicos, desde que os explique. E um vídeo de entretenimento se aproxima da divulgação quando deixa ver uma intenção de ensinar algo sobre a ciência.
 
-O eixo das fontes marca o outro limite. Conteúdo que usa a ciência como verniz para opiniões pessoais, sem compromisso com fontes confiáveis, se afasta da divulgação mesmo quando tem linguagem acessível e muito alcance.
+O eixo das fontes marca o outro limite. Conteúdo que usa a ciência como verniz para opiniões pessoais, sem compromisso com fontes confiáveis, se afasta da divulgação mesmo quando tem linguagem acessível e muito alcance. Há evidência desse uso. Um estudo exploratório com oito canais alemães de fitness e nutrição no YouTube que se apresentam como "baseados em ciência" encontrou boa nota em clareza e média de 2,12 em 5 em qualidade científica (Otto et al., 2026). No Brasil, um estudo do CGEE com 320 perfis do Instagram e 320 canais do YouTube encontrou o termo "cientista" usado muitas vezes para legitimar autores e vender produtos (CGEE, 2024, p. 26).
 
 ## Quem pode divulgar ciência?
 
 Pode divulgar ciência quem faz parte do campo científico e quem medeia o conhecimento com fidelidade às fontes. Valério e Takata (2025) distinguem a divulgação direta, feita por pesquisadores, estudantes e técnicos, da divulgação mediada, feita por profissionais de comunicação que tomam os primeiros como fonte. Entusiastas, como astrônomos amadores e participantes de projetos de ciência cidadã, também entram como divulgadores em potencial.
+
+A fidelidade às fontes também é um cuidado da divulgação direta. Num estudo com 462 releases de universidades britânicas sobre pesquisas de saúde, entre 33% e 40% exageravam em relação ao próprio artigo, dependendo do tipo de exagero. Os autores atribuem a maior parte da responsabilidade a quem pesquisa, que aprova esses textos (Sumner et al., 2014).
 
 Os autores acrescentam que divulgar vai além de explicar conceitos. Práticas, processos, personagens, histórias e valores da ciência também são matéria de divulgação. Mostrar como uma pesquisa é feita, com suas dúvidas e etapas, é tão legítimo quanto anunciar um resultado.
 
@@ -65,7 +70,7 @@ Na Seja, trabalhamos com a divulgação direta: quem pesquisa escreve, fala e re
 
 ## O que essa definição muda nas plataformas
 
-A definição lembra que [alcance e divulgação científica são coisas diferentes](/blog/indicadores-plano-divulgacao-cientifica/). O ensaio observa que, na última década, a relação entre ciência e público migrou para as redes sociais e que a promessa de uma democracia do conhecimento não se confirmou num ambiente em que os algoritmos organizam o que circula (Valério; Takata, 2025).
+A definição lembra que [alcance e divulgação científica são coisas diferentes](/blog/indicadores-plano-divulgacao-cientifica/). O ensaio observa que, na última década, a relação entre ciência e público migrou para as redes sociais e que a promessa de uma democracia do conhecimento não se confirmou num ambiente em que os algoritmos organizam o que circula (Valério; Takata, 2025). No Brasil, os números confirmam a migração: as redes sociais, os aplicativos de mensagem e as plataformas digitais já são a principal fonte de informação sobre ciência, à frente da TV, e Instagram, Facebook, YouTube e WhatsApp concentram essa busca (CGEE, 2024, p. 13-14).
 
 A leitura a seguir é nossa. Plataformas como Instagram, YouTube e TikTok premiam o que prende a atenção, e nenhuma das cinco condições da definição depende disso. Um conteúdo pode ter muitas visualizações e ficar longe da divulgação, por não ter fonte ou intenção de ensinar. Outro pode alcançar duzentas professoras e cumprir as cinco condições. Por isso, a intenção e a fonte precisam estar visíveis no próprio conteúdo: quem fez a pesquisa, onde ela pode ser lida e o que ainda não se sabe.
 
@@ -83,19 +88,29 @@ Quando a resposta a alguma pergunta for "mais ou menos", o espectro ajuda a deci
 
 ## Limites: o que a definição não resolve
 
-A definição de Valério e Takata (2025) é uma proposta teórica, apresentada num ensaio, e não foi testada como instrumento para classificar ações. Os próprios autores a chamam de plural e deixam questões abertas, como o lugar da ficção científica e das obras de arte que usam a ciência como matéria-prima.
+A definição de Valério e Takata (2025) é uma proposta teórica, apresentada num ensaio, e não foi testada como instrumento para classificar ações. Os próprios autores a chamam de plural (p. 15) e deixam questões em aberto, como o lugar da ficção científica e das obras de arte que usam a ciência como matéria-prima (p. 17).
 
 A intenção, que eles tratam como o ponto mais sensível, é difícil de verificar de fora. E a definição não substitui as regras de cada edital ou área de avaliação da CAPES, que decidem o que conta e como pontua. O espectro serve para pensar e planejar. Para registrar e prestar contas, vale o que o documento oficial pede.
 
 ## Uma definição para decidir com consciência
 
-Saber o que é divulgação científica ajuda a escolher onde colocar o tempo, que é curto para quem pesquisa, dá aula e orienta. A definição plural reconhece muitas formas legítimas, do cartaz ao podcast, e mantém firme o que os une: fonte na pesquisa, público fora da área, linguagem adaptada e intenção de compartilhar o modo de pensar da ciência. Nas plataformas, esses critérios são de quem pesquisa, e nenhuma métrica os substitui.
+Saber o que é divulgação científica ajuda a escolher onde colocar o tempo, que é curto para quem pesquisa, dá aula e orienta. A definição plural reconhece muitas formas legítimas, do lambe-lambe ao podcast, e mantém firme o que os une: fonte na pesquisa, público fora da área, linguagem adaptada e intenção de compartilhar o modo de pensar da ciência. Nas plataformas, esses critérios são de quem pesquisa, e nenhuma métrica os substitui.
 
 ## Referências
 
 <div class="referencias">
 
 BUENO, Wilson da Costa. Comunicação científica e divulgação científica: aproximações e rupturas conceituais. **Informação & Informação**, Londrina, v. 15, n. esp., p. 1-12, 2010. DOI: [10.5433/1981-8920.2010v15nesp.p1](https://doi.org/10.5433/1981-8920.2010v15nesp.p1).
+
+BURNS, T. W.; O'CONNOR, D. J.; STOCKLMAYER, S. M. Science communication: a contemporary definition. **Public Understanding of Science**, v. 12, n. 2, p. 183-202, 2003. DOI: [10.1177/09636625030122004](https://doi.org/10.1177/09636625030122004).
+
+CENTRO DE GESTÃO E ESTUDOS ESTRATÉGICOS (CGEE). **Percepção pública da C&T no Brasil - 2023**: resumo executivo. Brasília, DF: CGEE, 2024. ISBN 978-65-5775-080-3.
+
+OTTO, Daniel; GIEGERICH, Tobias; ABEL, Georg; RUANGROJ, Linn. How much science is in "science-based"? Adherence to scientific standards and ethics among fitness and nutrition influencers on YouTube. *In*: EUROPEAN CONFERENCE ON SOCIAL MEDIA, 13., 2026. **Proceedings** [...]. p. 158-166. DOI: [10.34190/ecsm.13.1.4608](https://doi.org/10.34190/ecsm.13.1.4608).
+
+PALMER, Sarah E.; SCHIBECI, Renato A. What conceptions of science communication are espoused by science research funding bodies? **Public Understanding of Science**, v. 23, n. 5, p. 511-527, 2014. DOI: [10.1177/0963662512455295](https://doi.org/10.1177/0963662512455295).
+
+SUMNER, Petroc *et al.* The association between exaggeration in health related science news and academic press releases: retrospective observational study. **BMJ**, v. 349, g7015, 2014. DOI: [10.1136/bmj.g7015](https://doi.org/10.1136/bmj.g7015).
 
 VALÉRIO, Marcelo; TAKATA, Roberto. Afinal, o que é divulgação científica? Explanação e proposição de uma definição plural. **Pro-Posições**, Campinas, v. 36, e2025c0502BR, 2025. DOI: [10.1590/1980-6248-2024-0047BR](https://doi.org/10.1590/1980-6248-2024-0047BR).
 
