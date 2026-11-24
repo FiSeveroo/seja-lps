@@ -83,6 +83,31 @@ Bueno (2010), usado nos posts de formatos e "O que é divulgação científica?"
 
 Post "O que é divulgação científica?" (16/11/2026, revisto em 24/11/2026): definição em cinco condições e espectro em quatro eixos de Valério e Takata (2025), Pro-Posições v. 36; levantamento latino-americano com nove expressões, relatado pelos mesmos autores. Exemplo do lambe-lambe numa parada de ônibus: p. 16 (o original diz "lambe", e não "cartaz"); conceito "plural": p. 15; ficção científica e obras de arte como questões em aberto: p. 17. Na revisão entraram: Burns, O'Connor e Stocklmayer (2003, p. 191 e 193), Palmer e Schibeci (2014, p. 513), Otto et al. (2026), CGEE (2024, p. 13-14 e 26) e Sumner et al. (2014), com a mesma redação registrada nas tabelas acima. Dado novo deste post: o estudo do CGEE com 320 perfis do Instagram e 320 canais do YouTube encontrou o termo "cientista" usado muitas vezes para legitimar autores e vender produtos (CGEE, 2024, p. 26).
 
+Dados do lote 1 de 2026-11-24 (posts sobre podcast científico, comunicação científica, fim do Qualis e divulgador científico). Todos conferidos nos fichamentos do projeto de redação (`estudos/`), sem apud. Referências completas nos próprios posts.
+
+| Dado (redação do post) | Fonte |
+|---|---|
+| 952 podcasts de ciência em inglês: 33% com menos de 10 episódios, 72% com menos de 50; 40% sem episódio novo havia mais de um ano; 57% sem calendário regular; 76% sem renda explícita; 77% para o público em geral, 16% para especialistas; 51% com notas do episódio. | MacKenzie (2019), Royal Society Open Science 6(1) e180932, p. 7-9. |
+| Programas ligados a organizações: mediana de 24 episódios contra 16 dos independentes; entre os de vida longa, 5,5 contra 4,3 anos no ar. Citar só medianas (as médias do artigo se contradizem). | MacKenzie (2019), p. 10-12. |
+| Ouvintes brasileiros de podcasts (PodPesquisa 2014, dois programas de ciência): ouvem em casa 45,93%, no trânsito 34,47%, no trabalho 18,86%; 55,94% com atenção dividida; maioria homens, com graduação ou pós, do Sul e Sudeste. | Dantas-Queiroz, Wentzel e Queiroz (2018), An. Acad. Bras. Ciênc. 90(2), p. 1897. |
+| Episódios de 60 a 90 min preferidos por 47,55% de quem já ouve; os autores sugerem episódios de 30 a 60 min ou menos para atrair novos ouvintes. DOI, links permanentes e ORCID nas notas do episódio. | Dantas-Queiroz, Wentzel e Queiroz (2018), p. 1896 e 1900. |
+| 69 podcasts de divulgação científica identificados em 2019; 37 analisados; bate-papo em 19 e entrevista em 12; 13 formatos. Entrevistas de 15 a 50 min, pílulas de cerca de 5 min. | Figueira e Bevilaqua (2022), Reciis 16(1), p. 128, 133-134. DOI correto termina em 2458. |
+| 77 podcasts de divulgação científica mapeados no Norte e Sudeste; interrupção relacionada pelos autores à dependência de editais. Citar só o total (contagens internas inconsistentes). | Souza, Martins e Costa (2025), Temática 21(9). |
+| Menos de 1% da audiência participa dos fóruns (estimativa dos autores); todos os ouvintes entrevistados conversam sobre os episódios fora da internet. | Birch e Weitkamp (2010), New Media & Society 12(6), p. 903-905. |
+| 80 respondentes: 81% preferem episódios com menos de 30 min; sugestão de título menos técnico e exemplos do cotidiano. | Rehman, Edkins e Ogrinc (2024), Frontiers in Communication 9, 1384389, p. 4 e 7-8. |
+| 45,3% nunca buscam informação sobre ciência em rádio e podcasts; 19,0% buscam com frequência. | CGEE (2024), p. 13-14. |
+| Em 2023, 17,9% citam uma instituição de pesquisa e 9,6% lembram um cientista brasileiro. | CGEE (2024), p. 14. |
+| Índice de confiança em cientistas de universidades e institutos públicos: 0,83 (2019) para 0,66 (2023), escala de -1 a 1. | CGEE (2024), p. 18. |
+| Estudo complementar com 320 perfis do Instagram e 320 canais do YouTube: "cientista" usado de forma comercial para legitimar autores e vender produtos. | CGEE (2024), p. 26. |
+| Podcasts, vídeos, canais em plataformas digitais e disseminação nas redes entre os produtos de popularização; DOI fundamental; base Altmetrics; artigos classificados de A1 a A8; Quesito 3 com três itens de peso mínimo de 25%; ao menos um Caso de Impacto por programa no quadriênio. | CAPES, Diretrizes comuns (2025), p. 14, 41, 43, 45, 49-54. |
+| Os veículos deixam de ser classificados nos estratos Qualis; a classificação passa a ser do artigo, por três procedimentos. O ofício não usa a palavra "extinção". | CAPES, Ofício Circular nº 46/2024, item 2d, p. 2. |
+| Quesito "impacto e inovação": resultados percebidos pela sociedade, alcance e visibilidade. Não diz "interação com a sociedade". Coleta anual. | Portaria CAPES nº 109/2025, art. 12, § 3º, e art. 18. |
+| Área 31: impacto "englobando e dando sentido a todos os outros"; 10 ações de divulgação científica, incluindo podcast e canais em redes; altmetria reconhecida, repercussão das publicações medida por citações. Sempre como exemplo de uma área. | CAPES, Documento de Área 31 (p. 6, 21-23) e Ficha 31 (p. 14). |
+| PQ em Comunicação conta artigos Qualis A1 a A4; Qualis não deve ser a única métrica; comitê de Divulgação Científica separa ação de pesquisa em divulgação; educação formal fora; "a ciência é um direito de todos". | CNPq, critérios PQ e DT 2024-2026, p. 1, 171 e 235. |
+| "Capacidade de construir narrativas de impacto". | Gomes e Lima (2025), ABEC Meeting, p. 5. |
+| Cientistas não deveriam ter de fazer tudo sozinhos (posição de especialistas). | Fähnrich, Weitkamp e Kupper (2023), PUS 32(5), p. 616. |
+| Três barreiras: formação, tempo e recompensa (síntese dos autores). | Palmer e Schibeci (2014), p. 522-523. |
+
 ## Referências (ABNT)
 
 COORDENAÇÃO DE APERFEIÇOAMENTO DE PESSOAL DE NÍVEL SUPERIOR (Brasil). Portaria nº 109, de 25 de abril de 2025. Disciplina o processo de Avaliação de Permanência dos Programas de Pós-Graduação stricto sensu no país. Brasília, DF: CAPES, 2025.
