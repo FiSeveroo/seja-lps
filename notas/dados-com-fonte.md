@@ -51,7 +51,7 @@ O restante da apresentação continua confidencial: não copiar textos, outros n
 
 ## Usados no blog
 
-Dados do post "Podcast, vídeo, carrossel ou newsletter? Como escolher o formato para divulgar sua pesquisa" (16/11/2026). A checagem foi feita no projeto de redação, antes da entrega. Referências completas no próprio post.
+Dados do post "Podcast, vídeo, carrossel ou newsletter? Como escolher o formato para divulgar sua pesquisa" (16/11/2026, revisto em 24/11/2026 com os fichamentos do projeto de redação; sem apud). A checagem foi feita no projeto de redação, antes da entrega. Referências completas no próprio post.
 
 | Dado (redação do post) | Fonte |
 |---|---|
@@ -59,15 +59,25 @@ Dados do post "Podcast, vídeo, carrossel ou newsletter? Como escolher o formato
 | 89,3% dos estudos da revisão são dos Estados Unidos; o Instagram aparece em um único estudo. | Lai et al. (2025). |
 | Cerca de 92% das visualizações de um canal de química no YouTube vinham de não inscritos; inscritos curtiam cerca de 13 vezes mais por visualização (dados de 2014 a 2017). | Yang et al. (2022), PLoS ONE 17(5) e0267697. |
 | No YouTube, 85% das visualizações ficam com 3% dos canais. | Bärtl (2018), Convergence 24(1). |
-| Busca por termos centrais do debate político brasileiro nos metadados de 1.049 vídeos populares do YouTube teve incidência nula ou irrelevante. | Severo (2026), dissertação, PUCRS. |
+| Busca por termos centrais do debate político brasileiro nos metadados de 1.049 vídeos populares do YouTube teve incidência nula ou irrelevante. | Severo (2026), dissertação, PUCRS, p. 86. |
+| Redes sociais, aplicativos de mensagem e plataformas digitais são a principal fonte de informação sobre ciência no Brasil: 39,8% buscam informação nelas com frequência, à frente da TV; Instagram, Facebook, YouTube e WhatsApp concentram a busca; 26,6% não buscam ciência nas redes. | CGEE (2024), Percepção pública da C&T no Brasil 2023, resumo executivo, p. 13-14 (1.931 entrevistas, nov.-dez. 2023). |
+| 36,5% das pessoas admitem já ter compartilhado informação falsa. | CGEE (2024), p. 20. |
+| 306 vídeos de 52 canais populares de ciência no YouTube: os mais vistos de cada canal tinham com mais frequência uma história conduzindo o conteúdo e mais emoção; também eram mais comuns pergunta central, viradas e lição explícita. Não usar "70% com pergunta no título" (não está no original). | Huang e Grant (2020), Frontiers in Communication 5, 581349. |
+| Cinco perguntas da Agência Bori para explicar uma pesquisa. | Righetti et al. (2022), Intercom 45, e2022120. |
+| Canais "baseados em ciência" com boa nota em clareza e média de 2,12 em 5 em qualidade científica. | Otto et al. (2026), ECSM 13. |
+| Cinco efeitos da comunicação da ciência: consciência, prazer, interesse, formação de opinião e compreensão. | Burns, O'Connor e Stocklmayer (2003), Public Understanding of Science 12(2), p. 191. |
 
-Dados do post "Indicadores para um plano de divulgação científica, além de curtidas" (16/11/2026), também checados no projeto de redação:
+Dados do post "Indicadores para um plano de divulgação científica, além de curtidas" (16/11/2026, revisto em 24/11/2026), também checados no projeto de redação:
 
 | Dado (redação do post) | Fonte |
 |---|---|
 | Impacto na sociedade descrito como os "efeitos percebidos na (e pela) sociedade" no ciclo 2025-2028. | CAPES, apresentação "Novas diretrizes da avaliação da pós-graduação: ciclo 25-28" (8 maio 2025). |
 | 48 vídeos de oito canais alemães de fitness e nutrição "baseados em ciência"; nota média de qualidade científica 2,12 numa escala de 1 a 5. | Otto et al. (2026), ECSM 13, DOI 10.34190/ecsm.13.1.4608. |
 | Revisão de 18 publicações de cientistas da saúde: seis mencionam envolver o público no planejamento, uma descreve como. | Fontaine et al. (2019), JMIR Public Health and Surveillance 5(3) e14447. |
+| Na revisão de 28 estudos, as pesquisas quantitativas olharam sobretudo para engajamento, visualizações e intenção de comportamento. Não dizer que "o sucesso quase sempre aparece como visualização e raramente como compreensão": a frase não é dos autores. | Lai et al. (2025), p. 7. |
+| Entre 33% e 40% de 462 releases de universidades britânicas sobre saúde (2011) exageravam em relação ao artigo (conselho 40%, causa 33%, animal para humano 36%). | Sumner et al. (2014), BMJ 349 g7015, p. 3. |
+| 26,6% dos brasileiros não buscam ciência nas redes. | CGEE (2024), p. 14. |
+| Tipologia de comunicação científica: profissional, de déficit, consultiva e deliberativa. Recursos para divulgação definidos na proposta (posição dos autores, p. 523-524); grupo australiano que destinou 10% dos recursos a ações com a comunidade (p. 519, dados de 2010). | Palmer e Schibeci (2014), Public Understanding of Science 23(5). |
 
 Post "O que é divulgação científica?" (16/11/2026): definição em cinco condições e espectro em quatro eixos de Valério e Takata (2025), Pro-Posições v. 36; levantamento latino-americano com nove expressões, relatado pelos mesmos autores.
 
