@@ -3,8 +3,10 @@ titulo: "Podcast científico: como criar um podcast com o seu grupo de pesquisa"
 tituloBusca: "Podcast científico: como criar com seu grupo de pesquisa"
 linhaFina: "O que a pesquisa sobre podcasts de divulgação científica diz sobre formato, duração, público e, principalmente, sobre o que faz um programa continuar depois dos primeiros episódios."
 descricao: "Veja como criar um podcast científico com o seu grupo de pesquisa: formatos, duração, notas do episódio e como manter o programa vivo depois do edital."
-data: 2026-11-26
+data: 2026-11-24
 autor: filipe-severo
+capa: ./imagens/podcast-capa.webp
+capaAlt: "Ilustração de três pesquisadores conversando em volta de dois microfones de podcast, com um caderno aberto e um frasco de laboratório na mesa"
 temas: ["podcast científico", "divulgação científica", "podcast de divulgação científica", "grupo de pesquisa"]
 ---
 
@@ -16,7 +18,7 @@ Gravar o primeiro episódio de um podcast científico é a parte fácil. A pesqu
 
 Um podcast científico é um programa em áudio, distribuído pela internet e ouvido sob demanda, que fala sobre pesquisa: resultados, métodos, pessoas que pesquisam e o lugar da ciência na sociedade. No Brasil, um levantamento da Fiocruz identificou 69 podcasts de divulgação científica nas principais plataformas em 2019 (Figueira; Bevilaqua, 2022).
 
-Quando o programa se dirige a quem está fora da área, ele é uma forma de [divulgação científica](/blog/o-que-e-divulgacao-cientifica/). Há também podcasts de ciência feitos para especialistas, como os de revistas científicas e sociedades profissionais. Num levantamento de 952 podcasts de ciência em inglês, 77% eram voltados ao público em geral e 16% a cientistas ou especialistas (MacKenzie, 2019). A diferença importa para o grupo de pesquisa: falar com colegas de outra universidade é [comunicação científica](/blog/o-que-e-comunicacao-cientifica/), e pede outra linguagem e outro planejamento.
+Quando o programa se dirige a quem está fora da área, ele é uma forma de [divulgação científica](/blog/o-que-e-divulgacao-cientifica/). Há também podcasts de ciência feitos para especialistas, como os de revistas científicas e sociedades profissionais. Num levantamento de 952 podcasts de ciência em inglês, 77% eram voltados ao público em geral e 16% a cientistas ou especialistas (MacKenzie, 2019). A diferença importa para o grupo de pesquisa: falar com colegas de outra universidade é comunicação científica, e pede outra linguagem e outro planejamento.
 
 ## Por que o podcast funciona para divulgar pesquisa
 

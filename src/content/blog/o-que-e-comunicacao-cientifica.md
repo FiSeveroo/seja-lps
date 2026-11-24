@@ -6,6 +6,7 @@ descricao: "Comunicação científica é a troca de informação entre especiali
 data: 2026-11-26
 autor: filipe-severo
 temas: ["comunicação científica", "divulgação científica", "comunicação entre pares"]
+rascunho: true
 ---
 
 Uma pesquisadora passa o semestre escrevendo um artigo. Ele é avaliado por pares, aceito numa boa revista e apresentado num congresso da área. Meses depois, uma vizinha pergunta o que ela pesquisa, e a resposta não sai: tudo o que foi escrito até ali foi feito para quem já conhecia o assunto.
