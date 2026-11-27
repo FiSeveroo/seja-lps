@@ -2,7 +2,7 @@
 
 As ilustrações deixam a marca mais humana: pessoas que pesquisam, conversando e criando, em volta das plataformas. Valem para o site e para qualquer criação da Seja (posts, carrosséis, materiais).
 
-Primeiro uso no site: a Home (`ilustra-home-topo-v2.svg` no primeiro bloco, v2 com um homem no grupo, e `ilustra-home-conversa-v1.svg` em "Agende uma conversa"). Depois, /ciencia/ (`ilustra-ciencia-topo-v1.svg` no primeiro bloco, `ilustra-ciencia-perguntas-v1.svg` em "Perguntas frequentes", ícones `ilustra-ciencia-dor-*-v1.svg` na lista de dores, `ilustra-ciencia-servico-*-v1.svg` nos serviços e `ilustra-ciencia-capes-*-v1.svg` na linha do tempo da CAPES).
+Primeiro uso no site: a Home (`ilustra-home-topo-v2.svg` no primeiro bloco, v2 com um homem no grupo, e `ilustra-home-conversa-v1.svg` em "Agende uma conversa"). Depois, /ciencia/ (`ilustra-ciencia-topo-v2.svg` no primeiro bloco, `ilustra-ciencia-perguntas-v2.svg` em "Perguntas frequentes", ícones `ilustra-ciencia-dor-*-v2.svg` na lista de dores, `ilustra-ciencia-servico-*-v1.svg` nos serviços e `ilustra-ciencia-capes-*-v1.svg` na linha do tempo da CAPES).
 
 ## Como o estilo funciona
 
@@ -31,7 +31,7 @@ Primeiro uso no site: a Home (`ilustra-home-topo-v2.svg` no primeiro bloco, v2 c
 3. **Abra a prévia com Read e olhe de verdade.** Confira: mão de quem fala visível, nenhum objeto cortado ou flutuando, tronco atrás de algo, peças sem encostar umas nas outras, cores certas no fundo certo. Corrija e gere de novo até ficar bom. Pular este passo é o que faz a ilustração sair ruim.
 4. Coloque na página com `<img src="/assets/ilustra-....svg" width=".." height=".." alt="...">`: `width` e `height` do viewBox, `height: auto` no estilo e um `alt` que descreve a cena. Ilustração é SVG (exceção à regra do WebP: é vetor, fica nítida em qualquer tela e é leve).
 5. Siga a checagem da skill seja-lp-design: `npm run build`, screenshots em 1440, 768 e 390, e olhe a cena dentro da página.
-6. Mudou o desenho de uma cena já publicada? Suba a versão no nome (`-v2`) e troque a referência na página.
+6. Mudou o desenho de uma cena ou ícone? Suba a versão no nome (`-v2`) e troque a referência na página. Vale também para o que já apareceu numa prévia de PR: as imagens de `/assets/` ficam 30 dias no cache do navegador, e com o mesmo nome a pessoa continua vendo o desenho antigo.
 
 ## Fora do site
 

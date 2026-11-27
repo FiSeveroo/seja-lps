@@ -1,6 +1,7 @@
 ---
 import DoBlog from '../../components/DoBlog.astro';
 import Historias from '../../components/Historias.astro';
+import Editais from '../../components/Editais.astro';
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -120,6 +121,17 @@ import Historias from '../../components/Historias.astro';
     padding: 72px var(--margem) 0;
   }
   .ilustra-topo { width: 100%; max-width: 1100px; height: auto; display: block; margin: 64px auto 0; }
+  /* No computador o primeiro bloco cabe inteiro na tela: texto à esquerda e ilustração
+     à direita, com a mesa encostada no fim do bloco. No celular, tudo empilhado. */
+  @media (min-width: 961px) {
+    .hero { min-height: min(100svh, 820px); display: flex; flex-direction: column; text-align: left; padding-top: 56px; }
+    .hero .topo-grade { flex: 1; width: 100%; max-width: 1320px; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 56px; align-items: end; }
+    .topo-texto { align-self: center; padding-bottom: 56px; }
+    .hero .topo-texto .hero-logo { margin: 0 0 40px; width: 160px; }
+    .hero .topo-texto h1 { font-size: clamp(40px, 4.2vw, 60px); margin: 0 0 24px; }
+    .hero .topo-texto .hero-sub { font-size: 19px; margin: 0 0 32px; }
+    .hero .ilustra-topo { margin: 0; max-width: none; }
+  }
   .hero-logo { width: 190px; margin: 0 auto 72px; }
   .hero h1 { font-size: clamp(40px, 6.2vw, 84px); max-width: 1000px; margin: 0 auto 32px; }
   .hero-sub { font-size: clamp(19px, 1.7vw, 23px); max-width: 720px; margin: 0 auto 44px; color: #fff; }
@@ -187,38 +199,6 @@ import Historias from '../../components/Historias.astro';
   .servico p { margin-bottom: 8px; }
   .servico .link-seta { display: inline-block; margin-top: 8px; }
 
-  /* EDITAIS */
-  .editais { background: var(--amarelo); }
-  .editais-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-  .editais h2 { font-size: clamp(30px, 3.4vw, 44px); }
-  .editais p { color: var(--texto); }
-  .editais .cta { margin-top: 12px; }
-  .selo { display: flex; gap: 18px; align-items: center; background: var(--texto); color: #fff; padding: 22px 26px; border-radius: 16px; margin-top: 36px; }
-  .selo img { width: 40px; flex-shrink: 0; }
-  .selo p { color: #fff; font-size: 17px; margin: 0; line-height: 1.45; }
-  .selo strong { display: block; font-size: 19px; color: var(--amarelo); }
-
-  .doc { background: #fff; border-radius: 16px; padding: 40px 36px; position: relative; transform: rotate(-1.5deg); }
-  .doc-aviso {
-    position: absolute; top: -22px; right: -14px;
-    background: var(--laranja); color: #fff;
-    padding: 10px 18px; border-radius: 999px;
-    font-size: 16px; font-weight: 700; transform: rotate(3deg); white-space: nowrap;
-  }
-  .doc-cabecalho { border-bottom: 2px solid var(--linha); padding-bottom: 16px; margin-bottom: 22px; }
-  .doc-tipo { font-size: 14px; color: var(--apoio); margin-bottom: 4px; }
-  .doc-titulo { font-size: 18px; font-weight: 700; }
-  .campo { margin-bottom: 16px; }
-  .campo-nome { font-size: 15px; font-weight: 600; color: var(--apoio); margin-bottom: 6px; }
-  .campo-linha { height: 26px; border-radius: 6px; background: var(--claro); position: relative; }
-  .campo-linha::after { content: ''; position: absolute; top: 9px; left: 12px; right: 40%; height: 8px; border-radius: 3px; background: #DAD7E2; }
-  .campo-linha.curta::after { right: 62%; }
-  .campo-linha.longa::after { right: 18%; }
-  .campo-destaque { background: #FFF2E9; border: 3px solid var(--laranja); border-radius: 10px; padding: 16px; margin: 22px 0 18px; }
-  .campo-destaque .campo-nome { color: var(--laranja); font-weight: 700; font-size: 16px; }
-  .campo-destaque .campo-linha { background: #fff; height: 54px; }
-  .campo-destaque .campo-linha::after { display: none; }
-
   /* PERGUNTAS FREQUENTES */
   .faq { background: var(--roxo); color: #fff; }
   .faq-container { max-width: 1160px; display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 72px; align-items: start; }
@@ -258,7 +238,6 @@ import Historias from '../../components/Historias.astro';
     .faq-container { grid-template-columns: minmax(0, 1fr); gap: 32px; }
     .ilustra-perguntas { position: static; max-width: 340px; }
     section { padding: 80px var(--margem); }
-    .editais-grid { grid-template-columns: 1fr; gap: 40px; }
     .dores-lista { columns: 1; }
     .dados-grid { grid-template-columns: 1fr; gap: 40px; margin: 48px 0 40px; }
     .timeline { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
@@ -267,7 +246,6 @@ import Historias from '../../components/Historias.astro';
     .servico img { width: 64px; }
     .servico > div:last-child { grid-column: 2; }
     .servico h3 { font-size: 28px; margin-top: 4px; }
-    .doc { transform: none; margin-top: 16px; }
   }
   @media (max-width: 560px) {
     p { font-size: 18px; }
@@ -278,8 +256,6 @@ import Historias from '../../components/Historias.astro';
     .dores-lista li { font-size: 19px; grid-template-columns: 48px 1fr; gap: 16px; }
     .dores-lista img { width: 48px; }
     .timeline { grid-template-columns: 1fr; }
-    .doc { padding: 32px 22px; }
-    .doc-aviso { right: 8px; font-size: 14px; }
     .simbolo-bg { width: 480px; }
     .cta { padding: 17px 28px; font-size: 17px; }
   }
@@ -291,12 +267,14 @@ import Historias from '../../components/Historias.astro';
 <!-- HERO -->
 <section class="hero">
   <img class="simbolo-bg dir" src="/assets/Simbolo_SEJA_BRANCO.webp" alt="" aria-hidden="true" width="800" height="838">
-  <div class="container">
-    <img class="hero-logo" src="/assets/Logotipo_SEJA_BRANCO.webp" alt="Seja Creator" width="1000" height="486" fetchpriority="high">
-    <h1>A ciência que você faz precisa chegar em quem importa.</h1>
-    <p class="hero-sub">A Seja é especializada em divulgação científica nas plataformas digitais. Caminhamos ao lado de pesquisadores, grupos de pesquisa, programas de pós-graduação e projetos de pesquisa na estratégia, na criação e na gestão da presença digital.</p>
-    <a class="cta" href="https://wa.me/5551991006411?text=Oi%2C%20Filipe!%20Vi%20a%20p%C3%A1gina%20da%20Seja%20e%20quero%20conversar." target="_blank" rel="noopener">Falar com especialista</a>
-    <img class="ilustra-topo" src="/assets/ilustra-ciencia-topo-v1.svg" width="1200" height="640" alt="Ilustração de uma pesquisadora falando, com notebook e livros na mesa. A ideia dela, uma lâmpada acesa, passa por um vídeo, um podcast e um post e chega a pessoas de várias idades do outro lado da mesa, uma delas com o celular na mão.">
+  <div class="container topo-grade">
+    <div class="topo-texto">
+      <img class="hero-logo" src="/assets/Logotipo_SEJA_BRANCO.webp" alt="Seja Creator" width="1000" height="486" fetchpriority="high">
+      <h1>A ciência que você faz precisa chegar em quem importa.</h1>
+      <p class="hero-sub">A Seja é especializada em divulgação científica nas plataformas digitais. Caminhamos ao lado de pesquisadores, grupos de pesquisa, programas de pós-graduação e projetos de pesquisa na estratégia, na criação e na gestão da presença digital.</p>
+      <a class="cta" href="https://wa.me/5551991006411?text=Oi%2C%20Filipe!%20Vi%20a%20p%C3%A1gina%20da%20Seja%20e%20quero%20conversar." target="_blank" rel="noopener">Falar com especialista</a>
+    </div>
+    <img class="ilustra-topo" src="/assets/ilustra-ciencia-topo-v2.svg" width="1200" height="640" alt="Ilustração de uma pesquisadora falando, com notebook e livros na mesa. A ideia dela, uma lâmpada acesa, passa por um vídeo, um podcast e um post e chega a pessoas de várias idades do outro lado da mesa, uma delas com o celular na mão.">
   </div>
 </section>
 
@@ -306,11 +284,11 @@ import Historias from '../../components/Historias.astro';
     <h2 class="revela">Se você é pesquisador, provavelmente já passou por isso.</h2>
     <div class="revela">
       <ul class="dores-lista">
-        <li><img src="/assets/ilustra-ciencia-dor-alcance-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Sabe que o que você estuda importa, mas não sabe como fazer isso chegar em quem não é da área.</span></li>
-        <li><img src="/assets/ilustra-ciencia-dor-tempo-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Quer aparecer nas redes, mas não sabe por onde começar, e não tem tempo pra descobrir sozinho.</span></li>
-        <li><img src="/assets/ilustra-ciencia-dor-tom-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Já tentou publicar conteúdo, mas o que sai técnico demais não é lido, e o que sai simples demais parece raso.</span></li>
-        <li><img src="/assets/ilustra-ciencia-dor-rotina-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Vê colegas construindo audiência e se pergunta como conciliar isso com a rotina de pesquisa, aula e orientação.</span></li>
-        <li><img src="/assets/ilustra-ciencia-dor-impacto-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Precisa mostrar o impacto do seu trabalho pra editais, avaliações institucionais e agora pra CAPES, mas sente que a academia não te preparou pra isso.</span></li>
+        <li><img src="/assets/ilustra-ciencia-dor-alcance-v2.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Sabe que o que você estuda importa, mas não sabe como fazer isso chegar em quem não é da área.</span></li>
+        <li><img src="/assets/ilustra-ciencia-dor-tempo-v2.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Quer aparecer nas redes, mas não sabe por onde começar, e não tem tempo pra descobrir sozinho.</span></li>
+        <li><img src="/assets/ilustra-ciencia-dor-tom-v2.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Já tentou publicar conteúdo, mas o que sai técnico demais não é lido, e o que sai simples demais parece raso.</span></li>
+        <li><img src="/assets/ilustra-ciencia-dor-rotina-v2.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Vê colegas construindo audiência e se pergunta como conciliar isso com a rotina de pesquisa, aula e orientação.</span></li>
+        <li><img src="/assets/ilustra-ciencia-dor-impacto-v2.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Precisa mostrar o impacto do seu trabalho pra editais, avaliações institucionais e agora pra CAPES, mas sente que a academia não te preparou pra isso.</span></li>
       </ul>
       <p class="dores-fechamento">A gente entende essas dores porque trabalha com elas todo dia.</p>
     </div>
@@ -413,33 +391,7 @@ import Historias from '../../components/Historias.astro';
 </section>
 
 <!-- EDITAIS -->
-<section class="editais">
-  <img class="simbolo-bg esq" src="/assets/Simbolo_SEJA_LARANJA.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy" style="opacity:.1">
-  <div class="container editais-grid">
-    <div class="revela">
-      <h2>Seu edital pede plano de divulgação científica?</h2>
-      <p>Nem sempre a orientação está clara. E o custo de errar é alto: proposta desclassificada ou nota baixa.</p>
-      <p><strong>A Seja constrói junto com você o planejamento de comunicação da sua proposta.</strong> Do documento pro edital ao trabalho contínuo depois da aprovação.</p>
-      <a class="cta cta-escuro" href="https://wa.me/5551991006411?text=Oi%2C%20Filipe!%20Quero%20falar%20sobre%20plano%20de%20divulga%C3%A7%C3%A3o%20cient%C3%ADfica%20para%20um%20edital." target="_blank" rel="noopener">Falar sobre meu edital</a>
-      <div class="selo">
-        <img src="/assets/Simbolo_SEJA_AMARELO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
-        <p><strong>Aprovado no FAPERGS 06/2025</strong>A Seja consta oficialmente no projeto Nós em redes (Grupo Lola / Unisinos).</p>
-      </div>
-    </div>
-    <div class="doc revela" role="img" aria-label="Ilustração de um formulário de edital com o campo Plano de divulgação científica e impacto social em destaque">
-      <div class="doc-aviso">É aqui que a Seja entra</div>
-      <div class="doc-cabecalho">
-        <div class="doc-tipo">Edital de fomento à pesquisa</div>
-        <div class="doc-titulo">Formulário de submissão de proposta</div>
-      </div>
-      <div class="campo"><div class="campo-nome">1. Título do projeto</div><div class="campo-linha longa"></div></div>
-      <div class="campo"><div class="campo-nome">2. Objetivos</div><div class="campo-linha longa"></div></div>
-      <div class="campo"><div class="campo-nome">3. Metodologia</div><div class="campo-linha"></div></div>
-      <div class="campo-destaque"><div class="campo-nome">4. Plano de divulgação científica e impacto social</div><div class="campo-linha"></div></div>
-      <div class="campo"><div class="campo-nome">5. Cronograma</div><div class="campo-linha curta"></div></div>
-    </div>
-  </div>
-</section>
+<Editais />
 
 <!-- HISTÓRIAS -->
 <Historias />
@@ -447,7 +399,7 @@ import Historias from '../../components/Historias.astro';
 <!-- PERGUNTAS FREQUENTES -->
 <section class="faq" id="perguntas">
   <div class="container faq-container">
-    <img class="ilustra-perguntas" src="/assets/ilustra-ciencia-perguntas-v1.svg" width="560" height="470" alt="Ilustração de um pesquisador de óculos, com a mão no queixo e um balão com ponto de interrogação, conversando com uma pessoa que levanta a mão para responder." loading="lazy">
+    <img class="ilustra-perguntas" src="/assets/ilustra-ciencia-perguntas-v2.svg" width="560" height="470" alt="Ilustração de um pesquisador de óculos, com a mão no queixo e um balão com ponto de interrogação, conversando com uma pessoa que levanta a mão para responder." loading="lazy">
     <div>
     <h2>Perguntas frequentes</h2>
     <div class="faq-lista">
