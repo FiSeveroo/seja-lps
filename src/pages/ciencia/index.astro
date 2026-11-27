@@ -128,14 +128,15 @@ import DoBlog from '../../components/DoBlog.astro';
   .dores-lista li { break-inside: avoid; }
   .dores-lista li {
     display: grid;
-    grid-template-columns: 36px 1fr;
-    gap: 20px;
+    grid-template-columns: 60px 1fr;
+    gap: 22px;
+    align-items: center;
     padding: 26px 0;
     font-size: 21px;
     line-height: 1.5;
   }
   .dores-lista li { border-top: 2px solid var(--linha); }
-  .dores-lista img { width: 30px; margin-top: 4px; }
+  .dores-lista img { width: 60px; height: auto; }
   .dores-fechamento { margin-top: 28px; font-size: 21px; font-weight: 700; color: var(--roxo); }
 
   /* DADOS */
@@ -298,8 +299,8 @@ import DoBlog from '../../components/DoBlog.astro';
     .ilustra-topo { margin-top: 48px; }
     .hero-logo { width: 150px; margin-bottom: 56px; }
     .hero h1 { font-size: 38px; }
-    .dores-lista li { font-size: 19px; grid-template-columns: 28px 1fr; gap: 14px; }
-    .dores-lista img { width: 24px; }
+    .dores-lista li { font-size: 19px; grid-template-columns: 48px 1fr; gap: 16px; }
+    .dores-lista img { width: 48px; }
     .timeline { grid-template-columns: 1fr; }
     .doc { padding: 32px 22px; }
     .doc-aviso { right: 8px; font-size: 14px; }
@@ -330,11 +331,11 @@ import DoBlog from '../../components/DoBlog.astro';
     <h2 class="revela">Se você é pesquisador, provavelmente já passou por isso.</h2>
     <div class="revela">
       <ul class="dores-lista">
-        <li><img src="/assets/Simbolo_SEJA_ROXO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy"><span>Sabe que o que você estuda importa, mas não sabe como fazer isso chegar em quem não é da área.</span></li>
-        <li><img src="/assets/Simbolo_SEJA_ROSA.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy"><span>Quer aparecer nas redes, mas não sabe por onde começar, e não tem tempo pra descobrir sozinho.</span></li>
-        <li><img src="/assets/Simbolo_SEJA_LARANJA.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy"><span>Já tentou publicar conteúdo, mas o que sai técnico demais não é lido, e o que sai simples demais parece raso.</span></li>
-        <li><img src="/assets/Simbolo_SEJA_ROXO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy"><span>Vê colegas construindo audiência e se pergunta como conciliar isso com a rotina de pesquisa, aula e orientação.</span></li>
-        <li><img src="/assets/Simbolo_SEJA_ROSA.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy"><span>Precisa mostrar o impacto do seu trabalho pra editais, avaliações institucionais e agora pra CAPES, mas sente que a academia não te preparou pra isso.</span></li>
+        <li><img src="/assets/ilustra-ciencia-dor-alcance-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Sabe que o que você estuda importa, mas não sabe como fazer isso chegar em quem não é da área.</span></li>
+        <li><img src="/assets/ilustra-ciencia-dor-tempo-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Quer aparecer nas redes, mas não sabe por onde começar, e não tem tempo pra descobrir sozinho.</span></li>
+        <li><img src="/assets/ilustra-ciencia-dor-tom-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Já tentou publicar conteúdo, mas o que sai técnico demais não é lido, e o que sai simples demais parece raso.</span></li>
+        <li><img src="/assets/ilustra-ciencia-dor-rotina-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Vê colegas construindo audiência e se pergunta como conciliar isso com a rotina de pesquisa, aula e orientação.</span></li>
+        <li><img src="/assets/ilustra-ciencia-dor-impacto-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"><span>Precisa mostrar o impacto do seu trabalho pra editais, avaliações institucionais e agora pra CAPES, mas sente que a academia não te preparou pra isso.</span></li>
       </ul>
       <p class="dores-fechamento">A gente entende essas dores porque trabalha com elas todo dia.</p>
     </div>
