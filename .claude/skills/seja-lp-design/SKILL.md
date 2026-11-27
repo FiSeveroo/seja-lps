@@ -28,6 +28,8 @@ Um DESIGN.md da Seja (no formato popularizado pelo Google Stitch / awesome-desig
 - bg1 (`/assets/bg1.webp`, degradê azul→roxo da marca) só no hero. Fora dele, blocos em cor sólida (roxo, rosa, amarelo) alternando com fundo claro. Nada de degradês criados em CSS. Outros degradês da marca (ex.: rosa→laranja do site sejacreator.com.br) só quando o Filipe pedir, no elemento que ele indicar; nunca por iniciativa própria.
 - Peça os arquivos ao usuário se não estiverem na sessão; não invente substitutos.
 
+- Ilustrações: pessoas em busto, de frente, sem rosto, em formas chapadas com as cores da marca, montadas só com o kit de `marca/ilustracoes/` (molde único de pessoa, ícones das plataformas, mesa, brilhos). Regras e passo a passo em `marca/ilustracoes/ILUSTRACOES.md`; nunca desenhar à mão livre fora do kit, e sempre abrir a prévia antes de usar.
+
 ## 3. Regras de casa
 
 | Evitar | Fazer |
@@ -40,6 +42,7 @@ Um DESIGN.md da Seja (no formato popularizado pelo Google Stitch / awesome-desig
 | Títulos de 3+ linhas | Título com até 2 linhas em qualquer largura; cortar palavras antes de reduzir fonte |
 | Bloco grande alinhado à esquerda com metade da tela vazia | Centralizar momentos de destaque (ex.: bloco CAPES) ou fechar o vazio com imagem/coluna |
 | Caixas de destaque redundantes repetindo o que o texto já disse | Remover |
+| Ilustração desenhada fora do kit, com rosto, contorno, sombra ou em toda seção | Cena do kit que nasce do conteúdo, no máximo duas ou três por página |
 | Dados sem fonte | Todo número com fonte visível (ex.: CAPES Portaria nº 109/2025) |
 
 Páginas sempre com um `h1` claro no primeiro bloco, um título em cada seção, margens iguais, versão mobile pensada (fontes com override próprio).

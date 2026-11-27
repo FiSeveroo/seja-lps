@@ -6,3 +6,5 @@ node_modules/
 .astro/
 dist/
 .wrangler/
+marca/ilustracoes/previas/
+__pycache__/
