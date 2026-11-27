@@ -2,7 +2,7 @@
 
 As ilustrações deixam a marca mais humana: pessoas que pesquisam, conversando e criando, em volta das plataformas. Valem para o site e para qualquer criação da Seja (posts, carrosséis, materiais).
 
-Primeiro uso no site: a Home (`ilustra-home-topo-v1.svg` no primeiro bloco e `ilustra-home-conversa-v1.svg` em "Agende uma conversa"). Depois, /ciencia/ (`ilustra-ciencia-topo-v1.svg` no primeiro bloco, `ilustra-ciencia-perguntas-v1.svg` em "Perguntas frequentes" e os ícones `ilustra-ciencia-dor-*-v1.svg` na lista de dores).
+Primeiro uso no site: a Home (`ilustra-home-topo-v2.svg` no primeiro bloco, v2 com um homem no grupo, e `ilustra-home-conversa-v1.svg` em "Agende uma conversa"). Depois, /ciencia/ (`ilustra-ciencia-topo-v2.svg` no primeiro bloco, `ilustra-ciencia-perguntas-v2.svg` em "Perguntas frequentes", ícones `ilustra-ciencia-dor-*-v2.svg` na lista de dores, `ilustra-ciencia-servico-*-v1.svg` nos serviços e `ilustra-ciencia-capes-*-v1.svg` na linha do tempo da CAPES).
 
 ## Como o estilo funciona
 
@@ -12,7 +12,7 @@ Primeiro uso no site: a Home (`ilustra-home-topo-v1.svg` no primeiro bloco e `il
 - **Cores só da marca.** Roxo, rosa, azul, laranja, amarelo, texto e branco, mais os tons claros do kit (lilás, lilás médio, rosa claro) e os tons de pele. Nada fora disso.
 - **Cenas novas para cada conteúdo.** As cenas da Home são referência de estilo, não de composição: não repita mesa, ideia e plataformas em toda página. Invente a situação que o texto pede (ex.: /ciencia/ mostra um pesquisador gravando com o celular no tripé e o vídeo chegando às telas do público).
 - **Objetos simples e reconhecíveis.** Notebook visto por trás, livros, caneca, caderno, celular, mesa. Ícones das plataformas em cartões brancos: vídeo, celular com reels, podcast (microfone com fone), post, página de site com envelope, lâmpada da ideia.
-- **Peças do kit:** `pessoa` (com `barba`), ícones das plataformas, `icone_ideia`, `mesa`, `notebook_costas`, `livros`, `caneca`, `balao`, `interrogacao`, `brilhos`, `fio`, `relogio`, `documento` (com `selo`), `coracao`, `tripe_celular` e `janela` (tela de vídeo com uma pessoa dentro).
+- **Peças do kit:** `pessoa` (com `barba`), ícones das plataformas, `icone_ideia`, `mesa`, `notebook_costas`, `livros`, `caneca`, `balao`, `interrogacao`, `brilhos`, `fio`, `relogio`, `documento` (com `selo`), `coracao`, `tripe_celular`, `janela` (tela de vídeo com uma pessoa dentro), `calendario`, `quadro`, `estrela` e `medalha`.
 - **Detalhes de vida.** Tracinhos amarelos de destaque (`brilhos`), fios brancos curvos ligando a ideia às plataformas (`fio`), balões de fala.
 
 ## Regras de composição
@@ -31,7 +31,7 @@ Primeiro uso no site: a Home (`ilustra-home-topo-v1.svg` no primeiro bloco e `il
 3. **Abra a prévia com Read e olhe de verdade.** Confira: mão de quem fala visível, nenhum objeto cortado ou flutuando, tronco atrás de algo, peças sem encostar umas nas outras, cores certas no fundo certo. Corrija e gere de novo até ficar bom. Pular este passo é o que faz a ilustração sair ruim.
 4. Coloque na página com `<img src="/assets/ilustra-....svg" width=".." height=".." alt="...">`: `width` e `height` do viewBox, `height: auto` no estilo e um `alt` que descreve a cena. Ilustração é SVG (exceção à regra do WebP: é vetor, fica nítida em qualquer tela e é leve).
 5. Siga a checagem da skill seja-lp-design: `npm run build`, screenshots em 1440, 768 e 390, e olhe a cena dentro da página.
-6. Mudou o desenho de uma cena já publicada? Suba a versão no nome (`-v2`) e troque a referência na página.
+6. Mudou o desenho de uma cena ou ícone? Suba a versão no nome (`-v2`) e troque a referência na página. Vale também para o que já apareceu numa prévia de PR: as imagens de `/assets/` ficam 30 dias no cache do navegador, e com o mesmo nome a pessoa continua vendo o desenho antigo.
 
 ## Fora do site
 

@@ -294,3 +294,52 @@ def janela(x, y, w, h, id_clip, fundo=LILAS, conteudo="", barra=ROXO):
             f'<rect x="{x+12}" y="{y+34}" width="{w-24}" height="{h-46}" rx="12" fill="{fundo}"/>'
             f'<g clip-path="url(#{id_clip})">{conteudo}</g>')
 
+
+
+def calendario(x, y, w=90, h=90, topo=ROSA, folha=BRANCO, marca=None):
+    """Folha de calendário com argolas. marca: None | "check" (prazo cumprido) | "dias" (quadradinhos)."""
+    out = (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{w*0.14:.0f}" fill="{folha}"/>'
+           f'<path d="M {x} {y+w*0.14:.0f} Q {x} {y} {x+w*0.14:.0f} {y} L {x+w-w*0.14:.0f} {y} Q {x+w} {y} {x+w} {y+w*0.14:.0f} '
+           f'L {x+w} {y+h*0.28:.0f} L {x} {y+h*0.28:.0f} Z" fill="{topo}"/>'
+           f'<rect x="{x+w*0.24:.0f}" y="{y-h*0.08:.0f}" width="{w*0.08:.0f}" height="{h*0.2:.0f}" rx="{w*0.04:.0f}" fill="{TEXTO}"/>'
+           f'<rect x="{x+w*0.68:.0f}" y="{y-h*0.08:.0f}" width="{w*0.08:.0f}" height="{h*0.2:.0f}" rx="{w*0.04:.0f}" fill="{TEXTO}"/>')
+    if marca == "check":
+        out += (f'<path d="M {x+w*0.3:.0f} {y+h*0.62:.0f} L {x+w*0.45:.0f} {y+h*0.76:.0f} L {x+w*0.72:.0f} {y+h*0.46:.0f}" fill="none" '
+                f'stroke="{ROXO}" stroke-width="{w*0.09:.0f}" stroke-linecap="round" stroke-linejoin="round"/>')
+    elif marca == "dias":
+        for i in range(4):
+            cor = ROXO if i < 3 else LILAS_MEDIO
+            out += f'<rect x="{x+w*(0.12+i*0.2):.0f}" y="{y+h*0.5:.0f}" width="{w*0.15:.0f}" height="{w*0.15:.0f}" rx="{w*0.04:.0f}" fill="{cor}"/>'
+    return out
+
+
+def quadro(x, y, w=110, h=76, tela=BRANCO, barra=AMARELO):
+    """Quadro de apresentação num cavalete (aula, formação)."""
+    return (f'<path d="M {x+w*0.3:.0f} {y+h} L {x+w*0.2:.0f} {y+h*1.32:.0f} M {x+w*0.7:.0f} {y+h} L {x+w*0.8:.0f} {y+h*1.32:.0f}" '
+            f'stroke="{TEXTO}" stroke-width="{w*0.06:.0f}" stroke-linecap="round"/>'
+            f'<rect x="{x+w*0.47:.0f}" y="{y-h*0.14:.0f}" width="{w*0.06:.0f}" height="{h*0.18:.0f}" rx="2" fill="{TEXTO}"/>'
+            f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{w*0.06:.0f}" fill="{tela}"/>'
+            f'<rect x="{x}" y="{y}" width="{w}" height="{h*0.14:.0f}" rx="{w*0.04:.0f}" fill="{barra}"/>'
+            f'<rect x="{x+w*0.1:.0f}" y="{y+h*0.32:.0f}" width="{w*0.18:.0f}" height="{h*0.18:.0f}" rx="3" fill="{LARANJA}"/>'
+            f'<rect x="{x+w*0.1:.0f}" y="{y+h*0.6:.0f}" width="{w*0.18:.0f}" height="{h*0.18:.0f}" rx="3" fill="{LARANJA}"/>'
+            f'<path d="M {x+w*0.38:.0f} {y+h*0.4:.0f} L {x+w*0.86:.0f} {y+h*0.4:.0f} M {x+w*0.38:.0f} {y+h*0.68:.0f} L {x+w*0.76:.0f} {y+h*0.68:.0f}" '
+            f'stroke="{ROXO}" stroke-width="{h*0.09:.0f}" stroke-linecap="round"/>')
+
+
+def estrela(cx, cy, r=20, cor=AMARELO):
+    """Estrela de cinco pontas, cantos arredondados (destaque, classificação)."""
+    pts = []
+    for i in range(10):
+        a = math.radians(-90 + i * 36)
+        rr = r if i % 2 == 0 else r * 0.46
+        pts.append(f'{cx + rr*math.cos(a):.1f},{cy + rr*math.sin(a):.1f}')
+    return f'<polygon points="{" ".join(pts)}" fill="{cor}" stroke="{cor}" stroke-width="{r*0.16:.1f}" stroke-linejoin="round"/>'
+
+
+def medalha(cx, cy, r=30, cor=AMARELO, fita1=ROSA, fita2=ROXO):
+    """Medalha com fitas (avaliação, nota)."""
+    return (f'<path d="M {cx-r*0.7:.0f} {cy-r*2.1:.0f} L {cx-r*0.05:.0f} {cy-r*0.6:.0f} L {cx-r*0.55:.0f} {cy-r*0.6:.0f} L {cx-r*1.1:.0f} {cy-r*1.9:.0f} Z" fill="{fita1}"/>'
+            f'<path d="M {cx+r*0.7:.0f} {cy-r*2.1:.0f} L {cx+r*0.05:.0f} {cy-r*0.6:.0f} L {cx+r*0.55:.0f} {cy-r*0.6:.0f} L {cx+r*1.1:.0f} {cy-r*1.9:.0f} Z" fill="{fita2}"/>'
+            f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{cor}"/>'
+            f'<circle cx="{cx}" cy="{cy}" r="{r*0.68:.0f}" fill="none" stroke="{BRANCO}" stroke-width="{r*0.1:.1f}"/>'
+            + estrela(cx, cy, r * 0.38, BRANCO))
