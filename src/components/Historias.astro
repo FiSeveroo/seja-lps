@@ -1,0 +1,78 @@
+---
+// "Histórias que ajudamos a contar": o Nós da Docência, com fotos que trocam sozinhas
+// e números com fonte. Usado na home e em /ciencia/ (o mesmo bloco nas duas páginas).
+---
+<section id="historias" class="secao" style="position: relative; overflow: hidden; background: #FB5507; padding: 120px clamp(20px, 5vw, 64px);">
+  <div style="position: relative; max-width: 1160px; margin: 0 auto;">
+    <h2 class="marca" style="font-size: 120px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; color: #FFFFFF; text-align: center; margin: 0 0 16px;">Histórias</h2>
+    <p style="font-size: 23px; font-weight: 700; color: #FFFFFF; text-align: center; margin: 0 0 64px;">que ajudamos a contar</p>
+    <article class="grade-2" style="gap: 0; background: #FFFFFF; border-radius: 20px; overflow: hidden;">
+      <div class="capa-foto" style="position: relative; overflow: hidden; background: #1A1A2E; min-height: 460px;">
+        <div class="carrossel" tabindex="0" aria-label="Fotos do Nós da Docência" style="position: absolute; inset: 0;">
+          <img src="/assets/maria-claudia-daligna.webp" width="900" height="900" alt="Maria Cláudia Dal’Igna" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block; opacity: 1; transition: opacity 0.8s ease;">
+          <img src="/assets/nos-da-docencia-podcast.webp" width="793" height="800" alt="Maria Cláudia gravando o podcast Nós da Docência" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; opacity: 0; transition: opacity 0.8s ease;">
+          <img src="/assets/nos-da-docencia-livro.webp" width="793" height="800" alt="Capa do livro Nós da Docência" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 0; transition: opacity 0.8s ease;">
+          <img src="/assets/nos-da-docencia-gravacao.webp" width="793" height="800" alt="Gravação em estúdio do Nós da Docência" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; opacity: 0; transition: opacity 0.8s ease;">
+        </div>
+        <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+          <div style="display: inline-block; background: #FF006E; color: #FFFFFF; border-radius: 14px; padding: 16px 20px;">
+            <div style="font-size: 36px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">Nós da Docência</div>
+            <div style="font-size: 19px; font-weight: 700; margin-top: 8px;">Maria Cláudia Dal’Igna, doutora em Educação (Unisinos)</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+        <h3 style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; color: #1A1A2E; margin: 0 0 14px;">Da ideia ao ecossistema inteiro, construído junto.</h3>
+        <p style="font-size: 18px; margin: 0 0 28px;">Desde 2024, a Seja construiu com a Maria Cláudia a marca, o site, as redes, os materiais, o modelo de negócio e a plataforma de formação continuada do Nós da Docência.</p>
+        <div class="numeros" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; border-top: 2px solid #E6E3EE; padding-top: 20px;">
+          <div><div style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; color: #FF006E;">+ de 70 mil</div><div style="font-size: 15px; line-height: 1.35; margin-top: 6px;">visualizações nas plataformas</div></div>
+          <div><div style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; color: #FF006E;">+ de 500</div><div style="font-size: 15px; line-height: 1.35; margin-top: 6px;">livros vendidos</div></div>
+          <div><div style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; color: #FF006E;">+ de 4 mil</div><div style="font-size: 15px; line-height: 1.35; margin-top: 6px;">pessoas nas formações</div></div>
+        </div>
+        <p style="font-size: 14px; color: #55526A; margin: 12px 0 24px;">Fonte: Nós da Docência, dados de 2021 a 2025.</p>
+        <a href="https://www.nosdadocencia.com" target="_blank" rel="noopener" style="font-weight: 700; font-size: 18px; color: #8338EB; text-decoration: none;">Conheça o Nós da Docência →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+.secao { font-family: 'Futuru', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 500; color: #1A1A2E; line-height: 1.6; text-align: left; }
+.secao p { line-height: 1.6; text-wrap: wrap; }
+.grade-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; }
+.carrossel { cursor: pointer; }
+@media (max-width: 900px) {
+  .secao { padding: 80px 20px !important; }
+  .grade-2 { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .marca { font-size: 52px !important; }
+  .capa-foto { min-height: 520px !important; }
+  .numeros { grid-template-columns: minmax(0, 1fr) !important; gap: 12px !important; }
+  .numeros > div { display: grid; grid-template-columns: 150px minmax(0, 1fr); align-items: baseline; gap: 12px; }
+  .numeros > div > div:first-child { white-space: nowrap; }
+  .numeros > div > div:last-child { margin-top: 0 !important; font-size: 16px !important; }
+}
+</style>
+
+<script is:inline>
+window.addEventListener('load', function () {
+  document.querySelectorAll('.carrossel').forEach(function (c) {
+    var fotos = c.querySelectorAll('img');
+    var atual = 0;
+    var timer;
+    function proxima() {
+      fotos[atual].style.opacity = 0;
+      atual = (atual + 1) % fotos.length;
+      fotos[atual].style.opacity = 1;
+    }
+    function agendar() {
+      clearInterval(timer);
+      timer = setInterval(function () { if (!document.hidden) proxima(); }, 3000);
+    }
+    c.addEventListener('click', function () { proxima(); agendar(); });
+    c.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); proxima(); agendar(); }
+    });
+    agendar();
+  });
+});
+</script>

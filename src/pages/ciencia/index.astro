@@ -1,5 +1,6 @@
 ---
 import DoBlog from '../../components/DoBlog.astro';
+import Historias from '../../components/Historias.astro';
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -52,6 +53,7 @@ import DoBlog from '../../components/DoBlog.astro';
   @font-face { font-family: 'Futuru'; src: url('/fonts/Futuru-Semibold.woff2') format('woff2'); font-weight: 600; font-display: swap; }
   @font-face { font-family: 'Futuru'; src: url('/fonts/Futuru-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
   @font-face { font-family: 'Futuru'; src: url('/fonts/Futuru-Extrabold.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+  @font-face { font-family: 'Futuru'; src: url('/fonts/Futuru-Black.woff2') format('woff2'); font-weight: 900; font-display: swap; }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -160,16 +162,10 @@ import DoBlog from '../../components/DoBlog.astro';
   .capes { background: var(--claro); text-align: center; }
   .capes h2 { color: var(--roxo); max-width: 820px; margin-left: auto; margin-right: auto; }
   .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin: 64px 0 48px; position: relative; list-style: none; }
-  .timeline::before { content: ''; position: absolute; top: 40px; left: 12%; right: 12%; height: 4px; background: var(--linha); border-radius: 4px; }
+  .timeline::before { content: ''; position: absolute; top: 56px; left: 12%; right: 12%; height: 4px; background: var(--linha); border-radius: 4px; }
   .etapa { position: relative; }
-  .etapa-icone {
-    width: 80px; height: 80px; border-radius: 50%;
-    background: #fff; border: 4px solid var(--linha);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 20px; padding: 18px;
-  }
-  .etapa.laranja .etapa-icone { background: var(--laranja); border-color: var(--laranja); }
-  .etapa.roxo .etapa-icone { background: var(--roxo); border-color: var(--roxo); }
+  .etapa-icone { width: 112px; margin: 0 auto 16px; position: relative; background: var(--claro); }
+  .etapa-icone img { width: 100%; height: auto; display: block; }
   .etapa-ano { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
   .etapa-titulo { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
   .etapa-texto { font-size: 17px; line-height: 1.55; color: var(--texto); margin: 0; }
@@ -180,13 +176,13 @@ import DoBlog from '../../components/DoBlog.astro';
   .servicos-lista { margin-top: 56px; }
   .servico {
     display: grid;
-    grid-template-columns: 72px 4fr 7fr;
+    grid-template-columns: 88px 4fr 7fr;
     gap: 36px;
     align-items: start;
     padding: 40px 0;
   }
   .servico + .servico { border-top: 2px solid var(--linha); }
-  .servico img { width: 64px; }
+  .servico img { width: 88px; height: auto; }
   .servico h3 { font-size: 34px; margin: 6px 0 0; }
   .servico p { margin-bottom: 8px; }
   .servico .link-seta { display: inline-block; margin-top: 8px; }
@@ -240,26 +236,6 @@ import DoBlog from '../../components/DoBlog.astro';
   .faq details p { color: #fff; margin: 0 0 28px; max-width: 760px; }
   @media (prefers-reduced-motion: reduce) { .faq-mais::after { transition: none; } }
 
-  /* HISTÓRIAS */
-  .historias h2 { color: var(--roxo); }
-  .historias-intro { max-width: 760px; }
-  .historias-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 56px; }
-  .historia { background: var(--claro); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
-  .historia-capa {
-    background: var(--rosa); color: #fff;
-    min-height: 240px; padding: 36px;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    position: relative; overflow: hidden;
-  }
-  .historia:nth-child(2) .historia-capa { background: var(--azul); }
-  .historia-capa img { position: absolute; width: 260px; right: -50px; top: -40px; opacity: .2; }
-  .historia-capa .projeto { font-size: clamp(34px, 3.6vw, 48px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; position: relative; }
-  .historia-capa .frente { font-size: 18px; font-weight: 600; margin-top: 12px; position: relative; }
-  .historia-corpo { padding: 36px; flex: 1; }
-  .historia-corpo h3 { font-size: 24px; }
-  .historia-corpo .quem { color: var(--apoio); font-size: 17px; margin-bottom: 18px; }
-  .historia-corpo p { font-size: 18px; }
-  .historias-fechamento { text-align: center; max-width: 760px; margin: 56px auto 0; font-size: 21px; color: var(--texto); }
 
   /* CTA FINAL */
   .cta-final { background: var(--rosa); color: #fff; text-align: center; padding: 140px var(--margem); }
@@ -282,13 +258,13 @@ import DoBlog from '../../components/DoBlog.astro';
     .faq-container { grid-template-columns: minmax(0, 1fr); gap: 32px; }
     .ilustra-perguntas { position: static; max-width: 340px; }
     section { padding: 80px var(--margem); }
-    .editais-grid, .historias-grid { grid-template-columns: 1fr; gap: 40px; }
+    .editais-grid { grid-template-columns: 1fr; gap: 40px; }
     .dores-lista { columns: 1; }
     .dados-grid { grid-template-columns: 1fr; gap: 40px; margin: 48px 0 40px; }
     .timeline { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
     .timeline::before { display: none; }
-    .servico { grid-template-columns: 56px 1fr; gap: 12px 20px; }
-    .servico img { width: 48px; }
+    .servico { grid-template-columns: 64px 1fr; gap: 12px 20px; }
+    .servico img { width: 64px; }
     .servico > div:last-child { grid-column: 2; }
     .servico h3 { font-size: 28px; margin-top: 4px; }
     .doc { transform: none; margin-top: 16px; }
@@ -304,7 +280,6 @@ import DoBlog from '../../components/DoBlog.astro';
     .timeline { grid-template-columns: 1fr; }
     .doc { padding: 32px 22px; }
     .doc-aviso { right: 8px; font-size: 14px; }
-    .historia-capa, .historia-corpo { padding: 28px; }
     .simbolo-bg { width: 480px; }
     .cta { padding: 17px 28px; font-size: 17px; }
   }
@@ -375,25 +350,25 @@ import DoBlog from '../../components/DoBlog.astro';
     <h2 class="revela">Comunicar ciência deixou de ser opcional.</h2>
     <ol class="timeline">
       <li class="etapa revela">
-        <div class="etapa-icone"><img src="/assets/Simbolo_SEJA_PRETO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy"></div>
+        <div class="etapa-icone"><img src="/assets/ilustra-ciencia-capes-qualis-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"></div>
         <div class="etapa-ano">Até 2024</div>
         <div class="etapa-titulo">Lista Qualis</div>
         <p class="etapa-texto">A CAPES publicava a lista de revistas com nota Qualis Periódicos.</p>
       </li>
       <li class="etapa laranja revela">
-        <div class="etapa-icone"><img src="/assets/Simbolo_SEJA_BRANCO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy"></div>
+        <div class="etapa-icone"><img src="/assets/ilustra-ciencia-capes-artigo-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"></div>
         <div class="etapa-ano">2025</div>
         <div class="etapa-titulo">Novo ciclo</div>
         <p class="etapa-texto">A lista de revistas deixa de ser publicada e a classificação passa a ser do artigo. Cada programa é avaliado em três quesitos: estrutura; formação, pesquisa e produção intelectual; impacto e inovação.</p>
       </li>
       <li class="etapa revela">
-        <div class="etapa-icone"><img src="/assets/Simbolo_SEJA_ROXO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy"></div>
+        <div class="etapa-icone"><img src="/assets/ilustra-ciencia-capes-coleta-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"></div>
         <div class="etapa-ano">2025 a 2028</div>
         <div class="etapa-titulo">Ciclo avaliativo</div>
         <p class="etapa-texto">Coleta de dados anual. O que o programa faz nesses quatro anos entra na avaliação.</p>
       </li>
       <li class="etapa roxo revela">
-        <div class="etapa-icone"><img src="/assets/Simbolo_SEJA_BRANCO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy"></div>
+        <div class="etapa-icone"><img src="/assets/ilustra-ciencia-capes-quadrienal-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy"></div>
         <div class="etapa-ano">2029</div>
         <div class="etapa-titulo">Avaliação Quadrienal</div>
         <p class="etapa-texto">Notas de 1 a 7. Notas 1 e 2 levam à desativação do programa.</p>
@@ -410,7 +385,7 @@ import DoBlog from '../../components/DoBlog.astro';
     <p class="servicos-intro revela">Cuidamos da estratégia, da criação e da presença digital pra que o seu trabalho encontre quem precisa encontrar. Sem receita pronta e sem transformar você em quem você não é.</p>
     <div class="servicos-lista">
       <article class="servico revela">
-        <img src="/assets/Simbolo_SEJA_ROXO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <img src="/assets/ilustra-ciencia-servico-projeto-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy">
         <h3>Projeto</h3>
         <div>
           <p>Trabalho com escopo e prazo definidos.</p>
@@ -418,7 +393,7 @@ import DoBlog from '../../components/DoBlog.astro';
         </div>
       </article>
       <article class="servico revela">
-        <img src="/assets/Simbolo_SEJA_ROSA.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <img src="/assets/ilustra-ciencia-servico-parceria-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy">
         <h3>Parceria contínua</h3>
         <div>
           <p>Caminhada de longo prazo com pesquisadores, grupos de pesquisa, programas de pós-graduação e projetos de pesquisa.</p>
@@ -426,7 +401,7 @@ import DoBlog from '../../components/DoBlog.astro';
         </div>
       </article>
       <article class="servico revela">
-        <img src="/assets/Simbolo_SEJA_LARANJA.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
+        <img src="/assets/ilustra-ciencia-servico-formacao-v1.svg" alt="" aria-hidden="true" width="120" height="120" loading="lazy">
         <h3>Formação</h3>
         <div>
           <p>Pra quem quer aprender a comunicar a própria ciência, individualmente ou em grupo de pesquisa.</p>
@@ -467,42 +442,7 @@ import DoBlog from '../../components/DoBlog.astro';
 </section>
 
 <!-- HISTÓRIAS -->
-<section class="historias">
-  <div class="container">
-    <h2 class="revela">Histórias que ajudamos a contar</h2>
-    <p class="historias-intro revela">Duas frentes: uma pesquisadora construindo presença digital a partir da própria pesquisa, e um grupo de pesquisa executando um edital com plano estruturado de divulgação.</p>
-    <div class="historias-grid">
-      <article class="historia revela">
-        <div class="historia-capa">
-          <img src="/assets/Simbolo_SEJA_BRANCO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
-          <div class="projeto">Nós da Docência</div>
-          <div class="frente">Pesquisadora · Parceria contínua</div>
-        </div>
-        <div class="historia-corpo">
-          <h3>Maria Cláudia Dal’Igna</h3>
-          <p class="quem">Educação, gênero e trabalho docente</p>
-          <p>Pedagoga, doutora em Educação e professora da Unisinos, Maria Cláudia criou o Nós da Docência, um ecossistema de desenvolvimento profissional para professoras e professores. Desde 2024, a Seja caminha ao lado dela na construção da marca, do site, das redes, dos materiais, do modelo de negócio e da plataforma de formação continuada.</p>
-          <p>Hoje o Nós da Docência circula em livros, formações, podcast e redes sociais.</p>
-          <a class="link-seta" href="https://www.nosdadocencia.com" target="_blank" rel="noopener">Conheça o Nós da Docência →</a>
-        </div>
-      </article>
-      <article class="historia revela">
-        <div class="historia-capa">
-          <img src="/assets/Simbolo_SEJA_BRANCO.webp" alt="" aria-hidden="true" width="800" height="838" loading="lazy">
-          <div class="projeto">Nós em redes</div>
-          <div class="frente">Grupo de pesquisa · Do edital à execução</div>
-        </div>
-        <div class="historia-corpo">
-          <h3>Grupo Lola · Unisinos</h3>
-          <p class="quem">Projeto aprovado no FAPERGS 06/2025</p>
-          <p>A Seja participou da construção da proposta do projeto Nós em redes junto com o Grupo Lola. O plano de divulgação, a metodologia de formação e a estrutura de comunicação foram desenhados em conjunto e incorporados oficialmente ao edital aprovado.</p>
-          <p>Desde agosto de 2026, a Seja executa o serviço em seis etapas ao longo de dois anos.</p>
-        </div>
-      </article>
-    </div>
-    <p class="historias-fechamento revela">Cada projeto é diferente porque cada pesquisador é diferente. O que se repete é o cuidado com a construção.</p>
-  </div>
-</section>
+<Historias />
 
 <!-- PERGUNTAS FREQUENTES -->
 <section class="faq" id="perguntas">

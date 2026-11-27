@@ -41,7 +41,7 @@ def home_topo():
     # o grupo (quem fala por último, para o braço ficar na frente)
     c.append(pessoa(300, 450, 0.82, PELES["escura"], AMARELO, "cacheado", TEXTO, brinco=BRANCO, pose="queixo"))
     c.append(pessoa(705, 455, 0.82, PELES["media"], LARANJA, "coque", TEXTO, brinco=AMARELO, pose="escreve"))
-    c.append(pessoa(905, 450, 0.82, PELES["morena"], BRANCO, "cacheado", TEXTO, fone=ROSA, pose="queixo", espelhar=True))
+    c.append(pessoa(905, 450, 0.82, PELES["morena"], BRANCO, "cacheado", TEXTO, fone=ROSA, barba=True, pose="queixo", espelhar=True))
     c.append(pessoa(490, 445, 0.82, PELES["clara"], ROSA, "branco", oculos=ROXO, pose="fala"))
     c.append(mesa(170, 600, 860, 200))
     c.append(livros(240, 524))
@@ -170,8 +170,51 @@ def dor_impacto():
     o relatório com o selo de aprovado."""
     return _dor(documento(24, 12, 66, 88, LILAS_MEDIO, BRANCO, selo=ROSA))
 
+
+# ---------------------------------------------------------------- ícones dos serviços (/ciencia/, fundo branco)
+def servico_projeto():
+    """Projeto: "escopo e prazo definidos" → calendário com o prazo cumprido."""
+    return 120, 120, calendario(16, 22, 88, 84, ROXO, LILAS, "check"), BRANCO
+
+
+def servico_parceria():
+    """Parceria contínua: "caminhada de longo prazo" → duas pessoas lado a lado, um coração entre elas."""
+    return 120, 120, (pessoa(40, 46, 0.19, PELES["escura"], ROSA, "coque", TEXTO)
+                      + pessoa(82, 48, 0.19, PELES["clara"], AMARELO, "curto", CABELO_CASTANHO, barba=True)
+                      + coracao(61, 20, 18, ROSA)
+                      + f'<rect x="6" y="100" width="108" height="10" rx="5" fill="{LILAS_MEDIO}"/>'), BRANCO
+
+
+def servico_formacao():
+    """Formação: "aprender a comunicar a própria ciência" → quadro de aula."""
+    return 120, 120, quadro(8, 24, 104, 66, LILAS, AMARELO), BRANCO
+
+
+# ---------------------------------------------------------------- ícones da linha do tempo da CAPES (/ciencia/, fundo cinza claro)
+def capes_qualis():
+    """Até 2024, "lista de revistas com nota Qualis" → pilha de revistas com uma estrela."""
+    return 120, 120, (f'<g transform="translate(15 52) scale(0.6)">' + livros(0, 0) + '</g>'
+                      + estrela(60, 30, 20, AMARELO)), CLARO
+
+
+def capes_artigo():
+    """2025, "a classificação passa a ser do artigo" → o artigo com a estrela."""
+    return 120, 120, (documento(28, 14, 64, 90, BRANCO, LILAS_MEDIO)
+                      + f'<circle cx="88" cy="86" r="20" fill="{LARANJA}"/>' + estrela(88, 87, 12, BRANCO)), CLARO
+
+
+def capes_coleta():
+    """2025 a 2028, "coleta de dados anual" → calendário com os anos marcados."""
+    return 120, 120, calendario(14, 22, 92, 84, LARANJA, BRANCO, "dias"), CLARO
+
+
+def capes_quadrienal():
+    """2029, "Avaliação Quadrienal, notas de 1 a 7" → a medalha da avaliação."""
+    return 120, 120, medalha(60, 76, 30, AMARELO, ROSA, ROXO), CLARO
+
+
 CENAS = {
-    "ilustra-home-topo-v1": home_topo,
+    "ilustra-home-topo-v2": home_topo,
     "ilustra-home-conversa-v1": home_conversa,
     "ilustra-ciencia-topo-v1": ciencia_topo,
     "ilustra-ciencia-perguntas-v1": ciencia_perguntas,
@@ -180,6 +223,13 @@ CENAS = {
     "ilustra-ciencia-dor-tom-v1": dor_tom,
     "ilustra-ciencia-dor-rotina-v1": dor_rotina,
     "ilustra-ciencia-dor-impacto-v1": dor_impacto,
+    "ilustra-ciencia-servico-projeto-v1": servico_projeto,
+    "ilustra-ciencia-servico-parceria-v1": servico_parceria,
+    "ilustra-ciencia-servico-formacao-v1": servico_formacao,
+    "ilustra-ciencia-capes-qualis-v1": capes_qualis,
+    "ilustra-ciencia-capes-artigo-v1": capes_artigo,
+    "ilustra-ciencia-capes-coleta-v1": capes_coleta,
+    "ilustra-ciencia-capes-quadrienal-v1": capes_quadrienal,
 }
 
 
