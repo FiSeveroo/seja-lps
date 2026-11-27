@@ -123,8 +123,8 @@ details[open] .mais .vertical{display:none}
 .menu-mobile[open] .hamburguer span:nth-child(2){opacity:0}
 .menu-mobile[open] .hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
 @media (prefers-reduced-motion:reduce){.hamburguer span{transition:none}}
-.banner-pessoas{background:#3A86FE;padding:40px clamp(20px,5vw,64px) 0}
-.banner-pessoas img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto}
+.ilustra-formatos{position:absolute;right:0;top:-96px;width:300px;height:auto;pointer-events:none}
+.ilustra-publico{width:420px;max-width:100%;height:auto;display:block;justify-self:center}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .menu-mobile nav{position:absolute;left:0;right:0;top:100%;z-index:20;background:#8338EB;display:flex;flex-direction:column;padding:8px clamp(20px,5vw,64px) 24px;border-top:2px solid rgba(255,255,255,.25)}
 .menu-mobile nav a{color:#FFFFFF;text-decoration:none;font-size:22px;font-weight:700;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.2)}
@@ -142,7 +142,7 @@ details[open] .mais .vertical{display:none}
   .numeros>div>div:last-child{margin-top:0 !important;font-size:16px !important}
   .so-desktop{display:none !important}
   .secao{padding:80px 20px !important}
-  .banner-pessoas{padding:24px 12px 0}
+  .ilustra-formatos{position:static;display:block;width:260px;margin:0 0 32px}
 }
 </style>
 </head>
@@ -210,13 +210,10 @@ details[open] .mais .vertical{display:none}
   </div>
 </section>
 
-<div class="banner-pessoas">
-  <img loading="lazy" src="/assets/ilustracao-pesquisa-e-publico-faixa.webp" width="1600" height="458" alt="Ilustração: pesquisadoras e pesquisadores de um lado e pessoas do público do outro, ligados por balões com um livro, um vídeo no celular, um microfone de podcast e uma apresentação.">
-</div>
-
-<section class="secao" style="position: relative; overflow: hidden; background: #8338EB; color: #FFFFFF; padding: 64px clamp(20px, 5vw, 64px) 120px;">
+<section class="secao" style="position: relative; overflow: hidden; background: #8338EB; color: #FFFFFF; padding: 120px clamp(20px, 5vw, 64px);">
   <img loading="lazy" class="so-desktop" src="/assets/Simbolo_SEJA_BRANCO.webp" width="800" height="838" alt="" aria-hidden="true" style="position: absolute; width: 820px; height: auto; left: -260px; top: -240px; opacity: 0.07; pointer-events: none;">
   <div style="position: relative; max-width: 1160px; margin: 0 auto;">
+    <img loading="lazy" class="ilustra-formatos" src="/assets/ilustracao-formatos.webp" width="635" height="299" alt="" aria-hidden="true">
     <h2 style="font-size: 52px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.08; margin: 0 0 24px; max-width: 820px; text-wrap: balance;">Comunicar ciência deixou de ser opcional.</h2>
     <p style="font-size: 19px; max-width: 760px; margin: 0;">No ciclo 2025 a 2028, impacto e inovação é um dos três quesitos de avaliação de cada programa de pós-graduação. E muitas vezes nem há um caminho pra isso dentro da instituição.</p>
     <p style="font-size: 15px; color: #EDE3FF; margin: 8px 0 0;">CAPES, Portaria nº 109/2025, art. 12</p>
@@ -364,11 +361,11 @@ details[open] .mais .vertical{display:none}
   </div>
 </section>
 
-<DoBlog />
+<DoBlog ilustracao={{ src: "/assets/ilustracao-pesquisadores.webp", largura: 567, altura: 403 }} />
 
 <section class="secao" style="position: relative; overflow: hidden; background: #8338EB; color: #FFFFFF; padding: 96px clamp(20px, 5vw, 64px);">
   <div class="grade-2" style="max-width: 1160px; margin: 0 auto; align-items: center;">
-    <img loading="lazy" class="so-desktop" src="/assets/Simbolo_SEJA_PRETO.webp" width="800" height="838" alt="" aria-hidden="true" style="width: 360px; height: auto; display: block; justify-self: center;">
+    <img loading="lazy" class="ilustra-publico" src="/assets/ilustracao-publico.webp" width="507" height="409" alt="Ilustração de pessoas de várias idades conversando, uma delas com o celular na mão.">
     <div style="text-align: center;">
       <h2 class="marca" style="font-size: 80px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; margin: 0 0 24px;">Agende uma conversa</h2>
       <p style="font-size: 20px; margin: 0 0 40px;">Bora tomar um café virtual e descobrir como a gente pode caminhar ao lado da sua pesquisa?</p>
