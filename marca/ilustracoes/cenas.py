@@ -171,18 +171,25 @@ def dor_impacto():
     return _dor(documento(24, 12, 66, 88, LILAS_MEDIO, BRANCO, selo=ROSA))
 
 
-# ---------------------------------------------------------------- ícones dos serviços (/ciencia/, fundo branco)
+# ---------------------------------------------------------------- ícones dos serviços (home e /ciencia/, fundo branco)
 def servico_projeto():
     """Projeto: "escopo e prazo definidos" → calendário com o prazo cumprido."""
     return 120, 120, calendario(16, 22, 88, 84, ROXO, LILAS, "check"), BRANCO
 
 
 def servico_parceria():
-    """Parceria contínua: "caminhada de longo prazo" → duas pessoas lado a lado, um coração entre elas."""
-    return 120, 120, (pessoa(40, 46, 0.19, PELES["escura"], ROSA, "coque", TEXTO)
-                      + pessoa(82, 48, 0.19, PELES["clara"], AMARELO, "curto", CABELO_CASTANHO, barba=True)
-                      + coracao(61, 20, 18, ROSA)
-                      + f'<rect x="6" y="100" width="108" height="10" rx="5" fill="{LILAS_MEDIO}"/>'), BRANCO
+    """Parceria contínua: "caminhada de longo prazo" → trilha com marcos e a bandeira no fim."""
+    return 120, 120, trilha([(14, 104), (38, 78), (66, 88), (80, 52)], ROXO, raio=9, espessura=5), BRANCO
+
+
+def servico_editais():
+    """Editais: "o plano de divulgação científica da proposta" → o formulário com o campo
+    do plano em destaque (o mesmo da seção de editais)."""
+    return 120, 120, (f'<rect x="20" y="10" width="80" height="100" rx="12" fill="{LILAS}"/>'
+                      f'<path d="M 32 28 L 74 28 M 32 40 L 62 40" stroke="{LILAS_MEDIO}" stroke-width="6" stroke-linecap="round"/>'
+                      f'<rect x="28" y="52" width="64" height="28" rx="7" fill="{BRANCO}" stroke="{LARANJA}" stroke-width="5"/>'
+                      f'<path d="M 38 66 L 70 66" stroke="{LARANJA}" stroke-width="5" stroke-linecap="round"/>'
+                      f'<path d="M 32 94 L 66 94" stroke="{LILAS_MEDIO}" stroke-width="6" stroke-linecap="round"/>'), BRANCO
 
 
 def servico_formacao():
@@ -213,6 +220,53 @@ def capes_quadrienal():
     return 120, 120, medalha(60, 76, 30, AMARELO, ROSA, ROXO), CLARO
 
 
+
+# ---------------------------------------------------------------- home, "o que fazemos": a dupla e o serviço aberto
+# A mesma dupla em todas (pesquisadora à esquerda, pessoa da Seja à direita); o que muda
+# é o que está entre elas, conforme o serviço aberto. Fundo: branco, então mesa lilás e
+# nenhuma peça branca. A página troca a cena quando outro serviço abre.
+def _dupla(meio, quem_fala="seja", depois=""):
+    W, H = 560, 420
+    c = [meio]
+    pesq = pessoa(140, 220, 0.55, PELES["escura"], AMARELO, "coque", TEXTO, brinco=ROSA,
+                  pose="fala" if quem_fala == "pesquisadora" else "queixo")
+    seja = pessoa(420, 222, 0.55, PELES["media"], ROXO, "curto", TEXTO, barba=True,
+                  pose="fala" if quem_fala == "seja" else None, espelhar=True)
+    c += [seja, pesq] if quem_fala == "pesquisadora" else [pesq, seja]
+    c.append(mesa(10, 340, 540, 200, LILAS))
+    c.append(depois)
+    return W, H, "".join(c), BRANCO
+
+
+def home_servico_projeto():
+    """Projeto, "escopo e prazo definidos": a dupla combina o prazo no calendário."""
+    return _dupla(calendario(212, 40, 136, 128, ROXO, LILAS, "check"), "seja", notebook_costas(150, 290, 100, 64))
+
+
+def home_servico_parceria():
+    """Parceria contínua, "caminhada de longo prazo": a trilha com marcos até a bandeira,
+    e a pesquisadora apontando para onde vão juntas."""
+    return _dupla(trilha([(70, 120), (170, 70), (280, 110), (380, 60), (470, 96)], ROXO, raio=13, espessura=7),
+                  "pesquisadora")
+
+
+def home_servico_editais():
+    """Editais, "o plano de divulgação da proposta": o formulário com o campo do plano em destaque."""
+    form = (f'<rect x="206" y="20" width="148" height="190" rx="18" fill="{LILAS}"/>'
+            f'<path d="M 228 50 L 310 50 M 228 72 L 290 72" stroke="{LILAS_MEDIO}" stroke-width="10" stroke-linecap="round"/>'
+            f'<rect x="220" y="96" width="120" height="50" rx="12" fill="{BRANCO}" stroke="{LARANJA}" stroke-width="7"/>'
+            f'<path d="M 238 121 L 300 121" stroke="{LARANJA}" stroke-width="8" stroke-linecap="round"/>'
+            f'<path d="M 228 176 L 296 176" stroke="{LILAS_MEDIO}" stroke-width="10" stroke-linecap="round"/>')
+    return _dupla(form, "seja",
+                  notebook_costas(150, 290, 100, 64))
+
+
+def home_servico_formacao():
+    """Formação, "aprender a comunicar a própria ciência": a pessoa da Seja explica no quadro."""
+    return _dupla(quadro(196, 34, 168, 108, LILAS, AMARELO), "seja",
+                  notebook_costas(150, 290, 100, 64))
+
+
 CENAS = {
     "ilustra-home-topo-v2": home_topo,
     "ilustra-home-conversa-v1": home_conversa,
@@ -223,9 +277,14 @@ CENAS = {
     "ilustra-ciencia-dor-tom-v2": dor_tom,
     "ilustra-ciencia-dor-rotina-v2": dor_rotina,
     "ilustra-ciencia-dor-impacto-v2": dor_impacto,
-    "ilustra-ciencia-servico-projeto-v1": servico_projeto,
-    "ilustra-ciencia-servico-parceria-v1": servico_parceria,
-    "ilustra-ciencia-servico-formacao-v1": servico_formacao,
+    "ilustra-servico-projeto-v1": servico_projeto,
+    "ilustra-servico-parceria-v1": servico_parceria,
+    "ilustra-servico-editais-v1": servico_editais,
+    "ilustra-servico-formacao-v1": servico_formacao,
+    "ilustra-home-servico-projeto-v1": home_servico_projeto,
+    "ilustra-home-servico-parceria-v1": home_servico_parceria,
+    "ilustra-home-servico-editais-v1": home_servico_editais,
+    "ilustra-home-servico-formacao-v1": home_servico_formacao,
     "ilustra-ciencia-capes-qualis-v1": capes_qualis,
     "ilustra-ciencia-capes-artigo-v1": capes_artigo,
     "ilustra-ciencia-capes-coleta-v1": capes_coleta,

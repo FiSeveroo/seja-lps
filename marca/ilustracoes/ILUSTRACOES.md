@@ -2,7 +2,7 @@
 
 As ilustrações deixam a marca mais humana: pessoas que pesquisam, conversando e criando, em volta das plataformas. Valem para o site e para qualquer criação da Seja (posts, carrosséis, materiais).
 
-Primeiro uso no site: a Home (`ilustra-home-topo-v2.svg` no primeiro bloco, v2 com um homem no grupo, e `ilustra-home-conversa-v1.svg` em "Agende uma conversa"). Depois, /ciencia/ (`ilustra-ciencia-topo-v2.svg` no primeiro bloco, `ilustra-ciencia-perguntas-v2.svg` em "Perguntas frequentes", ícones `ilustra-ciencia-dor-*-v2.svg` na lista de dores, `ilustra-ciencia-servico-*-v1.svg` nos serviços e `ilustra-ciencia-capes-*-v1.svg` na linha do tempo da CAPES).
+Primeiro uso no site: a Home (`ilustra-home-topo-v2.svg` no primeiro bloco, v2 com um homem no grupo, `ilustra-home-servico-*-v1.svg` em "o que fazemos", uma cena por serviço que troca quando outro serviço abre, os ícones `ilustra-servico-*-v1.svg` nos serviços, e `ilustra-home-conversa-v1.svg` em "Agende uma conversa"). Depois, /ciencia/ (`ilustra-ciencia-topo-v2.svg` no primeiro bloco, `ilustra-ciencia-perguntas-v2.svg` em "Perguntas frequentes", ícones `ilustra-ciencia-dor-*-v2.svg` na lista de dores, `ilustra-servico-*-v1.svg` nos serviços (os mesmos da home) e `ilustra-ciencia-capes-*-v1.svg` na linha do tempo da CAPES).
 
 ## Como o estilo funciona
 
@@ -12,7 +12,7 @@ Primeiro uso no site: a Home (`ilustra-home-topo-v2.svg` no primeiro bloco, v2 c
 - **Cores só da marca.** Roxo, rosa, azul, laranja, amarelo, texto e branco, mais os tons claros do kit (lilás, lilás médio, rosa claro) e os tons de pele. Nada fora disso.
 - **Cenas novas para cada conteúdo.** As cenas da Home são referência de estilo, não de composição: não repita mesa, ideia e plataformas em toda página. Invente a situação que o texto pede (ex.: /ciencia/ mostra um pesquisador gravando com o celular no tripé e o vídeo chegando às telas do público).
 - **Objetos simples e reconhecíveis.** Notebook visto por trás, livros, caneca, caderno, celular, mesa. Ícones das plataformas em cartões brancos: vídeo, celular com reels, podcast (microfone com fone), post, página de site com envelope, lâmpada da ideia.
-- **Peças do kit:** `pessoa` (com `barba`), ícones das plataformas, `icone_ideia`, `mesa`, `notebook_costas`, `livros`, `caneca`, `balao`, `interrogacao`, `brilhos`, `fio`, `relogio`, `documento` (com `selo`), `coracao`, `tripe_celular`, `janela` (tela de vídeo com uma pessoa dentro), `calendario`, `quadro`, `estrela` e `medalha`.
+- **Peças do kit:** `pessoa` (com `barba`), ícones das plataformas, `icone_ideia`, `mesa`, `notebook_costas`, `livros`, `caneca`, `balao`, `interrogacao`, `brilhos`, `fio`, `relogio`, `documento` (com `selo`), `coracao`, `tripe_celular`, `janela` (tela de vídeo com uma pessoa dentro), `calendario`, `quadro`, `estrela`, `medalha`, `trilha` (caminho com marcos e bandeira) e `mesa(cor=LILAS)` para fundo branco.
 - **Detalhes de vida.** Tracinhos amarelos de destaque (`brilhos`), fios brancos curvos ligando a ideia às plataformas (`fio`), balões de fala.
 
 ## Regras de composição

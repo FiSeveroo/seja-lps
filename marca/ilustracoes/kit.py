@@ -198,9 +198,10 @@ def icone_pagina(x, y, w=230, h=170):
             f'<path d="M {x+w-64} {y+h-36} L {x+w-28} {y+h-6} L {x+w+8} {y+h-36}" fill="none" stroke="{ROXO}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>')
 
 
-def mesa(x, y, w, h=220):
-    """Mesa branca em que o grupo se reúne (geralmente sangrando pela borda de baixo)."""
-    return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="44" fill="{BRANCO}"/>'
+def mesa(x, y, w, h=220, cor=BRANCO):
+    """Mesa em que o grupo se reúne (geralmente sangrando pela borda de baixo).
+    Branca nos fundos coloridos; em fundo branco, use cor=LILAS."""
+    return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="44" fill="{cor}"/>'
 
 
 def notebook_costas(cx, y, w=200, h=130):
@@ -343,3 +344,25 @@ def medalha(cx, cy, r=30, cor=AMARELO, fita1=ROSA, fita2=ROXO):
             f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{cor}"/>'
             f'<circle cx="{cx}" cy="{cy}" r="{r*0.68:.0f}" fill="none" stroke="{BRANCO}" stroke-width="{r*0.1:.1f}"/>'
             + estrela(cx, cy, r * 0.38, BRANCO))
+
+
+def trilha(pontos, cor=ROXO, marcos=(ROSA, AMARELO, LARANJA, AZUL), bandeira=ROSA, espessura=6, raio=9):
+    """Caminho tracejado com marcos coloridos e uma bandeira no fim: caminhada longa, feita
+    em etapas (parceria contínua). pontos: lista de (x, y), do começo ao fim; a curva passa
+    suave por todos eles."""
+    p = [pontos[0]] + list(pontos) + [pontos[-1]]
+    d = f"M {pontos[0][0]} {pontos[0][1]}"
+    for i in range(1, len(p) - 2):
+        (x0, y0), (x1, y1), (x2, y2), (x3, y3) = p[i-1], p[i], p[i+1], p[i+2]
+        c1 = (x1 + (x2 - x0) / 6, y1 + (y2 - y0) / 6)
+        c2 = (x2 - (x3 - x1) / 6, y2 - (y3 - y1) / 6)
+        d += f" C {c1[0]:.1f} {c1[1]:.1f} {c2[0]:.1f} {c2[1]:.1f} {x2} {y2}"
+    out = (f'<path d="{d}" fill="none" stroke="{cor}" stroke-width="{espessura}" stroke-linecap="round" '
+           f'stroke-dasharray="{espessura*1.6:.1f} {espessura*1.6:.1f}"/>')
+    for i, (x, y) in enumerate(pontos[1:-1]):
+        out += f'<circle cx="{x}" cy="{y}" r="{raio}" fill="{marcos[i % len(marcos)]}"/>'
+    xf, yf = pontos[-1]
+    h = raio * 4.4
+    out += (f'<path d="M {xf} {yf} L {xf} {yf-h:.0f}" stroke="{TEXTO}" stroke-width="{max(espessura*0.7,3):.0f}" stroke-linecap="round"/>'
+            f'<path d="M {xf} {yf-h:.0f} L {xf+h*0.8:.0f} {yf-h*0.78:.0f} L {xf} {yf-h*0.55:.0f} Z" fill="{bandeira}"/>')
+    return out

@@ -135,6 +135,12 @@ details[open] .mais .vertical{display:none}
   .topo-texto p{font-size:clamp(21px,1.9vw,28px) !important;margin:0 0 36px !important}
   .ilustra-topo{margin:0 !important;max-width:none !important}
 }
+.cena-servicos{position:relative;width:100%;max-width:520px;aspect-ratio:560/420;margin-bottom:32px}
+.cena-servicos img{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .35s ease}
+.cena-servicos img.ativa{opacity:1}
+@media (prefers-reduced-motion:reduce){.cena-servicos img{transition:none}}
+.servico-nome{display:flex;align-items:center;gap:16px}
+.servico-nome img{width:52px;height:52px;flex-shrink:0}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .menu-mobile nav{position:absolute;left:0;right:0;top:100%;z-index:20;background:#8338EB;display:flex;flex-direction:column;padding:8px clamp(20px,5vw,64px) 24px;border-top:2px solid rgba(255,255,255,.25)}
 .menu-mobile nav a{color:#FFFFFF;text-decoration:none;font-size:22px;font-weight:700;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.2)}
@@ -151,6 +157,8 @@ details[open] .mais .vertical{display:none}
   .numeros>div>div:first-child{white-space:nowrap}
   .numeros>div>div:last-child{margin-top:0 !important;font-size:16px !important}
   .so-desktop{display:none !important}
+  .cena-servicos{max-width:380px;margin-bottom:24px}
+  .servico-nome img{width:44px;height:44px}
   .secao{padding:80px 20px !important}
   .hero.secao{padding-bottom:0 !important}
   .ilustra-topo{margin-top:48px !important}
@@ -201,24 +209,29 @@ details[open] .mais .vertical{display:none}
 <section id="o-que-fazemos" class="secao" style="padding: 120px clamp(20px, 5vw, 64px);">
   <div class="grade-2" style="max-width: 1160px; margin: 0 auto; align-items: center;">
     <div>
-      <img loading="lazy" class="so-desktop" src="/assets/Logotipo_SEJA_ROXO.webp" width="1000" height="486" alt="" aria-hidden="true" style="width: 100%; max-width: 520px; height: auto; display: block; margin-bottom: 40px;">
+      <div class="cena-servicos">
+        <img src="/assets/ilustra-home-servico-projeto-v1.svg" width="560" height="420" data-cena="projeto" class="ativa" alt="Ilustração: a pesquisadora e a pessoa da Seja combinam o prazo num calendário." loading="lazy">
+        <img src="/assets/ilustra-home-servico-parceria-v1.svg" width="560" height="420" data-cena="parceria" alt="Ilustração: a pesquisadora aponta uma trilha com marcos até uma bandeira, o caminho que as duas pessoas fazem juntas." loading="lazy">
+        <img src="/assets/ilustra-home-servico-editais-v1.svg" width="560" height="420" data-cena="editais" alt="Ilustração: entre as duas pessoas, um formulário de edital com o campo do plano de divulgação em destaque." loading="lazy">
+        <img src="/assets/ilustra-home-servico-formacao-v1.svg" width="560" height="420" data-cena="formacao" alt="Ilustração: a pessoa da Seja explica algo num quadro de aula para a pesquisadora." loading="lazy">
+      </div>
       <h2 style="font-size: 36px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: #8338EB; margin: 0; text-wrap: balance;">Formação, planos de divulgação e presença digital para quem pesquisa.</h2>
     </div>
     <div>
-      <details class="acordeao" name="servicos" open style="border: 1px solid #8338EB; margin-bottom: 16px;">
-        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Projeto <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
+      <details class="acordeao" data-servico="projeto" name="servicos" open style="border: 1px solid #8338EB; margin-bottom: 16px;">
+        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;"><span class="servico-nome"><img src="/assets/ilustra-servico-projeto-v1.svg" width="120" height="120" alt="" aria-hidden="true" loading="lazy">Projeto</span> <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
         <div style="padding: 0 32px 28px; font-size: 19px;">Trabalho com escopo e prazo definidos. Para objetivos específicos: lançamento, edital, campanha ou base inicial.</div>
       </details>
-      <details class="acordeao" name="servicos" style="border: 1px solid #8338EB; margin-bottom: 16px">
-        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Parceria contínua <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
+      <details class="acordeao" data-servico="parceria" name="servicos" style="border: 1px solid #8338EB; margin-bottom: 16px">
+        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;"><span class="servico-nome"><img src="/assets/ilustra-servico-parceria-v1.svg" width="120" height="120" alt="" aria-hidden="true" loading="lazy">Parceria contínua</span> <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
         <div style="padding: 0 32px 28px; font-size: 19px">Caminhada de longo prazo com pesquisadores, grupos de pesquisa, programas de pós-graduação e projetos de pesquisa. Estratégia, planejamento, criação e gestão das plataformas.</div>
       </details>
-      <details class="acordeao" name="servicos" style="border: 1px solid #8338EB; margin-bottom: 16px;">
-        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Editais <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
+      <details class="acordeao" data-servico="editais" name="servicos" style="border: 1px solid #8338EB; margin-bottom: 16px;">
+        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;"><span class="servico-nome"><img src="/assets/ilustra-servico-editais-v1.svg" width="120" height="120" alt="" aria-hidden="true" loading="lazy">Editais</span> <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
         <div style="padding: 0 32px 28px; font-size: 19px;">Construímos junto com você o plano de divulgação científica e impacto social da proposta. Do documento pro edital ao trabalho contínuo depois da aprovação. <a href="https://wa.me/5551991006411?text=Oi%2C%20Filipe%21%20Vi%20o%20site%20da%20Seja%20e%20meu%20edital%20pede%20plano%20de%20divulga%C3%A7%C3%A3o%20cient%C3%ADfica." target="_blank" rel="noopener" style="font-weight: 700; color: #8338EB; text-decoration: none;">Falar sobre meu edital →</a></div>
       </details>
-      <details class="acordeao" name="servicos" style="border: 1px solid #8338EB;">
-        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;">Formação <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
+      <details class="acordeao" data-servico="formacao" name="servicos" style="border: 1px solid #8338EB;">
+        <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 32px; font-weight: 800; font-size: 24px; text-transform: uppercase; color: #8338EB;"><span class="servico-nome"><img src="/assets/ilustra-servico-formacao-v1.svg" width="120" height="120" alt="" aria-hidden="true" loading="lazy">Formação</span> <svg class="mais" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 11h16"></path><path class="vertical" d="M11 3v16"></path></svg></summary>
         <div style="padding: 0 32px 28px; font-size: 19px;">Pra quem quer aprender a comunicar a própria ciência, individualmente ou em grupo de pesquisa.</div>
       </details>
     </div>
@@ -334,6 +347,16 @@ details[open] .mais .vertical{display:none}
 <script is:inline>
 document.querySelectorAll('.menu-mobile a').forEach(function (a) {
   a.addEventListener('click', function () { a.closest('details').removeAttribute('open'); });
+});
+</script>
+<script is:inline>
+document.querySelectorAll('details[data-servico]').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (!d.open) return;
+    document.querySelectorAll('.cena-servicos img').forEach(function (img) {
+      img.classList.toggle('ativa', img.dataset.cena === d.dataset.servico);
+    });
+  });
 });
 </script>
 </body>
