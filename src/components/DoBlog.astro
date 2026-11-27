@@ -9,22 +9,16 @@ interface Props {
   largura?: number; // largura máxima do conteúdo, em px
   coluna?: boolean; // um post embaixo do outro (páginas estreitas)
   fundo?: string;
-  ilustracao?: { src: string; largura: number; altura: number }; // ao lado do título
 }
 
-const { quantos = 3, largura = 1160, coluna = false, fundo = '#F5F4F8', ilustracao } = Astro.props;
+const { quantos = 3, largura = 1160, coluna = false, fundo = '#F5F4F8' } = Astro.props;
 const posts = (await postsPublicados()).slice(0, quantos);
 ---
 {posts.length > 0 && (
   <section class="do-blog" style={`background: ${fundo};`}>
     <div class="dentro" style={`max-width: ${largura}px;`}>
-      <div class:list={['topo', { 'com-ilustracao': ilustracao }]}>
-        <div>
-          <h2>Do blog</h2>
-          <p class="apoio">Divulgação científica nas plataformas digitais, escrita por quem faz isso todo dia.</p>
-        </div>
-        {ilustracao && <img class="ilustracao" src={ilustracao.src} width={ilustracao.largura} height={ilustracao.altura} alt="" aria-hidden="true" loading="lazy" />}
-      </div>
+      <h2>Do blog</h2>
+      <p class="apoio">Divulgação científica nas plataformas digitais, escrita por quem faz isso todo dia.</p>
       <div class:list={['posts', { coluna }]}>
         {posts.map((post) => (
           <article>
@@ -44,9 +38,6 @@ const posts = (await postsPublicados()).slice(0, quantos);
 .dentro { margin: 0 auto; }
 h2 { font-size: clamp(40px, 5vw, 64px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #8338EB; margin: 0 0 16px; }
 .apoio { font-size: 19px; margin: 0 0 48px; max-width: 640px; }
-.topo.com-ilustracao { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 40px; align-items: end; margin-bottom: 48px; }
-.topo.com-ilustracao .apoio { margin-bottom: 0; }
-.ilustracao { width: 100%; height: auto; display: block; }
 .posts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
 .posts.coluna { grid-template-columns: minmax(0, 1fr); gap: 0; }
 article { border-top: 2px solid #E2D8F7; padding-top: 24px; }
@@ -60,7 +51,5 @@ h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 900px) {
   .do-blog { padding-top: 80px; padding-bottom: 80px; }
   .posts { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-  .topo.com-ilustracao { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-  .ilustracao { max-width: 300px; }
 }
 </style>
