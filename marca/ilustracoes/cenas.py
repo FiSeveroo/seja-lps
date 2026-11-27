@@ -122,53 +122,53 @@ def ciencia_perguntas():
 
 
 # ---------------------------------------------------------------- ícones das dores (/ciencia/)
-# Um desenho por dor, num círculo colorido de 120x120. Fundo da página: branco.
-def _dor(cor, corpo):
-    return 120, 120, f'<circle cx="60" cy="60" r="60" fill="{cor}"/>' + corpo, BRANCO
+# Um desenho por dor, 120x120, direto no fundo branco da página (sem círculo atrás):
+# nada de peça branca; folhas e telas em lilás, contornos em texto.
+def _dor(corpo):
+    return 120, 120, corpo, BRANCO
 
 
 def dor_alcance():
     """"Sabe que o que você estuda importa, mas não sabe como fazer isso chegar em quem
     não é da área": a ideia acesa, ligada por um fio a uma dúvida."""
-    return _dor(ROXO, fio(46, 58, 86, 74, curva=0.3, espessura=4)
-                + icone_ideia(42, 52, 26) + f'<circle cx="88" cy="80" r="18" fill="{AMARELO}"/>'
-                + interrogacao(88, 78, 22, TEXTO))
+    return _dor(fio(48, 60, 90, 84, curva=0.3, cor=ROXO, espessura=5)
+                + f'<circle cx="44" cy="50" r="34" fill="{LILAS}"/>' + icone_ideia(44, 50, 34).split('/>', 1)[1]
+                + f'<circle cx="92" cy="88" r="22" fill="{AMARELO}"/>' + interrogacao(92, 86, 26, TEXTO))
 
 
 def dor_tempo():
     """"Quer aparecer nas redes, mas não sabe por onde começar, e não tem tempo":
     o relógio e o celular."""
-    return _dor(AMARELO, relogio(50, 56, 30, BRANCO, TEXTO)
-                + f'<rect x="70" y="48" width="30" height="50" rx="7" fill="{TEXTO}"/>'
-                + f'<rect x="74" y="54" width="22" height="34" rx="3" fill="{LILAS}"/>'
-                + f'<path d="M 81 64 L 81 78 L 91 71 Z" fill="{ROSA}"/>')
+    return _dor(relogio(48, 56, 38, AMARELO, TEXTO)
+                + f'<rect x="72" y="44" width="36" height="62" rx="8" fill="{TEXTO}"/>'
+                + f'<rect x="77" y="51" width="26" height="42" rx="4" fill="{LILAS}"/>'
+                + f'<path d="M 85 63 L 85 81 L 98 72 Z" fill="{ROSA}"/>')
 
 
 def dor_tom():
     """"O que sai técnico demais não é lido, e o que sai simples demais parece raso":
     um texto cheio demais e outro quase vazio."""
-    return _dor(AZUL, f'<g transform="rotate(-8 40 60)">' + documento(18, 30, 44, 58, BRANCO, TEXTO) + '</g>'
-                + f'<g transform="rotate(8 82 62)"><rect x="60" y="34" width="44" height="58" rx="8" fill="{BRANCO}"/>'
-                + f'<path d="M 68 52 L 84 52" stroke="{LILAS_MEDIO}" stroke-width="4" stroke-linecap="round"/></g>')
+    return _dor(f'<g transform="rotate(-8 38 60)">' + documento(12, 22, 52, 72, LILAS, TEXTO) + '</g>'
+                + f'<g transform="rotate(8 84 62)"><rect x="60" y="28" width="52" height="72" rx="9" fill="{AZUL}"/>'
+                + f'<path d="M 70 50 L 88 50" stroke="{BRANCO}" stroke-width="5" stroke-linecap="round"/></g>')
 
 
 def dor_rotina():
-    """"Como conciliar isso com a rotina de pesquisa, aula e orientação": livros,
-    notebook e caneca disputando a mesma mesa."""
-    return _dor(LARANJA, f'<g transform="translate(16 46) scale(0.3)">' + livros(0, 0) + '</g>'
-                + f'<rect x="62" y="42" width="40" height="30" rx="5" fill="{TEXTO}"/>'
-                + f'<circle cx="82" cy="56" r="4" fill="{AMARELO}"/>'
-                + f'<rect x="56" y="71" width="52" height="6" rx="3" fill="{TEXTO}"/>'
-                + f'<rect x="36" y="74" width="16" height="18" rx="4" fill="{AMARELO}"/>'
-                + f'<path d="M 52 78 Q 59 78 58 84 Q 57 89 52 88" fill="none" stroke="{AMARELO}" stroke-width="3"/>'
-                + f'<rect x="14" y="92" width="92" height="7" rx="3.5" fill="{BRANCO}"/>')
+    """"Como conciliar isso com a rotina de pesquisa, aula e orientação": livros com a
+    caneca em cima e o notebook, tudo na mesma estante."""
+    return _dor(f'<g transform="translate(4 70) scale(0.36)">' + livros(0, 0) + '</g>'
+                + f'<rect x="20" y="48" width="20" height="22" rx="5" fill="{LARANJA}"/>'
+                + f'<path d="M 40 53 Q 49 53 48 60 Q 47 66 40 65" fill="none" stroke="{LARANJA}" stroke-width="4"/>'
+                + f'<rect x="64" y="52" width="48" height="36" rx="6" fill="{TEXTO}"/>'
+                + f'<circle cx="88" cy="69" r="5" fill="{AMARELO}"/>'
+                + f'<rect x="58" y="87" width="60" height="9" rx="4" fill="{TEXTO}"/>'
+                + f'<rect x="2" y="96" width="116" height="8" rx="4" fill="{LILAS_MEDIO}"/>')
+
 
 def dor_impacto():
     """"Precisa mostrar o impacto do seu trabalho pra editais, avaliações e CAPES":
     o relatório com o selo de aprovado."""
-    return _dor(ROSA, documento(32, 22, 54, 72, BRANCO, LILAS_MEDIO, selo=AMARELO)
-                + brilhos(88, 30, AMARELO, 3, -60, 70, 6, 10, 4))
-
+    return _dor(documento(24, 12, 66, 88, LILAS_MEDIO, BRANCO, selo=ROSA))
 
 CENAS = {
     "ilustra-home-topo-v1": home_topo,

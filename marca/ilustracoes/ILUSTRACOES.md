@@ -18,7 +18,7 @@ Primeiro uso no site: a Home (`ilustra-home-topo-v1.svg` no primeiro bloco e `il
 ## Regras de composição
 
 1. **A cena nasce do conteúdo.** Antes de desenhar, escreva em uma frase o que a seção diz e o que a cena mostra (ex.: "Agende uma conversa" → café virtual por chamada de vídeo). Se a cena não acrescenta nada ao texto, a seção fica sem ilustração.
-2. **Poucas cenas por página.** Uma cena grande no primeiro bloco e, no máximo, mais uma ou duas em seções com espaço. Nunca uma ilustração por seção. Ícones pequenos de lista (círculo colorido de 120x120 com um desenho do kit, como as dores de /ciencia/) não contam como cena: servem para trocar símbolos repetidos, um desenho diferente por item.
+2. **Poucas cenas por página.** Uma cena grande no primeiro bloco e, no máximo, mais uma ou duas em seções com espaço. Nunca uma ilustração por seção. Ícones pequenos de lista (desenho do kit em 120x120, direto no fundo da página e sem círculo atrás, como as dores de /ciencia/; no fundo branco, nada de peça branca) não contam como cena: servem para trocar símbolos repetidos, um desenho diferente por item.
 3. **Tronco nunca cortado no ar.** Pessoa termina atrás de uma mesa, da borda da cena ou de outro objeto.
 4. **Ordem de desenho.** Fios primeiro, depois ícones, depois pessoas, por último quem tem pose "fala" (o braço levantado precisa ficar na frente) e então mesa e objetos. Confira se nenhum objeto esconde a mão de quem fala.
 5. **Fundo.** A cena é transparente e pensada para o fundo onde vai entrar (bg1 no hero, roxo, laranja, amarelo, branco). No bg1 e no roxo, evitar roupa roxa (some no fundo).
