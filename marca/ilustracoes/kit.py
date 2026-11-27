@@ -28,7 +28,7 @@ def svg(w, h, corpo, titulo=None):
 
 # ---------------------------------------------------------------- pessoas
 def pessoa(cx, cy, s=1.0, pele=PELES["morena"], roupa=ROXO, cabelo="cacheado", cor_cabelo=TEXTO,
-           oculos=None, brinco=None, fone=None, pose=None, objeto=None, espelhar=False):
+           oculos=None, brinco=None, fone=None, pose=None, objeto=None, espelhar=False, barba=False):
     """Pessoa em busto, de frente, sem rosto. Molde único: só mudam os atributos.
 
     (cx, cy): centro da cabeça. Altura total ~ 400*s (cabelo até o fim do tronco).
@@ -36,6 +36,7 @@ def pessoa(cx, cy, s=1.0, pele=PELES["morena"], roupa=ROXO, cabelo="cacheado", c
     pose: None | fala (mão levantada) | queixo (mão no queixo) | escreve
     objeto: None | caneca | celular
     espelhar: inverte a pessoa (a mão da pose passa para o outro lado).
+    barba: True desenha barba na cor do cabelo (use para ter homens nas cenas; com cabelo "curto" ou "cacheado").
     Desenhe quem tem pose "fala" por último, para o braço ficar na frente das outras pessoas.
     """
     fx = -1 if espelhar else 1
@@ -63,6 +64,8 @@ def pessoa(cx, cy, s=1.0, pele=PELES["morena"], roupa=ROXO, cabelo="cacheado", c
             g.append(f'<circle cx="-40" cy="-46" r="20" fill="{c}"/><circle cx="-8" cy="-62" r="22" fill="{c}"/><circle cx="28" cy="-56" r="20" fill="{c}"/>')
     elif cabelo == "comprido":
         g.append(f'<path d="M -54 8 Q -58 -66 2 -66 Q 60 -64 54 8 Q 30 -34 -12 -36 Q -40 -30 -54 8 Z" fill="{cor_cabelo}"/>')
+    if barba:
+        g.append(f'<path d="M -50 -2 Q -52 66 0 70 Q 52 66 50 -2 Q 44 26 22 30 Q 0 22 -22 30 Q -44 26 -50 -2 Z" fill="{cor_cabelo}"/>')
     if oculos:
         g.append(f'<circle cx="-20" cy="2" r="16" fill="none" stroke="{oculos}" stroke-width="6"/>'
                  f'<circle cx="22" cy="2" r="16" fill="none" stroke="{oculos}" stroke-width="6"/>'
@@ -227,3 +230,67 @@ def balao(x, y, w, h, cor=BRANCO, ponta="baixo-esquerda", pontos=ROSA):
     r = min(w, h) * 0.11
     dots = "".join(f'<circle cx="{x + w*(0.3 + 0.2*i):.0f}" cy="{y + h/2:.0f}" r="{r:.0f}" fill="{pontos}"/>' for i in range(3)) if pontos else ""
     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{h*0.34:.0f}" fill="{cor}"/>' + cauda + dots
+
+
+def interrogacao(cx, cy, tam=40, cor=ROSA):
+    """Ponto de interrogação desenhado (sem texto), para balões de dúvida. tam = altura total."""
+    k = tam / 40
+    def p(v): return v * k
+    return (f'<path d="M {cx-p(10)} {cy-p(10)} Q {cx-p(10)} {cy-p(20)} {cx} {cy-p(20)} Q {cx+p(11)} {cy-p(20)} {cx+p(11)} {cy-p(9)} '
+            f'Q {cx+p(11)} {cy-p(2)} {cx+p(3)} {cy+p(2)} Q {cx} {cy+p(4)} {cx} {cy+p(9)}" fill="none" stroke="{cor}" '
+            f'stroke-width="{p(7)}" stroke-linecap="round" stroke-linejoin="round"/>'
+            f'<circle cx="{cx}" cy="{cy+p(18)}" r="{p(4.2)}" fill="{cor}"/>')
+
+
+# ---------------------------------------------------------------- peças para ícones e cenas novas
+def relogio(cx, cy, r=40, cor=BRANCO, ponteiro=TEXTO):
+    """Relógio de parede: falta de tempo, rotina."""
+    return (f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{cor}"/>'
+            f'<path d="M {cx} {cy} L {cx} {cy-r*0.6:.0f} M {cx} {cy} L {cx+r*0.45:.0f} {cy+r*0.2:.0f}" stroke="{ponteiro}" '
+            f'stroke-width="{max(r*0.14, 3):.0f}" stroke-linecap="round"/>'
+            f'<circle cx="{cx}" cy="{cy}" r="{max(r*0.1, 2.5):.0f}" fill="{ponteiro}"/>')
+
+
+def documento(x, y, w=90, h=116, cor=BRANCO, linhas=LILAS_MEDIO, selo=None):
+    """Folha com linhas de texto (projeto, relatório, edital). selo: cor do selo redondo com check."""
+    out = (f'<path d="M {x} {y+10} Q {x} {y} {x+10} {y} L {x+w*0.72:.0f} {y} L {x+w} {y+h*0.22:.0f} L {x+w} {y+h-10} '
+           f'Q {x+w} {y+h} {x+w-10} {y+h} L {x+10} {y+h} Q {x} {y+h} {x} {y+h-10} Z" fill="{cor}"/>'
+           f'<path d="M {x+w*0.72:.0f} {y} L {x+w*0.72:.0f} {y+h*0.22:.0f} L {x+w} {y+h*0.22:.0f} Z" fill="{LILAS}"/>')
+    for i, f in enumerate((0.62, 0.5, 0.62, 0.38)):
+        yy = y + h * 0.34 + i * h * 0.13
+        out += f'<path d="M {x+w*0.14:.0f} {yy:.0f} L {x+w*(0.14+f):.0f} {yy:.0f}" stroke="{linhas}" stroke-width="{h*0.055:.0f}" stroke-linecap="round"/>'
+    if selo:
+        sx, sy, sr = x + w * 0.82, y + h * 0.86, w * 0.26
+        out += (f'<circle cx="{sx:.0f}" cy="{sy:.0f}" r="{sr:.0f}" fill="{selo}"/>'
+                f'<path d="M {sx-sr*0.42:.0f} {sy:.0f} L {sx-sr*0.08:.0f} {sy+sr*0.34:.0f} L {sx+sr*0.46:.0f} {sy-sr*0.3:.0f}" '
+                f'fill="none" stroke="{BRANCO}" stroke-width="{sr*0.22:.0f}" stroke-linecap="round" stroke-linejoin="round"/>')
+    return out
+
+
+def coracao(cx, cy, s=30, cor=ROSA):
+    """Coração (curtida, reação do público). s = largura."""
+    k = s / 30
+    return (f'<path d="M {cx} {cy+12*k:.1f} C {cx-18*k:.1f} {cy+1*k:.1f} {cx-15*k:.1f} {cy-14*k:.1f} {cx-6*k:.1f} {cy-13*k:.1f} '
+            f'C {cx-2*k:.1f} {cy-13*k:.1f} {cx} {cy-9*k:.1f} {cx} {cy-7*k:.1f} C {cx} {cy-9*k:.1f} {cx+2*k:.1f} {cy-13*k:.1f} {cx+6*k:.1f} {cy-13*k:.1f} '
+            f'C {cx+15*k:.1f} {cy-14*k:.1f} {cx+18*k:.1f} {cy+1*k:.1f} {cx} {cy+12*k:.1f} Z" fill="{cor}"/>')
+
+
+def tripe_celular(cx, y_tela, altura=230):
+    """Celular de pé num tripé, gravando (bolinha rosa de gravação). y_tela = topo do celular."""
+    return (f'<path d="M {cx} {y_tela+120} L {cx-46} {y_tela+altura} M {cx} {y_tela+120} L {cx+46} {y_tela+altura} '
+            f'M {cx} {y_tela+120} L {cx} {y_tela+altura}" stroke="{TEXTO}" stroke-width="9" stroke-linecap="round"/>'
+            f'<rect x="{cx-40}" y="{y_tela}" width="80" height="128" rx="14" fill="{TEXTO}"/>'
+            f'<rect x="{cx-32}" y="{y_tela+10}" width="64" height="98" rx="8" fill="{LILAS}"/>'
+            f'<circle cx="{cx}" cy="{y_tela+58}" r="16" fill="{ROSA}"/>'
+            f'<circle cx="{cx}" cy="{y_tela+58}" r="7" fill="{BRANCO}"/>')
+
+
+def janela(x, y, w, h, id_clip, fundo=LILAS, conteudo="", barra=ROXO):
+    """Janela de vídeo/rede social com o que estiver dentro recortado pela tela.
+    conteudo: SVG desenhado dentro (ex.: uma pessoa). id_clip precisa ser único na cena."""
+    return (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="20" fill="{BRANCO}"/>'
+            f'<circle cx="{x+20}" cy="{y+18}" r="5" fill="{barra}"/><circle cx="{x+36}" cy="{y+18}" r="5" fill="{AMARELO}"/>'
+            f'<clipPath id="{id_clip}"><rect x="{x+12}" y="{y+34}" width="{w-24}" height="{h-46}" rx="12"/></clipPath>'
+            f'<rect x="{x+12}" y="{y+34}" width="{w-24}" height="{h-46}" rx="12" fill="{fundo}"/>'
+            f'<g clip-path="url(#{id_clip})">{conteudo}</g>')
+

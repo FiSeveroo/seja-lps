@@ -73,9 +73,113 @@ def home_conversa():
     return W, H, "".join(c), ROXO
 
 
+def ciencia_topo():
+    """/ciencia/, primeiro bloco: "A ciência que você faz precisa chegar em quem importa."
+    O pesquisador grava um vídeo explicando a pesquisa (celular no tripé) e o vídeo chega
+    às telas de pessoas de fora da academia, que reagem. Fundo: bg1; a mesa encosta na
+    seção branca seguinte."""
+    W, H = 1200, 640
+    cel = (560, 420)  # centro do celular no tripé
+    c = []
+    # fios do celular até as telas do público
+    for alvo in [(720, 170), (958, 250), (760, 452)]:
+        c.append(fio(cel[0] + 40, cel[1] - 20, alvo[0], alvo[1], curva=-0.12))
+    # telas do público, cada uma com uma pessoa assistindo
+    c.append(janela(700, 70, 230, 200, "tela-a",
+                    conteudo=pessoa(815, 170, 0.62, PELES["clara"], LARANJA, "branco", oculos=TEXTO)))
+    c.append(janela(956, 170, 210, 190, "tela-b", fundo=ROSA_CLARO,
+                    conteudo=pessoa(1061, 268, 0.6, PELES["escura"], AMARELO, "curto", TEXTO, fone=ROSA)))
+    c.append(janela(740, 362, 240, 200, "tela-c", fundo="#FFE7A8",
+                    conteudo=pessoa(860, 462, 0.62, PELES["morena"], ROSA, "comprido", CABELO_CASTANHO, brinco=AMARELO)))
+    c.append(coracao(930, 80, 44, ROSA))
+    c.append(balao(1080, 64, 104, 64, BRANCO, "baixo-esquerda", ROSA))
+    c.append(coracao(990, 400, 36, AMARELO))
+    c.append(brilhos(560, 300, AMARELO, 3, -150, 60, 70, 24, 8))
+    # o pesquisador explica para a câmera (fala por último entre as pessoas)
+    c.append(pessoa(300, 400, 0.8, PELES["media"], AMARELO, "curto", TEXTO, barba=True, pose="fala"))
+    c.append(mesa(40, 585, 640, 200))
+    c.append(tripe_celular(cel[0], 355, 230))
+    c.append(livros(80, 509))
+    return W, H, "".join(c), "#5A3EE0"
+
+def ciencia_perguntas():
+    """/ciencia/, "Perguntas frequentes": a dúvida de quem pesquisa e a conversa que
+    responde. O pesquisador pensa (mão no queixo, balão com interrogação); a pessoa da
+    Seja fala e responde (balão com reticências). Fundo: roxo, então nada de roupa roxa."""
+    W, H = 560, 470
+    c = []
+    # balões primeiro (acima das cabeças), com a ponta para quem fala
+    c.append(balao(64, 36, 150, 96, BRANCO, "baixo-esquerda", None))
+    c.append(interrogacao(139, 82, 50, ROSA))
+    c.append(brilhos(236, 52, AMARELO, 3, -50, 60, 12, 24, 8))
+    c.append(balao(285, 64, 170, 84, BRANCO, "baixo-direita", ROSA))
+    # o pesquisador pensa; quem fala vem por último, com o braço na frente
+    c.append(pessoa(130, 262, 0.6, PELES["clara"], LARANJA, "curto", CABELO_CASTANHO, oculos=TEXTO, barba=True, pose="queixo"))
+    c.append(pessoa(410, 262, 0.6, PELES["escura"], AMARELO, "cacheado", TEXTO, brinco=ROSA, pose="fala", espelhar=True))
+    c.append(mesa(20, 420, 520, 200))
+    c.append(caneca(204, 350, ROSA))
+    return W, H, "".join(c), ROXO
+
+
+# ---------------------------------------------------------------- ícones das dores (/ciencia/)
+# Um desenho por dor, 120x120, direto no fundo branco da página (sem círculo atrás):
+# nada de peça branca; folhas e telas em lilás, contornos em texto.
+def _dor(corpo):
+    return 120, 120, corpo, BRANCO
+
+
+def dor_alcance():
+    """"Sabe que o que você estuda importa, mas não sabe como fazer isso chegar em quem
+    não é da área": a ideia acesa, ligada por um fio a uma dúvida."""
+    return _dor(fio(48, 60, 90, 84, curva=0.3, cor=ROXO, espessura=5)
+                + f'<circle cx="44" cy="50" r="34" fill="{LILAS}"/>' + icone_ideia(44, 50, 34).split('/>', 1)[1]
+                + f'<circle cx="92" cy="88" r="22" fill="{AMARELO}"/>' + interrogacao(92, 86, 26, TEXTO))
+
+
+def dor_tempo():
+    """"Quer aparecer nas redes, mas não sabe por onde começar, e não tem tempo":
+    o relógio e o celular."""
+    return _dor(relogio(48, 56, 38, AMARELO, TEXTO)
+                + f'<rect x="72" y="44" width="36" height="62" rx="8" fill="{TEXTO}"/>'
+                + f'<rect x="77" y="51" width="26" height="42" rx="4" fill="{LILAS}"/>'
+                + f'<path d="M 85 63 L 85 81 L 98 72 Z" fill="{ROSA}"/>')
+
+
+def dor_tom():
+    """"O que sai técnico demais não é lido, e o que sai simples demais parece raso":
+    um texto cheio demais e outro quase vazio."""
+    return _dor(f'<g transform="rotate(-8 38 60)">' + documento(12, 22, 52, 72, LILAS, TEXTO) + '</g>'
+                + f'<g transform="rotate(8 84 62)"><rect x="60" y="28" width="52" height="72" rx="9" fill="{AZUL}"/>'
+                + f'<path d="M 70 50 L 88 50" stroke="{BRANCO}" stroke-width="5" stroke-linecap="round"/></g>')
+
+
+def dor_rotina():
+    """"Como conciliar isso com a rotina de pesquisa, aula e orientação": livros com a
+    caneca em cima e o notebook, tudo na mesma estante."""
+    return _dor(f'<g transform="translate(4 70) scale(0.36)">' + livros(0, 0) + '</g>'
+                + f'<rect x="20" y="48" width="20" height="22" rx="5" fill="{LARANJA}"/>'
+                + f'<path d="M 40 53 Q 49 53 48 60 Q 47 66 40 65" fill="none" stroke="{LARANJA}" stroke-width="4"/>'
+                + f'<rect x="64" y="52" width="48" height="36" rx="6" fill="{TEXTO}"/>'
+                + f'<circle cx="88" cy="69" r="5" fill="{AMARELO}"/>'
+                + f'<rect x="58" y="87" width="60" height="9" rx="4" fill="{TEXTO}"/>'
+                + f'<rect x="2" y="96" width="116" height="8" rx="4" fill="{LILAS_MEDIO}"/>')
+
+
+def dor_impacto():
+    """"Precisa mostrar o impacto do seu trabalho pra editais, avaliações e CAPES":
+    o relatório com o selo de aprovado."""
+    return _dor(documento(24, 12, 66, 88, LILAS_MEDIO, BRANCO, selo=ROSA))
+
 CENAS = {
     "ilustra-home-topo-v1": home_topo,
     "ilustra-home-conversa-v1": home_conversa,
+    "ilustra-ciencia-topo-v1": ciencia_topo,
+    "ilustra-ciencia-perguntas-v1": ciencia_perguntas,
+    "ilustra-ciencia-dor-alcance-v1": dor_alcance,
+    "ilustra-ciencia-dor-tempo-v1": dor_tempo,
+    "ilustra-ciencia-dor-tom-v1": dor_tom,
+    "ilustra-ciencia-dor-rotina-v1": dor_rotina,
+    "ilustra-ciencia-dor-impacto-v1": dor_impacto,
 }
 
 
