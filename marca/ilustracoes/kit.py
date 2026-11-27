@@ -227,3 +227,13 @@ def balao(x, y, w, h, cor=BRANCO, ponta="baixo-esquerda", pontos=ROSA):
     r = min(w, h) * 0.11
     dots = "".join(f'<circle cx="{x + w*(0.3 + 0.2*i):.0f}" cy="{y + h/2:.0f}" r="{r:.0f}" fill="{pontos}"/>' for i in range(3)) if pontos else ""
     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{h*0.34:.0f}" fill="{cor}"/>' + cauda + dots
+
+
+def interrogacao(cx, cy, tam=40, cor=ROSA):
+    """Ponto de interrogação desenhado (sem texto), para balões de dúvida. tam = altura total."""
+    k = tam / 40
+    def p(v): return v * k
+    return (f'<path d="M {cx-p(10)} {cy-p(10)} Q {cx-p(10)} {cy-p(20)} {cx} {cy-p(20)} Q {cx+p(11)} {cy-p(20)} {cx+p(11)} {cy-p(9)} '
+            f'Q {cx+p(11)} {cy-p(2)} {cx+p(3)} {cy+p(2)} Q {cx} {cy+p(4)} {cx} {cy+p(9)}" fill="none" stroke="{cor}" '
+            f'stroke-width="{p(7)}" stroke-linecap="round" stroke-linejoin="round"/>'
+            f'<circle cx="{cx}" cy="{cy+p(18)}" r="{p(4.2)}" fill="{cor}"/>')

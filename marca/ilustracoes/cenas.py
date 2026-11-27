@@ -73,9 +73,59 @@ def home_conversa():
     return W, H, "".join(c), ROXO
 
 
+def ciencia_topo():
+    """/ciencia/, primeiro bloco: "A ciência que você faz precisa chegar em quem importa."
+    A pesquisadora fala; a ideia dela passa pelas plataformas (vídeo, podcast, post) e
+    chega a pessoas de fora da academia. Fundo: bg1. A mesa encosta na seção branca seguinte."""
+    W, H = 1200, 640
+    ideia = (330, 190)
+    c = []
+    # fios primeiro: ideia -> vídeo -> podcast -> post, descendo até o público
+    c.append(fio(ideia[0] + 60, ideia[1] - 30, 482, 110, curva=-0.12))
+    c.append(fio(678, 110, 752, 150, curva=-0.12))
+    c.append(fio(852, 170, 982, 220, curva=-0.12))
+    c.append(icone_video(480, 40, 200, 130))
+    c.append(icone_podcast(800, 160, 56))
+    c.append(icone_post(980, 170, 120, 92))
+    c.append(icone_ideia(*ideia, r=70))
+    c.append(brilhos(330, 190, AMARELO, 3, -165, 50, 90, 26, 8))
+    c.append(brilhos(1040, 216, AMARELO, 2, -60, 40, 92, 24, 8))
+    # o público, de fora da academia
+    c.append(pessoa(790, 430, 0.7, PELES["clara"], LARANJA, "branco", oculos=TEXTO))
+    c.append(pessoa(1090, 440, 0.68, PELES["morena"], ROSA, "comprido", CABELO_CASTANHO, brinco=AMARELO))
+    c.append(pessoa(940, 420, 0.72, PELES["media"], BRANCO, "curto", TEXTO, fone=ROSA, objeto="celular"))
+    # a pesquisadora fala por último, para o braço ficar na frente
+    c.append(pessoa(210, 420, 0.8, PELES["escura"], AMARELO, "coque", TEXTO, brinco=BRANCO, pose="fala"))
+    c.append(mesa(30, 585, 1140, 200))
+    c.append(notebook_costas(110, 482, 140, 92))
+    c.append(livros(320, 509))
+    c.append(caneca(590, 515, LARANJA))
+    return W, H, "".join(c), "#5A3EE0"
+
+def ciencia_perguntas():
+    """/ciencia/, "Perguntas frequentes": a dúvida de quem pesquisa e a conversa que
+    responde. O pesquisador pensa (mão no queixo, balão com interrogação); a pessoa da
+    Seja fala e responde (balão com reticências). Fundo: roxo, então nada de roupa roxa."""
+    W, H = 560, 470
+    c = []
+    # balões primeiro (acima das cabeças), com a ponta para quem fala
+    c.append(balao(64, 36, 150, 96, BRANCO, "baixo-esquerda", None))
+    c.append(interrogacao(139, 82, 50, ROSA))
+    c.append(brilhos(236, 52, AMARELO, 3, -50, 60, 12, 24, 8))
+    c.append(balao(285, 64, 170, 84, BRANCO, "baixo-direita", ROSA))
+    # o pesquisador pensa; quem fala vem por último, com o braço na frente
+    c.append(pessoa(130, 262, 0.6, PELES["clara"], LARANJA, "curto", CABELO_CASTANHO, oculos=TEXTO, pose="queixo"))
+    c.append(pessoa(410, 262, 0.6, PELES["escura"], AMARELO, "cacheado", TEXTO, brinco=ROSA, pose="fala", espelhar=True))
+    c.append(mesa(20, 420, 520, 200))
+    c.append(caneca(204, 350, ROSA))
+    return W, H, "".join(c), ROXO
+
+
 CENAS = {
     "ilustra-home-topo-v1": home_topo,
     "ilustra-home-conversa-v1": home_conversa,
+    "ilustra-ciencia-topo-v1": ciencia_topo,
+    "ilustra-ciencia-perguntas-v1": ciencia_perguntas,
 }
 
 

@@ -115,12 +115,9 @@ import DoBlog from '../../components/DoBlog.astro';
     background: #5a3ee0 url('/assets/bg1.webp') center/cover no-repeat;
     color: #fff;
     text-align: center;
-    padding: 72px var(--margem) 140px;
-    min-height: 92vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 72px var(--margem) 0;
   }
+  .ilustra-topo { width: 100%; max-width: 1100px; height: auto; display: block; margin: 64px auto 0; }
   .hero-logo { width: 190px; margin: 0 auto 72px; }
   .hero h1 { font-size: clamp(40px, 6.2vw, 84px); max-width: 1000px; margin: 0 auto 32px; }
   .hero-sub { font-size: clamp(19px, 1.7vw, 23px); max-width: 720px; margin: 0 auto 44px; color: #fff; }
@@ -227,7 +224,8 @@ import DoBlog from '../../components/DoBlog.astro';
 
   /* PERGUNTAS FREQUENTES */
   .faq { background: var(--roxo); color: #fff; }
-  .faq-container { max-width: 860px; }
+  .faq-container { max-width: 1160px; display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 72px; align-items: start; }
+  .ilustra-perguntas { width: 100%; height: auto; display: block; position: sticky; top: 40px; }
   .faq h2 { color: #fff; margin-bottom: 40px; }
   .faq-lista { border-top: 2px solid rgba(255,255,255,.3); }
   .faq details { border-bottom: 2px solid rgba(255,255,255,.3); }
@@ -280,6 +278,8 @@ import DoBlog from '../../components/DoBlog.astro';
   }
 
   @media (max-width: 960px) {
+    .faq-container { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+    .ilustra-perguntas { position: static; max-width: 340px; }
     section { padding: 80px var(--margem); }
     .editais-grid, .historias-grid { grid-template-columns: 1fr; gap: 40px; }
     .dores-lista { columns: 1; }
@@ -294,7 +294,8 @@ import DoBlog from '../../components/DoBlog.astro';
   }
   @media (max-width: 560px) {
     p { font-size: 18px; }
-    .hero { min-height: auto; padding: 48px var(--margem) 88px; }
+    .hero { padding: 48px var(--margem) 0; }
+    .ilustra-topo { margin-top: 48px; }
     .hero-logo { width: 150px; margin-bottom: 56px; }
     .hero h1 { font-size: 38px; }
     .dores-lista li { font-size: 19px; grid-template-columns: 28px 1fr; gap: 14px; }
@@ -319,6 +320,7 @@ import DoBlog from '../../components/DoBlog.astro';
     <h1>A ciência que você faz precisa chegar em quem importa.</h1>
     <p class="hero-sub">A Seja é especializada em divulgação científica nas plataformas digitais. Caminhamos ao lado de pesquisadores, grupos de pesquisa, programas de pós-graduação e projetos de pesquisa na estratégia, na criação e na gestão da presença digital.</p>
     <a class="cta" href="https://wa.me/5551991006411?text=Oi%2C%20Filipe!%20Vi%20a%20p%C3%A1gina%20da%20Seja%20e%20quero%20conversar." target="_blank" rel="noopener">Falar com especialista</a>
+    <img class="ilustra-topo" src="/assets/ilustra-ciencia-topo-v1.svg" width="1200" height="640" alt="Ilustração de uma pesquisadora falando, com notebook e livros na mesa. A ideia dela, uma lâmpada acesa, passa por um vídeo, um podcast e um post e chega a pessoas de várias idades do outro lado da mesa, uma delas com o celular na mão.">
   </div>
 </section>
 
@@ -504,6 +506,8 @@ import DoBlog from '../../components/DoBlog.astro';
 <!-- PERGUNTAS FREQUENTES -->
 <section class="faq" id="perguntas">
   <div class="container faq-container">
+    <img class="ilustra-perguntas" src="/assets/ilustra-ciencia-perguntas-v1.svg" width="560" height="470" alt="Ilustração de um pesquisador de óculos, com a mão no queixo e um balão com ponto de interrogação, conversando com uma pessoa que levanta a mão para responder." loading="lazy">
+    <div>
     <h2>Perguntas frequentes</h2>
     <div class="faq-lista">
       <details>
@@ -550,6 +554,7 @@ import DoBlog from '../../components/DoBlog.astro';
         <summary><h3>Como é a primeira conversa e o que eu preciso levar?</h3><span class="faq-mais" aria-hidden="true"></span></summary>
         <p>A primeira conversa é pelo WhatsApp, direto com a gente, e serve para entender a sua pesquisa, o seu grupo e o que vocês precisam agora. Se houver edital, leve o link e o prazo de submissão. Também ajuda trazer um resumo do projeto e os canais que já existem.</p>
       </details>
+    </div>
     </div>
   </div>
 </section>

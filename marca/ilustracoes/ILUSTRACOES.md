@@ -2,7 +2,7 @@
 
 As ilustrações deixam a marca mais humana: pessoas que pesquisam, conversando e criando, em volta das plataformas. Valem para o site e para qualquer criação da Seja (posts, carrosséis, materiais).
 
-Primeiro uso no site: a Home (`ilustra-home-topo-v1.svg` no primeiro bloco e `ilustra-home-conversa-v1.svg` em "Agende uma conversa").
+Primeiro uso no site: a Home (`ilustra-home-topo-v1.svg` no primeiro bloco e `ilustra-home-conversa-v1.svg` em "Agende uma conversa"). Depois, /ciencia/ (`ilustra-ciencia-topo-v1.svg` no primeiro bloco e `ilustra-ciencia-perguntas-v1.svg` em "Perguntas frequentes").
 
 ## Como o estilo funciona
 
